@@ -1,0 +1,183 @@
+:root {
+  --backgroundColor: rgb(255, 255, 255);
+  --ddTitleColor: rgb(121, 116, 116);
+  --ddItemColor: rgb(99, 97, 97);
+  --ddmenuhoverColor: rgb(47, 46, 46);
+}
+@font-face {
+  font-family: "Playfair Display";
+  src:
+    url("./fonts/PlayfairDisplay-Italic.woff2") format("woff2"),
+    url("./fonts/PlayfairDisplay-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src:
+    url("./fonts/PlayfairDisplay-Regular.woff2") format("woff2"),
+    url("./fonts/PlayfairDisplay-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src:
+    url("./fonts/Roboto-Regular.woff2") format("woff2"),
+    url("./fonts/Roboto-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src:
+    url("./fonts/Roboto-Italic.woff2") format("woff2"),
+    url("./fonts/Roboto-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+body {
+  height: 100dvh;
+  text-decoration: none;
+  justify-content: center;
+  font-family: "Playfair Display", "Roboto";
+  background-color: var(--backgroundColor);
+}
+
+.ball {
+  width: 15px;
+  height: 15px;
+  position: fixed;
+  z-index: 1;
+  border-radius: 25px;
+  background-color: rgb(115, 255, 0);
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-out;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+@keyframes dropDownBounce {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1.15);
+  }
+  90% {
+    transform: scaleY(1.1);
+  }
+  95% {
+    transform: scaleY(1.02);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1rem;
+  font-family: "Roboto";
+  background-color: #66666e;
+  color: white;
+
+  .dropdown-container {
+    min-width: 250px;
+    position: relative;
+    text-align: center;
+    line-height: 50px;
+    font-size: 15px;
+    color: rgb(241, 240, 240);
+    cursor: pointer;
+    .menu-title {
+      background-color: inherit;
+    }
+
+    .dropdown-menu {
+      min-width: 250px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: var(--ddItemColor);
+      display: none;
+    }
+
+    ul.dropdown-menu li:hover {
+      background: var(--ddmenuhoverColor);
+    }
+
+    ul {
+      transform-origin: top;
+      animation: dropDownBounce 0.3s ease-out forwards;
+    }
+
+    .visible {
+      display: inline-block;
+    }
+  }
+}
+.projectImg {
+  max-width: 30vw;
+  height: 30vh;
+  background-repeat: no-repeat;
+  object-position: center;
+  object-fit: cover;
+}
+
+header {
+  display: flex;
+  padding: 2rem;
+
+  .heroImage {
+    transform: scale(1.08);
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .about-me-container {
+    display: flex;
+
+    border-left: none;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 3rem;
+    font-size: larger;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-wrap: pretty;
+      max-width: 70ch;
+      margin-bottom: 1.5rem;
+      font-family: "Roboto";
+    }
+  }
+}
+
+.portfolio-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .projectsGrid {
+    display: grid;
+  }
+}
