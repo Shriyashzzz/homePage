@@ -1,5 +1,5 @@
 :root {
-  --backgroundColor: rgb(195, 173, 220);
+  --backgroundColor: #374a67;
   --ddTitleColor: rgb(121, 116, 116);
   --ddItemColor: rgb(99, 97, 97);
   --ddmenuhoverColor: rgb(47, 46, 46);
@@ -101,6 +101,7 @@ html,
 body {
   max-width: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -173,7 +174,6 @@ nav {
   animation: slideIn 0.3s ease-in 0.2s 1 backwards;
 
   .dropdown-container {
-    padding-right: 4rem;
     min-width: 250px;
     position: relative;
     text-align: center;
@@ -187,7 +187,7 @@ nav {
     }
 
     .dropdown-menu {
-      width: 100%;
+      max-width: 100%;
       position: absolute;
       left: 0%;
       list-style: none;
@@ -204,6 +204,7 @@ nav {
 
     ul {
       transform-origin: top;
+      width: 100%;
       animation: dropDownBounce 0.3s ease-out forwards;
     }
 
@@ -503,6 +504,10 @@ footer {
   padding-bottom: 2rem;
   line-height: 1.6;
   text-wrap: pretty;
+}
+
+#projects-title {
+  color: white;
 }
 @keyframes hoverIcon {
   from {

@@ -10,5 +10,5 @@ window.onload = () => {
   setTimeout(() => {
     content.style.display = "block";
     loader.style.display = "none";
-  }, 1000);
+  }, 1200);
 };
