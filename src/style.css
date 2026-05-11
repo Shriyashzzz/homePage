@@ -618,24 +618,20 @@ footer {
 /* tech stack cube */
 .cube-wrap {
   pointer-events: none;
+  will-change: animation;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   position: absolute;
   --size: 5rem;
-  top: 18%;
+  top: 22%;
   left: 85%;
   width: var(--size);
   height: var(--size);
   perspective: 100vmin;
-  overflow: visible;
 }
 .cube {
   transform-style: preserve-3d;
-  transform: rotateX(0deg) rotateZ(45deg) rotateY(-45deg);
-  animation: cube 1s linear;
-  will-change: transform;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform-style: preserve-3d;
-  transform: rotateX(0deg) rotateZ(45deg) rotateY(-45deg);
+
   animation: cube 3s linear infinite;
 }
 @keyframes cube {
@@ -652,7 +648,6 @@ footer {
   position: absolute;
   width: var(--size);
   height: var(--size);
-  background-color: #eee;
   backface-visibility: visible;
   top: calc(var(--size) * -0.5);
   left: calc(var(--size) * -0.5);
