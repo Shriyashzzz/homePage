@@ -44,6 +44,10 @@
   font-style: italic;
   font-display: swap;
 }
+main {
+  min-height: 100vh;
+  min-width: 100vw;
+}
 
 body {
   height: 100dvh;
@@ -142,6 +146,8 @@ nav {
 }
 
 .about-me-container {
+  max-width: 100%;
+  margin: 0 auto;
   h1 {
     animation: slidein 0.5s ease-in forwards;
   }
@@ -344,18 +350,18 @@ footer {
   animation: hoverIcon 0.5s ease-out reverse;
 }
 
-.svgIcons:hover {
-  animation: hoverIcon 0.3s ease-out both;
-  pointer-events: stroke;
-}
-
 .projectLinks {
   display: flex;
   gap: 1rem;
 
   .svgIcons {
     height: 1.6rem;
+    will-change: transform;
   }
+}
+.svgIcons:hover {
+  animation: hoverIcon 0.3s ease-out both;
+  pointer-events: stroke;
 }
 
 .proejctDescription {
@@ -384,12 +390,24 @@ footer {
     gap: 1rem;
   }
 }
+
+/*  need to check for scroll state to see if it"s
+  in
+  project
+  section
+  */
+.navshow {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
 @keyframes hoverIcon {
   from {
-    transform: scale(1);
+    transform: translateY(0rem) translateX(0rem);
   }
   to {
-    transform: scale(1.2);
+    transform: translateY(-0.2rem) translateX(-0.2rem);
   }
 }
 
@@ -398,5 +416,16 @@ footer {
 @media screen and (max-width: 800px) {
   header {
     flex-wrap: wrap;
+    .heroImage {
+      margin: 0 auto;
+      max-width: 100%;
+      max-height: 80vh;
+    }
+  }
+}
+
+@media (hover: none) {
+  .ball {
+    display: none;
   }
 }
