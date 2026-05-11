@@ -1,8 +1,7 @@
 import "normalize.css";
-
 import "./style.css";
-
 import "./bobTheblob.js";
+import "./extLinks.js";
 (() => {
   const dropdownContainer = document.querySelector(".dropdown-container");
   const menuTitle = document.querySelector(".menu-title");

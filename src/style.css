@@ -322,6 +322,7 @@ footer {
 }
 .footerInfo {
   display: flex;
+  font-size: 1.3rem;
   flex-direction: column;
   justify-content:;
   align-items: space-between;
@@ -352,6 +353,25 @@ footer {
 
   .svgIcons {
     height: 1.6rem;
+  }
+}
+
+.svgIcons:active {
+  filter: invert(84%) sepia(10%) saturate(144%) hue-rotate(219deg)
+    brightness(90%) contrast(93%);
+}
+
+.footerSocial {
+  display: flex;
+  margin: 0 0 1rem 0;
+  gap: 1rem;
+}
+.emailFooter {
+  p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
   }
 }
 @keyframes hoverIcon {
