@@ -455,6 +455,12 @@ header {
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
+  p {
+    margin: 0;
+  }
+}
+.contactInfo {
+  padding-bottom: 3rem;
 }
 
 /*  need to check for scroll state to see if it"s
