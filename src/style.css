@@ -58,8 +58,6 @@ body {
 }
 
 a {
-  height: 100%;
-  width: 100%;
   text-decoration: none;
   color: inherit;
 }
@@ -67,6 +65,10 @@ a {
 p {
   position: relative;
   z-index: 2;
+}
+
+img {
+  max-inline-size: 100%;
 }
 
 .ball {
@@ -106,12 +108,14 @@ p {
 
 nav {
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   padding-left: 1rem;
   font-family: "Roboto";
   background-color: var(--navFootBgColor);
   color: white;
+  animation: slideIn 0.3s ease-in 0.2s 1 backwards;
 
   .dropdown-container {
     min-width: 250px;
@@ -173,7 +177,7 @@ nav {
   60% {
     transform: translateY(1.15rem);
   }
-  to {
+  about-me-container to {
     transform: translateY(0rem);
   }
 }
@@ -212,25 +216,30 @@ nav {
 
 header {
   display: flex;
+  flex-direction: row;
   padding: 2rem;
-
+  margin: 0 auto;
   .heroImage {
-    transform: scale(1.08);
+    display: inline-block;
+    z-index: 1;
     border-radius: 1rem;
+    transform: scale(1);
+
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   }
 
   .about-me-container {
     display: flex;
+
     height: inherit;
     justify-content: flex-start;
     background-color: var(--contentBgColor);
+    margin: 0px;
 
     border-left: none;
     flex-direction: column;
-
-    padding: 0 3rem;
     font-size: 2rem;
+    padding: 0 3rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 
     .about-desc {
@@ -238,9 +247,8 @@ header {
         font-size: 1.1rem;
         line-height: 1.6;
         text-wrap: pretty;
+        font-size: 1.4rem;
         max-width: 70ch;
-        font-size: 1.3rem;
-
         margin-bottom: 1.5rem;
         font-family: "Roboto";
       }
@@ -331,13 +339,16 @@ header {
 
 footer {
   margin: 0px;
+  font-size: 1.2rem;
   color: white;
   font-family: "Courier New", Courier, monospace;
   background-color: var(--navFootBgColor);
+  #contact-content {
+    max-width: 100%;
+  }
 }
 .footerInfo {
   display: flex;
-  font-size: 1.3rem;
   flex-direction: column;
   justify-content:;
   align-items: space-between;
@@ -353,8 +364,9 @@ footer {
   max-width: 100%;
   padding-bottom: 1rem;
   gap: 1.2rem;
-  justify-content: flex-end;
   animation: hoverIcon 0.5s ease-out reverse;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .projectLinks {
@@ -390,14 +402,11 @@ footer {
   padding-bottom: 1rem;
 }
 .emailFooter {
-  p {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1rem;
-    margin: 0px;
-    padding: 0px;
-  }
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 /*  need to check for scroll state to see if it"s
@@ -407,9 +416,30 @@ footer {
   */
 .navshow {
   position: fixed;
+  animation: fadeIn 0.3s ease-out 0.2s backwards;
   width: 100%;
   top: 0;
   z-index: 1000;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0.4;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .footerContactDesc {
@@ -434,6 +464,24 @@ footer {
       max-width: 100%;
       max-height: 80vh;
     }
+  }
+}
+
+/* for tablets and medium size screens */
+@media screen and (min-width: 820px) and (max-width: 1200px) {
+  header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+  }
+
+  .heroImage {
+    justify-self: flex-end;
+    align-self: flex-start;
+    margin-top: 2rem;
+    z-index: 2;
+    scale: 1.1;
   }
 }
 
