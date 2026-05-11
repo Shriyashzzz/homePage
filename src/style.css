@@ -263,6 +263,7 @@ header {
     max-width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 1fr;
     column-gap: 4rem;
     row-gap: 1.5rem;
   }
@@ -271,6 +272,7 @@ header {
     border: 2px solid rgb(169, 154, 125);
     box-shadow: 10px 10px 5px grey;
     display: flex;
+    height: 100%;
     background-color: var(--contentBgColor);
     flex-direction: column;
     justify-self: center;
@@ -353,6 +355,14 @@ footer {
 
   .svgIcons {
     height: 1.6rem;
+  }
+}
+
+.proejctDescription {
+  p {
+    padding: 2px;
+    line-height: 1.6;
+    text-wrap: pretty;
   }
 }
 
