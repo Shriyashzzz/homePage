@@ -5,10 +5,6 @@
   --ddmenuhoverColor: rgb(47, 46, 46);
   --contentBgColor: rgb(239, 239, 239);
   --navFootBgColor: #66666e;
-  animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -1s);
-  animation-iteration-count: 1;
-  animation-fill-mode: both;
 }
 @font-face {
   font-family: "Playfair Display";
@@ -105,16 +101,20 @@ main {
 html {
   max-width: 100%;
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 
 body {
   max-height: 100dvh;
   max-width: 100dvw;
   text-decoration: none;
+  overflow-x: hidden;
   justify-content: center;
   font-family: "Playfair Display", "Roboto";
   background-color: var(--backgroundColor);
+  scroll-behavior: smooth;
+  /* enables gpu acceleration */
+  will-change: auto;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -214,6 +214,8 @@ nav {
 }
 
 .about-me-container {
+  position: relative;
+  overflow: hidden;
   h1 {
     margin-left: auto;
     animation: slidein 0.5s ease-in forwards;
@@ -507,9 +509,8 @@ header {
   }
 }
 
-/* For small screens */
-
-@media screen and (max-width: 800px) {
+/* for small screens */
+@media screen and (max-width: 545px) {
   header {
     flex-direction: column;
     align-items: center;
@@ -518,6 +519,30 @@ header {
   .about-me-container {
     margin-top: -20px;
     padding: 1.5rem;
+    .cube-wrap {
+      top: 92%;
+      left: 20%;
+      --size: 3rem;
+    }
+  }
+}
+
+/* For med-small screens */
+
+@media screen and (max-width: 800px) and (min-width: 545px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-me-container {
+    margin-top: -20px;
+    padding: 1.5rem;
+    .cube-wrap {
+      top: 20%;
+      left: 70%;
+      --size: 3rem;
+    }
   }
 }
 /* for tablets and medium size screens */
@@ -540,6 +565,10 @@ header {
   .about-me-container {
     position: relative;
     margin-top: -8rem;
+    .cube-wrap {
+      left: 55%;
+      --size: 4rem;
+    }
 
     h1 {
       text-align: end;
@@ -570,7 +599,6 @@ header {
 }
 footer {
   display: flex;
-  position: relative;
   margin: 0px;
   font-size: 1.2rem;
   color: white;
@@ -581,26 +609,35 @@ footer {
   }
 }
 
+/* tech stack cube */
 .cube-wrap {
+  pointer-events: none;
   position: absolute;
   --size: 5rem;
-  top: 70%;
-  left: 80%;
-  width: 0;
-  height: 0;
+  top: 18%;
+  left: 85%;
+  width: var(--size);
+  height: var(--size);
   perspective: 100vmin;
+  overflow: visible;
 }
 .cube {
   transform-style: preserve-3d;
   transform: rotateX(0deg) rotateZ(45deg) rotateY(-45deg);
   animation: cube 1s linear;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   transform-style: preserve-3d;
   transform: rotateX(0deg) rotateZ(45deg) rotateY(-45deg);
   animation: cube 3s linear infinite;
 }
 @keyframes cube {
-  to {
-    transform: rotateX(360deg) rotateZ(45deg) rotateY(-45deg);
+  0% {
+    transform: rotateX(0deg) rotateZ(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateZ(360deg) rotateY(360deg);
   }
 }
 .side {
@@ -614,27 +651,29 @@ footer {
   top: calc(var(--size) * -0.5);
   left: calc(var(--size) * -0.5);
 }
+
+/* cube sides */
 .top {
-  background-color: #fff;
+  background-color: #e8db7d;
   transform: rotateX(90deg) translateZ(calc(var(--size) * 0.5));
 }
 .bottom {
-  background-color: #999;
+  background-color: #649ee1;
   transform: rotateX(90deg) translateZ(calc(var(--size) * -0.5));
 }
 .left {
-  background-color: #ccc;
+  background-color: #d19aef;
   transform: rotateY(90deg) translateZ(calc(var(--size) * 0.5));
 }
 .right {
-  background-color: #ddd;
+  background-color: #fcf3c9;
   transform: rotateY(90deg) translateZ(calc(var(--size) * -0.5));
 }
 .front {
-  background-color: #aaa;
+  background-color: #b64646;
   transform: translateZ(calc(var(--size) * 0.5));
 }
 .back {
-  background-color: #bbb;
+  background-color: #d6e631;
   transform: translateZ(calc(var(--size) * -0.5));
 }
