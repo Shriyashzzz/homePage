@@ -51,11 +51,16 @@ body {
   background-color: var(--backgroundColor);
 }
 
+p {
+  position: relative;
+  z-index: 1;
+}
+
 .ball {
   width: 15px;
   height: 15px;
   position: fixed;
-  z-index: 1;
+  z-index: 0;
   border-radius: 25px;
   background-color: rgb(115, 255, 0);
   top: 0;
@@ -126,11 +131,70 @@ nav {
     ul {
       transform-origin: top;
       animation: dropDownBounce 0.3s ease-out forwards;
+      li {
+        z-index: -1;
+      }
     }
 
     .visible {
       display: inline-block;
     }
+  }
+}
+
+.about-me-container {
+  h1 {
+    animation: fadein 0.5s ease-in forwards;
+  }
+}
+
+@keyframes fadein {
+  from {
+    transform: translateY(-3rem);
+  }
+  50% {
+    transform: translateY(1rem);
+  }
+  55% {
+    transform: translateY(1.2rem);
+  }
+  60% {
+    transform: translateY(1rem);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.about-desc {
+  p {
+    span {
+      background: linear-gradient(
+        to right,
+        #ff2400,
+        #e81d1d,
+        #e8b21d,
+        #1de840,
+        #1ddde8,
+        #2b1de8,
+        #dd00f3,
+        #dd00f3
+      );
+      background-size: 200% auto;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: rainbow-shift 3s linear infinite;
+    }
+  }
+}
+
+@keyframes rainbow-shift {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 200% 50%;
   }
 }
 
@@ -174,13 +238,16 @@ header {
 .projectImg {
   max-width: 30vw;
   max-height: 20vh;
+  display: flex;
+  max-width: 100%;
+  justify-self: center;
   background-repeat: no-repeat;
   object-position: center;
   object-fit: cover;
 }
 .portfolio-section {
   display: flex;
-  padding: 1rem;
+  margin: 2rem;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -191,15 +258,23 @@ header {
     font-family: "Playfair Display";
   }
   .projectsGrid {
-    width: 100%;
+    max-width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     column-gap: 4rem;
-    row-gap: 1rem;
+    row-gap: 1.5rem;
   }
 
   .project {
-    max-width: 30vw;
+    border: 2px solid rgb(169, 154, 125);
+    box-shadow: 10px 10px 5px grey;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    padding: 0.1rem;
+    align-self: center;
+    max-width: 100%;
+    transition: transform 0.2s ease-in;
     .projectInfo {
       padding: 5px;
       .projectHeader {
@@ -216,5 +291,20 @@ header {
         text-wrap: pretty;
       }
     }
+  }
+}
+
+.project:hover {
+  transform: scale(1.05) translateY(-3px) translateX(-0.5rem);
+
+  border: 2px solid rgb(169, 154, 125);
+  z-index: 1;
+}
+
+/* For small screens */
+
+@media screen and (max-width: 800px) {
+  header {
+    flex-wrap: wrap;
   }
 }
