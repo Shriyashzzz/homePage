@@ -57,6 +57,13 @@ body {
   background-color: var(--backgroundColor);
 }
 
+a {
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
 p {
   position: relative;
   z-index: 2;
@@ -271,7 +278,7 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-auto-rows: 1fr;
     column-gap: 4rem;
-    row-gap: 1.5rem;
+    row-gap: 4rem;
   }
 
   .project {
@@ -379,8 +386,8 @@ footer {
 
 .footerSocial {
   display: flex;
-  margin: 0 0 1rem 0;
   gap: 1rem;
+  padding-bottom: 1rem;
 }
 .emailFooter {
   p {
@@ -388,6 +395,8 @@ footer {
     justify-content: flex-start;
     align-items: center;
     gap: 1rem;
+    margin: 0px;
+    padding: 0px;
   }
 }
 
@@ -401,6 +410,10 @@ footer {
   width: 100%;
   top: 0;
   z-index: 1000;
+}
+
+.footerContactDesc {
+  padding-bottom: 2rem;
 }
 @keyframes hoverIcon {
   from {

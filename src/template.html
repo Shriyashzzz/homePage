@@ -12,14 +12,14 @@
       <div class="dropdown-container">
         <div class="menu-title">QUICK DIVE</div>
         <ul class="dropdown-menu">
-          <li>About</li>
-          <li>Projects</li>
-          <li>Contact</li>
+          <a href="#about-content"><li>About</li></a>
+          <a href="#project-content"><li>Projects</li></a>
+          <a href="#contact-content"><li>Contact</li></a>
         </ul>
       </div>
     </nav>
     <main>
-      <header>
+      <header id="about-content">
         <img
           srcset="
             ./images/heroImg-small.png   400w,
@@ -35,7 +35,7 @@
           <h1>About Me</h1>
           <div class="about-desc">
             <p>
-              Hello! I'm <span>Shriyash</span>, a Computer Science student at
+              Hello! I am <span>Shriyash</span>, a Computer Science student at
               College of San Mateo with a passion for web development.
             </p>
             <p>
@@ -82,7 +82,12 @@
           </div>
         </div>
       </header>
-      <section class="portfolio-section" aria-labelledby="projects-title">
+      <section
+        class="portfolio-section"
+        aria-labelledby="projects-title"
+        tabindex="-1"
+        id="project-content"
+      >
         <h2 id="projects-title">My Projects</h2>
         <div class="projectsGrid">
           <article class="project">
@@ -466,10 +471,10 @@
       </section>
     </main>
     <footer>
-      <section>
+      <section id="contact-content">
         <div class="footerInfo">
           <h2>Contact me</h2>
-          <p>
+          <p class="footerContactDesc">
             Have a project in mind or just want to say hello? I'd love to hear
             from you! Feel free to reach out via github or connect with me on
             LinkedIn. Whether it's a collaboration, freelance opportunity, or a
