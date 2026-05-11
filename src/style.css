@@ -44,6 +44,55 @@
   font-style: italic;
   font-display: swap;
 }
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(var(--bounce-offset));
+  }
+}
+.Content {
+  display: none;
+}
+.loader {
+  height: 100dvh;
+  background-color: rgb(246, 239, 239);
+  display: flex;
+  gap: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  width: 30px;
+  height: 30px;
+  background: rgb(52, 47, 194);
+  padding: 8px;
+  display: grid;
+  place-content: center;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.box {
+  animation: bounce alternate infinite cubic-bezier(0.2, 0.65, 0.6, 1);
+}
+.box.one {
+  --bounce-offset: -20px;
+  animation-duration: 200ms;
+}
+.box.two {
+  --bounce-offset: -30px;
+  animation-duration: 300ms;
+}
+.box.three {
+  --bounce-offset: -40px;
+  animation-duration: 400ms;
+}
+
 main {
   min-height: 100vh;
   min-width: 100vw;
@@ -305,7 +354,6 @@ header {
       box-shadow 0.2s ease-in;
     position: relative;
 
-    z-index: 0;
     img {
       border-bottom: 2px solid rgb(169, 154, 125);
       box-shadow: 2px 2px 5px grey;
@@ -359,7 +407,6 @@ footer {
 }
 
 .socials {
-  z-index: 1;
   display: flex;
   max-width: 100%;
   padding-bottom: 1rem;
@@ -376,11 +423,12 @@ footer {
   .svgIcons {
     height: 1.6rem;
     will-change: transform;
+    backface-visibility: hidden;
   }
 }
 .svgIcons:hover {
+  position: relative;
   animation: hoverIcon 0.3s ease-out both;
-  pointer-events: stroke;
 }
 
 .proejctDescription {
@@ -444,6 +492,8 @@ footer {
 
 .footerContactDesc {
   padding-bottom: 2rem;
+  line-height: 1.6;
+  text-wrap: pretty;
 }
 @keyframes hoverIcon {
   from {
