@@ -97,9 +97,15 @@ main {
   min-height: 100vh;
   min-width: 100vw;
 }
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 body {
-  height: 100dvh;
+  max-height: 100dvh;
+  max-width: 100dvw;
   text-decoration: none;
   justify-content: center;
   font-family: "Playfair Display", "Roboto";
@@ -121,15 +127,15 @@ img {
 }
 
 .ball {
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   position: fixed;
   z-index: 2;
   border-radius: 25px;
   background-color: rgb(115, 255, 0);
   top: 0;
   left: 0;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.1s ease-out;
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
@@ -167,6 +173,7 @@ nav {
   animation: slideIn 0.3s ease-in 0.2s 1 backwards;
 
   .dropdown-container {
+    padding-right: 4rem;
     min-width: 250px;
     position: relative;
     text-align: center;
@@ -174,12 +181,13 @@ nav {
     font-size: 15px;
     color: rgb(241, 240, 240);
     cursor: pointer;
+    z-index: 9999;
     .menu-title {
       background-color: inherit;
     }
 
     .dropdown-menu {
-      min-width: 250px;
+      width: 100%;
       position: absolute;
       left: 0%;
       list-style: none;
@@ -206,9 +214,8 @@ nav {
 }
 
 .about-me-container {
-  max-width: 100%;
-  margin: 0 auto;
   h1 {
+    margin-left: auto;
     animation: slidein 0.5s ease-in forwards;
   }
 }
@@ -226,7 +233,7 @@ nav {
   60% {
     transform: translateY(1.15rem);
   }
-  about-me-container to {
+  to {
     transform: translateY(0rem);
   }
 }
@@ -265,30 +272,32 @@ nav {
 
 header {
   display: flex;
-  flex-direction: row;
-  padding: 2rem;
-  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
   .heroImage {
-    display: inline-block;
-    z-index: 1;
-    border-radius: 1rem;
-    transform: scale(1);
+    max-width: clamp(600px, 50vw, 420px);
 
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+    object-fit: cover;
+    box-shadow: 0 0 5px 2px white;
+    border-radius: 1rem;
   }
 
   .about-me-container {
     display: flex;
-
+    gap: 1rem;
+    max-width: 100%;
+    padding: 1rem;
     height: inherit;
+
     justify-content: flex-start;
     background-color: var(--contentBgColor);
-    margin: 0px;
 
     border-left: none;
     flex-direction: column;
     font-size: 2rem;
-    padding: 0 3rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 
     .about-desc {
@@ -508,30 +517,39 @@ footer {
 
 @media screen and (max-width: 800px) {
   header {
-    flex-wrap: wrap;
-    .heroImage {
-      margin: 0 auto;
-      max-width: 100%;
-      max-height: 80vh;
-    }
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-me-container {
+    margin-top: -20px;
+    padding: 1.5rem;
   }
 }
-
 /* for tablets and medium size screens */
-@media screen and (min-width: 820px) and (max-width: 1200px) {
+@media screen and (min-width: 800px) and (max-width: 1200px) {
   header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
   }
 
   .heroImage {
-    justify-self: flex-end;
+    position: relative;
+
     align-self: flex-start;
-    margin-top: 2rem;
-    z-index: 2;
-    scale: 1.1;
+
+    margin-left: 40px;
+  }
+
+  .about-me-container {
+    position: relative;
+    margin-top: -8rem;
+
+    h1 {
+      text-align: end;
+    }
   }
 }
 
