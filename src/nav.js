@@ -33,7 +33,7 @@
     root: null,
     rootMargin: "0px",
     scrollMargin: "0px",
-    threshold: 0,
+    threshold: 0.5,
   };
 
   const navObserver = new IntersectionObserver(showNav, options);
