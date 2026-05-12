@@ -99,8 +99,16 @@ main {
 }
 
 html {
-  max-width: 100%;
+  max-width: 100dvw;
+  max-height: 100dvh;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+  overflow: hidden;
+
+  /* enables gpu acceleration */
+  will-change: auto;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -112,9 +120,6 @@ body {
   font-family: "Playfair Display", "Roboto";
   background-color: var(--backgroundColor);
   scroll-behavior: smooth;
-  /* enables gpu acceleration */
-  will-change: auto;
-  -webkit-font-smoothing: antialiased;
 }
 
 a {
