@@ -39,7 +39,7 @@
   const navObserver = new IntersectionObserver(showNav, options);
   const heroSection = document.getElementById("about-content");
   navObserver.observe(heroSection);
-  function showNav(entries, observer) {
+  function showNav(entries) {
     entries.forEach((entry) => {
       if (entry.target.id == "about-content" && !entry.isIntersecting) {
         const navHeight = nav.offsetHeight;
