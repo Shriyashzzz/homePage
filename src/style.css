@@ -50,7 +50,7 @@
     transform: translateY(0px);
   }
   to {
-    transform: translateY(var(--bounce-offset));
+    transform: translateY(-10px);
   }
 }
 .Content {
@@ -99,7 +99,7 @@ main {
 }
 
 html {
-  max-width: 100dvw;
+  max-width: 100vw;
   max-height: 100dvh;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -622,21 +622,21 @@ footer {
 
 /* tech stack cube */
 .cube-wrap {
-  pointer-events: none;
   will-change: animation;
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
   position: absolute;
   --size: 5rem;
-  top: 22%;
+  top: 20%;
   left: 85%;
-  width: var(--size);
-  height: var(--size);
   perspective: 100vmin;
+
+  img {
+    background-size: cover;
+  }
 }
 .cube {
   transform-style: preserve-3d;
-
+  position: absolute;
   animation: cube 3s linear infinite;
 }
 @keyframes cube {
@@ -648,8 +648,6 @@ footer {
   }
 }
 .side {
-  width: 10px;
-  height: 10px;
   position: absolute;
   width: var(--size);
   height: var(--size);
@@ -676,10 +674,10 @@ footer {
   transform: rotateY(90deg) translateZ(calc(var(--size) * -0.5));
 }
 .front {
-  background-color: #b64646;
+  background-color: #e3d4d4;
   transform: translateZ(calc(var(--size) * 0.5));
 }
 .back {
-  background-color: #d6e631;
+  background-color: #09c3fc;
   transform: translateZ(calc(var(--size) * -0.5));
 }
