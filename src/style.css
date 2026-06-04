@@ -105,14 +105,13 @@ html {
   scroll-behavior: smooth;
   overscroll-behavior: none;
   overflow: hidden;
-
-  /* enables gpu acceleration */
-  will-change: auto;
   -webkit-font-smoothing: antialiased;
 }
 
 body {
   max-height: 100dvh;
+  transform-style: preserve-3d;
+
   max-width: 100dvw;
   text-decoration: none;
   overflow-x: hidden;
@@ -222,8 +221,8 @@ nav {
   position: relative;
   overflow: hidden;
   h1 {
-    margin-left: auto;
-    animation: slidein 0.5s ease-in forwards;
+    width: fit-content;
+    animation: slidein 0.5s ease-in both;
   }
 }
 
@@ -622,12 +621,16 @@ footer {
 
 /* tech stack cube */
 .cube-wrap {
+  pointer-events: none;
   will-change: animation;
   backface-visibility: hidden;
   position: absolute;
   --size: 5rem;
   top: 20%;
   left: 85%;
+
+  transform-style: preserve-3d;
+
   perspective: 100vmin;
 
   img {
@@ -652,6 +655,7 @@ footer {
   width: var(--size);
   height: var(--size);
   backface-visibility: visible;
+  transform-style: preserve-3d;
   top: calc(var(--size) * -0.5);
   left: calc(var(--size) * -0.5);
 }
