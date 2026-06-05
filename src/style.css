@@ -110,8 +110,6 @@ html {
 
 body {
   max-height: 100dvh;
-  transform-style: preserve-3d;
-
   max-width: 100dvw;
   text-decoration: none;
   overflow-x: hidden;
@@ -221,7 +219,6 @@ nav {
   position: relative;
   overflow: hidden;
   h1 {
-    width: fit-content;
     animation: slidein 0.5s ease-in both;
   }
 }
