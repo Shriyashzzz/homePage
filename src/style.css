@@ -401,7 +401,7 @@ header {
   flex-direction: column;
   justify-content:;
   align-items: space-between;
-  margin: 0 1rem;
+  margin: 1rem;
   h2 {
     margin-bottom: 0px;
   }
@@ -606,7 +606,7 @@ header {
 }
 footer {
   display: flex;
-  margin: 0px;
+  margin-top: 8rem;
   font-size: 1.2rem;
   color: white;
   font-family: "Courier New", Courier, monospace;
