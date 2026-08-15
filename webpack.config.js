@@ -20,7 +20,7 @@ export default {
       template: "./src/template.html",
     }),
     new ESLintPlugin({
-      extensions: ["js", "jsx", "ts", "tsx"],
+      extensions: ["js", "jsx", "ts", "tsx", ".png"],
       fix: true,
       failOnError: true,
     }),

@@ -6,6 +6,7 @@
   --contentBgColor: rgb(239, 239, 239);
   --navFootBgColor: #66666e;
 }
+
 @font-face {
   font-family: "Playfair Display";
   src:
@@ -323,11 +324,10 @@ header {
   justify-self: center;
   background-repeat: no-repeat;
   object-position: center;
-  object-fit: cover;
+  object-fit: contain;
 }
 .portfolio-section {
   display: flex;
-
   margin: 2rem;
   align-items: center;
   justify-content: center;
@@ -399,7 +399,6 @@ header {
 .footerInfo {
   display: flex;
   flex-direction: column;
-  justify-content:;
   align-items: space-between;
   margin: 1rem;
   h2 {
@@ -473,11 +472,57 @@ header {
   position: fixed;
   animation: fadeIn 0.3s ease-out 0.2s backwards;
   width: 100%;
-
   top: 0;
   z-index: 2;
 }
 
+.techStackDiv {
+  display: flex;
+  gap: 1rem;
+}
+.techStackDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.stackContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.stackContainer:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.stackContainer .svgIcons {
+  transition: transform 0.2s ease;
+}
+
+.stackContainer:hover .svgIcons {
+  transform: scale(1.1);
+}
+
+.stackContainer p {
+  font-size: medium !important;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0;
+  white-space: nowrap;
+}
 @keyframes slideIn {
   from {
     opacity: 0.4;
@@ -527,13 +572,33 @@ header {
     margin-top: -20px;
     padding: 1.5rem;
     .cube-wrap {
-      top: 92%;
-      left: 20%;
+      top: 8%;
+      left: 80%;
       --size: 3rem;
     }
   }
 }
 
+.blog-link {
+  font-style: normal;
+  color: #013103;
+  text-decoration: none;
+  font-style: italic;
+  border-bottom: 1px dashed currentColor;
+  transition: opacity 0.2s;
+  gap: 25px;
+}
+
+.blog-link:hover {
+  opacity: 0.7;
+}
+
+.blog-link::before {
+  content: "< ";
+}
+.blog-link::after {
+  content: " />";
+}
 /* For med-small screens */
 
 @media screen and (max-width: 800px) and (min-width: 545px) {
@@ -546,8 +611,8 @@ header {
     margin-top: -20px;
     padding: 1.5rem;
     .cube-wrap {
-      top: 20%;
-      left: 70%;
+      top: 12%;
+      left: 50%;
       --size: 3rem;
     }
   }
@@ -573,6 +638,7 @@ header {
     position: relative;
     margin-top: -8rem;
     .cube-wrap {
+      top: 15%;
       left: 55%;
       --size: 4rem;
     }
@@ -609,7 +675,7 @@ footer {
   margin-top: 8rem;
   font-size: 1.2rem;
   color: white;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--navFootBgColor);
   #contact-content {
     max-width: 100%;
@@ -623,7 +689,7 @@ footer {
   backface-visibility: hidden;
   position: absolute;
   --size: 5rem;
-  top: 20%;
+  top: 13%;
   left: 85%;
 
   transform-style: preserve-3d;
