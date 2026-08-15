@@ -280,14 +280,14 @@ header {
   align-items: center;
   margin: 2rem;
   .heroImage {
-    max-width: clamp(600px, 50vw, 420px);
+    width: clamp(280px, 40vw, 420px);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     position: relative;
     z-index: 1;
-    object-fit: contain;
     box-shadow: 0 0 5px 2px white;
     border-radius: 1rem;
   }
-
   .about-me-container {
     display: flex;
     gap: 1rem;
@@ -317,14 +317,13 @@ header {
   }
 }
 .projectImg {
-  max-width: 30vw;
-  max-height: 20vh;
+  height: 200px;
   display: flex;
   max-width: 100%;
   justify-self: center;
   background-repeat: no-repeat;
   object-position: center;
-  object-fit: contain;
+  object-fit: fill;
 }
 .portfolio-section {
   display: flex;
