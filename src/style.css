@@ -279,8 +279,10 @@ header {
   justify-content: center;
   align-items: center;
   margin: 2rem;
+  text-wrap: pretty;
+
   .heroImage {
-    width: clamp(280px, 40vw, 420px);
+    width: clamp(325px, 40vw, 420px);
     aspect-ratio: 1 / 1;
     object-fit: cover;
     position: relative;
@@ -318,7 +320,6 @@ header {
 }
 .projectImg {
   height: 200px;
-  display: flex;
   max-width: 100%;
   justify-self: center;
   background-repeat: no-repeat;
@@ -406,15 +407,21 @@ header {
 }
 
 .socials {
+  margin-top: 2rem;
   display: flex;
   max-width: 100%;
   padding-bottom: 1rem;
   gap: 1.2rem;
   animation: hoverIcon 0.5s ease-out reverse;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
 }
 
+h5,
+h4 {
+  margin: 0;
+  padding: none;
+}
 .projectLinks {
   display: flex;
   gap: 1rem;
@@ -477,14 +484,10 @@ header {
 
 .techStackDiv {
   display: flex;
-  gap: 1rem;
-}
-.techStackDiv {
-  display: flex;
+  justify-content: start;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 1.5rem;
-  margin-top: 1rem;
+  margin-top: 3rem;
+  gap: 2rem;
 }
 
 .stackContainer {
@@ -565,8 +568,12 @@ header {
   header {
     flex-direction: column;
     align-items: center;
+    text-wrap: pretty;
   }
 
+  .techStackDiv {
+    justify-content: space-evenly;
+  }
   .about-me-container {
     margin-top: -20px;
     padding: 1.5rem;
@@ -604,6 +611,7 @@ header {
   header {
     flex-direction: column;
     align-items: center;
+    text-wrap: pretty;
   }
 
   .about-me-container {
@@ -623,13 +631,13 @@ header {
     flex-direction: column;
     align-items: center;
     position: relative;
+    text-wrap: pretty;
   }
 
   .heroImage {
     position: relative;
-
     align-self: flex-start;
-
+    object-fit: cover;
     margin-left: 40px;
   }
 
@@ -694,10 +702,6 @@ footer {
   transform-style: preserve-3d;
 
   perspective: 100vmin;
-
-  img {
-    background-size: cover;
-  }
 }
 .cube {
   transform-style: preserve-3d;
@@ -732,7 +736,7 @@ footer {
   transform: rotateX(90deg) translateZ(calc(var(--size) * -0.5));
 }
 .left {
-  background-color: #d19aef;
+  background-color: #eae8eb;
   transform: rotateY(90deg) translateZ(calc(var(--size) * 0.5));
 }
 .right {
