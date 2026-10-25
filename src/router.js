@@ -1,8 +1,11 @@
+import resumePdf from "./assets/Shriyash_Ghimire_Resume.pdf";
+
 (() => {
   // hash based routing, each view is an element with data-view="<route>"
   const titles = {
     about: "About",
     projects: "Projects",
+    resume: "Resume",
   };
   const defaultRoute = "about";
 
@@ -14,6 +17,8 @@
 
   const views = document.querySelectorAll(".view");
   const routeLinks = document.querySelectorAll("[data-route]");
+
+  document.getElementById("resumeDownload").href = resumePdf;
 
   function getRoute() {
     const hash = window.location.hash;

@@ -18,7 +18,9 @@
     isHoverd = false;
   });
 
-  const navLink = document.querySelectorAll(".navLink, .navName");
+  const navLink = document.querySelectorAll(
+    ".navLink, .navName, .resumeDownload, .resumeLink",
+  );
   navLink.forEach((link) => {
     link.addEventListener("mouseenter", () => {
       isHoverd = true;

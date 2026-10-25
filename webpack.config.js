@@ -40,6 +40,13 @@ export default {
         type: "asset/resource",
       },
       {
+        test: /\.pdf$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "[name][ext]",
+        },
+      },
+      {
         test: /\.(?:js|mjs|cjs)$/,
         exclude: /node_modules/, // Do not transpile libraries in node_modules
         use: {
