@@ -21,13 +21,20 @@
   const skipLinks = document.querySelectorAll(".navLink");
 
   skipLinks.forEach((link) => {
-    link.addEventListener("click", () => {
+    link.addEventListener("click", (e) => {
       dropdownMenu.classList.remove("visible");
+
+      // contact lives in the footer on every view, so scroll instead of routing
+      if (link.dataset.scroll) {
+        e.preventDefault();
+        document
+          .getElementById(link.dataset.scroll)
+          .scrollIntoView({ behavior: "smooth" });
+      }
     });
   });
 
   const nav = document.querySelector("nav");
-  const body = document.querySelector("body");
   const options = {
     root: null,
     rootMargin: "0px",
@@ -41,13 +48,9 @@
   function showNav(entries) {
     entries.forEach((entry) => {
       if (entry.target.id == "about-content" && !entry.isIntersecting) {
-        const navHeight = nav.offsetHeight;
         nav.classList.add("navshow");
-        body.style.paddingTop = navHeight + "px";
       } else {
         nav.classList.remove("navshow");
-        nav.classList.add("navHide");
-        body.style.paddingTop = "0";
       }
     });
   }

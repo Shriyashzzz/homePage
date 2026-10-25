@@ -1,6 +1,7 @@
 import "normalize.css";
 import "./style.css";
 import "./bobTheblob.js";
+import "./router.js";
 import "./nav.js";
 import { inject } from "@vercel/analytics";
 

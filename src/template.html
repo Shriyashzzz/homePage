@@ -3,8 +3,12 @@
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta
+        name="description"
+        content="Shriyash Ghimire, full-stack developer. Projects, resume, and contact."
+      />
       <link rel="icon" href="./images/favicon.png" />
-      <title>Portfolio</title>
+      <title>Shriyash Ghimire | About</title>
     </head>
 
     <body>
@@ -16,18 +20,18 @@
       <div class="Content">
         <div class="ball" id="cursorFollow"></div>
         <nav>
-          <div>Shriyash Ghimire</div>
+          <a href="#/about" class="navName">Shriyash Ghimire</a>
           <div class="dropdown-container">
             <div class="menu-title">QUICK DIVE</div>
             <ul class="dropdown-menu">
-              <li><a href="#about-content" class="navLink">About</a></li>
-              <li><a href="#project-content" class="navLink">Projects</a></li>
-              <li><a href="#contact-content" class="navLink">Contact</a></li>
+              <li><a href="#/about" class="navLink" data-route="about">About</a></li>
+              <li><a href="#/projects" class="navLink" data-route="projects">Projects</a></li>
+              <li><a href="#contact-content" class="navLink" data-scroll="contact-content">Contact</a></li>
             </ul>
           </div>
         </nav>
         <main>
-          <header id="about-content">
+          <header id="about-content" class="view" data-view="about" tabindex="-1">
             <img
               srcset="
                 ./images/hero_1200.png 1200w,
@@ -161,7 +165,8 @@
               </div>  
           </header>
           <section
-            class="portfolio-section"
+            class="portfolio-section view"
+            data-view="projects"
             aria-labelledby="projects-title"
             tabindex="-1"
             id="project-content"

@@ -18,7 +18,7 @@
     isHoverd = false;
   });
 
-  const navLink = document.querySelectorAll(".navLink");
+  const navLink = document.querySelectorAll(".navLink, .navName");
   navLink.forEach((link) => {
     link.addEventListener("mouseenter", () => {
       isHoverd = true;

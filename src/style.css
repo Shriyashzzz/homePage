@@ -475,7 +475,7 @@ h4 {
   section
   */
 .navshow {
-  position: fixed;
+  position: sticky;
   animation: fadeIn 0.3s ease-out 0.2s backwards;
   width: 100%;
   top: 0;
@@ -750,4 +750,23 @@ footer {
 .back {
   background-color: #09c3fc;
   transform: translateZ(calc(var(--size) * -0.5));
+}
+
+/* spa views, hidden ones must win over display: flex */
+.view[hidden] {
+  display: none;
+}
+.view:focus {
+  outline: none;
+}
+
+.navName {
+  font-weight: 500;
+}
+.navLink {
+  display: block;
+}
+.navLink[aria-current="page"] {
+  background: var(--ddmenuhoverColor);
+  color: rgb(141, 255, 47);
 }
