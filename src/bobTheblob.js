@@ -19,7 +19,7 @@
   });
 
   const navLink = document.querySelectorAll(
-    ".navLink, .navName, .resumeDownload, .resumeLink, .emailButton, .footerEmail",
+    ".navLink, .navName, .resumeDownload, .resumeLink, .emailButton",
   );
   navLink.forEach((link) => {
     link.addEventListener("mouseenter", () => {

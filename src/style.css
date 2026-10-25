@@ -279,7 +279,6 @@ nav {
       display: block;
     }
     .menuEmail {
-      color: rgb(141, 255, 47);
       border-top: 1px solid rgba(255, 255, 255, 0.15);
     }
 
@@ -723,9 +722,6 @@ footer {
 }
 
 .footerMain {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  gap: 2rem 4rem;
   max-width: 1100px;
   margin: 0 auto;
   padding: 3rem 2rem 2rem;
@@ -750,36 +746,26 @@ footer {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.75rem 1.25rem;
-  margin-bottom: 1.5rem;
+  gap: 1rem 1.5rem;
 }
 
+/* same look as the resume's Download PDF button */
 .emailButton {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.7rem 1.3rem;
-  font-weight: 500;
-  color: #1e1e24;
-  background-color: rgb(141, 255, 47);
-  border-radius: 999px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  padding: 0.6rem 1.2rem;
+  color: black;
+  background-color: var(--contentBgColor);
+  border: 2px solid rgb(169, 154, 125);
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3);
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transform 0.2s ease-in,
+    box-shadow 0.2s ease-in;
 }
 .emailButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-}
-
-.footerEmail {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.85);
-  border-bottom: 1px dashed currentColor;
-}
-.footerEmail:hover {
-  opacity: 0.75;
+  transform: translateY(-3px) translateX(-0.2rem);
+  box-shadow: 8px 8px 3px rgba(0, 0, 0, 0.3);
 }
 
 .footerSocial {
@@ -801,31 +787,6 @@ footer {
   .svgIcons {
     width: 1.5rem;
     height: 1.5rem;
-  }
-}
-
-.footerLinks {
-  display: flex;
-  gap: 3rem;
-
-  h3 {
-    margin: 0.5rem 0 0.75rem;
-    font-size: 0.8rem;
-    font-weight: normal;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
-  }
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  li + li {
-    margin-top: 0.5rem;
-  }
-  a:hover {
-    color: rgb(141, 255, 47);
   }
 }
 
@@ -861,7 +822,6 @@ footer {
 
 @media screen and (max-width: 700px) {
   .footerMain {
-    grid-template-columns: 1fr;
     padding: 2.5rem 1.25rem 1.5rem;
   }
   .footerBottom {
