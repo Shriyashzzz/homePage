@@ -532,13 +532,15 @@ h4 {
 
   .svgIcons {
     height: 1.6rem;
-    will-change: transform;
-    backface-visibility: hidden;
+    transition: transform 0.2s ease-out;
   }
 }
-.svgIcons:hover {
-  position: relative;
-  animation: hoverIcon 0.3s ease-out both;
+
+/* move only the icon, never the link: if the hover target itself
+   shifts it can slide out from under the cursor and flicker */
+.projectLinks a:hover .svgIcons,
+.projectLinks a:focus-visible .svgIcons {
+  transform: translate(-0.15rem, -0.2rem);
 }
 
 .projectDescription {
@@ -579,7 +581,6 @@ h4 {
 }
 
 .stackContainer:hover {
-  transform: translateY(-4px);
   background: rgba(255, 255, 255, 0.06);
   border-color: rgba(255, 255, 255, 0.18);
 }
@@ -589,7 +590,7 @@ h4 {
 }
 
 .stackContainer:hover .svgIcons {
-  transform: scale(1.1);
+  transform: translateY(-3px) scale(1.1);
 }
 
 .stackContainer p {
@@ -612,14 +613,6 @@ h4 {
 }
 
 
-@keyframes hoverIcon {
-  from {
-    transform: translateY(0rem) translateX(0rem);
-  }
-  to {
-    transform: translateY(-0.2rem) translateX(-0.2rem);
-  }
-}
 
 /* for small screens */
 @media screen and (max-width: 545px) {
@@ -802,14 +795,23 @@ footer {
     height: 2.75rem;
     border-radius: 50%;
     background-color: var(--contentBgColor);
-    transition: transform 0.2s ease;
+    transition:
+      background-color 0.2s ease,
+      box-shadow 0.2s ease;
   }
-  a:hover {
-    transform: translateY(-3px);
+  a:hover,
+  a:focus-visible {
+    background-color: white;
+    box-shadow: 0 0 0 3px rgb(169, 154, 125);
   }
   .svgIcons {
     width: 1.5rem;
     height: 1.5rem;
+    transition: transform 0.2s ease-out;
+  }
+  a:hover .svgIcons,
+  a:focus-visible .svgIcons {
+    transform: scale(1.15);
   }
 }
 
