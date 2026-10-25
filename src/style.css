@@ -418,72 +418,98 @@ header {
   }
 }
 .projectImg {
+  display: block;
+  width: 100%;
   height: 200px;
-  max-width: 100%;
-  justify-self: center;
-  background-repeat: no-repeat;
-  object-position: center;
-  object-fit: fill;
+  object-fit: cover;
+  object-position: top;
 }
 .portfolio-section {
   display: flex;
   margin: 2rem;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
   text-wrap: pretty;
 
   h2 {
-    margin-right: auto;
+    margin: 0;
     font-family: "Times New Roman", Times, serif;
     font-size: 2rem;
+    color: white;
+  }
+  .projectsIntro {
+    margin: 0.5rem 0 2rem;
+    font-family: "Roboto", sans-serif;
+    color: rgba(255, 255, 255, 0.75);
+  }
+  .projectsSubtitle {
+    margin: 5rem 0 2rem;
+    font-size: 1.6rem;
   }
   .projectsGrid {
     color: rgb(0, 0, 0);
-    max-width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-auto-rows: 1fr;
-    column-gap: 4rem;
-    row-gap: 4rem;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 3rem;
   }
 
   .project {
+    display: flex;
+    flex-direction: column;
     border: 2px solid rgb(169, 154, 125);
     box-shadow: 10px 10px 5px grey;
-    display: flex;
-    height: 100%;
     background-color: var(--contentBgColor);
-    flex-direction: column;
-    justify-self: center;
     padding: 0.1rem;
-    align-self: center;
-    max-width: 100%;
     transition:
       transform 0.2s ease-in,
       box-shadow 0.2s ease-in;
 
-    img {
+    img,
+    .projectPlaceholder {
       border-bottom: 2px solid rgb(169, 154, 125);
-      box-shadow: 2px 2px 5px grey;
     }
     .projectInfo {
-      padding: 5px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 0.5rem 0.6rem 0.75rem;
 
       .projectHeader {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        p {
+        gap: 0.5rem;
+
+        h3 {
+          margin: 0.4rem 0;
           font-size: 1.5rem;
-          font-family: "Playfair Display", "Roboto";
+          font-weight: normal;
+          font-family: "Playfair Display", "Roboto", serif;
+          overflow-wrap: anywhere;
         }
       }
-      .proejctDescription {
-        font-size: 1.1rem;
-        text-wrap: pretty;
+      .projectDescription {
+        font-size: 1.05rem;
       }
     }
+  }
+}
+
+/* tags sit at the bottom so cards in a row line up */
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: auto 0 0;
+  padding: 0.75rem 0 0;
+
+  li {
+    padding: 0.15rem 0.55rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.75);
+    background-color: white;
+    border: 1px solid rgb(169, 154, 125);
   }
 }
 
@@ -515,9 +541,9 @@ h4 {
   animation: hoverIcon 0.3s ease-out both;
 }
 
-.proejctDescription {
+.projectDescription {
   p {
-    padding: 2px;
+    margin: 0 0 0.75rem;
     line-height: 1.6;
     text-wrap: pretty;
   }
@@ -586,9 +612,6 @@ h4 {
 }
 
 
-#projects-title {
-  color: white;
-}
 @keyframes hoverIcon {
   from {
     transform: translateY(0rem) translateX(0rem);

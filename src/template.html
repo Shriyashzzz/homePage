@@ -200,23 +200,20 @@
             id="project-content"
           >
             <h2 id="projects-title">My Projects</h2>
+            <p class="projectsIntro">Full-stack apps first, then the smaller front-end builds I learned on.</p>
             <div class="projectsGrid">
               <article class="project">
-                <img src="./images/where-is-waldo.jpg" alt="" class="projectImg" />
+                <img src="./images/viewpost-client.jpg" alt="Blog post page of Shriyash Uncompiled" class="projectImg" loading="lazy" />
                 <div class="projectInfo">
                   <div class="projectHeader">
-                    <p>&lt; Where's Waldo /&gt;</p>
+                    <h3>Shriyash Uncompiled</h3>
                     <div class="projectLinks">
-                      <a
-                        href="https://github.com/Shriyashzzz/where-is-waldo"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href="https://github.com/Shriyashzzz/blog-shriyash" target="_blank" rel="noopener noreferrer" aria-label="Shriyash Uncompiled on GitHub">
                         <svg
                           viewBox="0 0 128 128"
                           width="40"
                           height="40"
-                          class="svgIcons githubLink githubLibrary"
+                          class="svgIcons githubLink"
                         >
                           <g fill="#181616">
                             <path
@@ -230,17 +227,12 @@
                           </g>
                         </svg>
                       </a>
-                      <a
-                        href="https://where-is-waldo.shriyash.dev/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href="https://blog.shriyash.dev" target="_blank" rel="noopener noreferrer" aria-label="Shriyash Uncompiled live site">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
-                          class="svgIcons externalLink externalLibrary"
+                          class="svgIcons externalLink"
                         >
-                          <title>open-in-new</title>
                           <path
                             d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                           />
@@ -248,150 +240,34 @@
                       </a>
                     </div>
                   </div>
-                  <div class="proejctDescription">
-                     <p>
-                      Photo-hunt game where you find characters hidden inside an image.
-                      <br />
-                      <br /><strong>Major Focus:</strong> Every click is verified server-side against
-                      coordinates in PostgreSQL, so answers never reach the client. Player progress lives in
-                      short-lived (12 hr) Redis-backed sessions.
-                      <br />
-                      <br />
-                      <strong>Tested</strong> with Jest &amp; SuperTest, simulating full multi-request play sessions.
-                    </p>
+                  <div class="projectDescription">
+                    <p>A decoupled blog platform split into three services: <strong>admin CMS</strong>, <strong>API</strong>, and <strong>client</strong>.</p>
+                    <p><strong>Major Focus:</strong> A newsletter that sends in the background with Redis + BullMQ job queues, and a WYSIWYG editor for drafting posts.</p>
                   </div>
-                </div>
-              </article>
-                <article class="project">
-                <img src="./images/viewpost-client.jpg" alt="" class="projectImg" />
-                <div class="projectInfo">
-                  <div class="projectHeader">
-                    <p>&lt; Shriyash Uncompiled /&gt;</p>
-                    <div class="projectLinks">
-                      <a
-                        href="https://github.com/Shriyashzzz/blog-shriyash"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <svg
-                          viewBox="0 0 128 128"
-                          width="40"
-                          height="40"
-                          class="svgIcons githubLink githubLibrary"
-                        >
-                          <g fill="#181616">
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
-                            ></path>
-                            <path
-                              d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
-                            ></path>
-                          </g>
-                        </svg>
-                      </a>
-                      <a
-                        href="https://blog.shriyash.dev"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          class="svgIcons externalLink externalLibrary"
-                        >
-                          <title>open-in-new</title>
-                          <path
-                            d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="proejctDescription">
-                     <p>
-                      A decoupled blog platform split into three services -<strong>admin panel</strong>, <strong>API</strong>, and <strong>client</strong>.<br /><br />
-                      <strong>Major Focus:</strong> WYSIWYG editor for drafting posts, and a newsletter that sends in the background using Redis + BullMQ job queues.
-                    </p>
-                  </div>
-                </div>
-              </article>
-               <article class="project">
-                <img src="./images/fileHwoosting.png" alt="" class="projectImg" />
-                <div class="projectInfo">
-                  <div class="projectHeader">
-                    <p>Hwoosting</p>
-                    <div class="projectLinks">
-                      <a
-                        href="https://github.com/Shriyashzzz/fileHoster"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <svg
-                          viewBox="0 0 128 128"
-                          width="40"
-                          height="40"
-                          class="svgIcons githubLink githubLibrary"
-                        >
-                          <g fill="#181616">
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
-                            ></path>
-                            <path
-                              d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
-                            ></path>
-                          </g>
-                        </svg>
-                      </a>
-                      <a
-                        href="https://filehoster-production.up.railway.app/login"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          class="svgIcons externalLink externalLibrary"
-                        >
-                          <title>open-in-new</title>
-                          <path
-                            d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="proejctDescription">
-                    <p>
-                    SSR app that lets you upload and organize your files in nested folders on the cloud.
-                    <br />
-                    <br />
-                    <strong>Major Focus:</strong> File binaries go to a Supabase <strong>S3</strong> bucket, while
-                    PostgreSQL only stores lightweight metadata (MIME type, size, path).
-
-                    </p>
-                  </div>
+                  <ul class="projectTags" aria-label="Built with">
+                    <li>TypeScript</li>
+                    <li>React</li>
+                    <li>Redux</li>
+                    <li>Express</li>
+                    <li>Prisma</li>
+                    <li>Redis</li>
+                    <li>BullMQ</li>
+                    <li>Docker</li>
+                  </ul>
                 </div>
               </article>
               <article class="project">
-                <img src="./images/clubhouse.png" alt="" class="projectImg" />
+                <img src="./images/where-is-waldo.jpg" alt="Where's Waldo game board" class="projectImg" loading="lazy" />
                 <div class="projectInfo">
                   <div class="projectHeader">
-                    <p>Club House</p>
+                    <h3>Where's Waldo</h3>
                     <div class="projectLinks">
-                      <a
-                        href="https://github.com/Shriyashzzz/clubhouse"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href="https://github.com/Shriyashzzz/where-is-waldo" target="_blank" rel="noopener noreferrer" aria-label="Where's Waldo on GitHub">
                         <svg
                           viewBox="0 0 128 128"
                           width="40"
                           height="40"
-                          class="svgIcons githubLink githubLibrary"
+                          class="svgIcons githubLink"
                         >
                           <g fill="#181616">
                             <path
@@ -405,17 +281,12 @@
                           </g>
                         </svg>
                       </a>
-                      <a
-                        href="https://clubhouse-production-e196.up.railway.app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href="https://where-is-waldo.shriyash.dev/" target="_blank" rel="noopener noreferrer" aria-label="Where's Waldo live site">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
-                          class="svgIcons externalLink externalLibrary"
+                          class="svgIcons externalLink"
                         >
-                          <title>open-in-new</title>
                           <path
                             d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                           />
@@ -423,32 +294,33 @@
                       </a>
                     </div>
                   </div>
-                  <div class="proejctDescription">
-                    <p>
-                   Message board web app where only <strong>authenticated</strong> users can post messages.
-                    <br />
-                    <br>
-                   <strong>Major Focus:</strong> Implement Role-based Authorization, where each user is assigned one of three roles (Member, VIP, or Admin), which determines their authorization. 
-                    </p>
+                  <div class="projectDescription">
+                    <p>Photo-hunt game where you find characters hidden inside an image.</p>
+                    <p><strong>Major Focus:</strong> Every click is verified server-side against coordinates in PostgreSQL, so answers never reach the client. Tested with Jest &amp; SuperTest.</p>
                   </div>
+                  <ul class="projectTags" aria-label="Built with">
+                    <li>TypeScript</li>
+                    <li>React</li>
+                    <li>Zustand</li>
+                    <li>Express</li>
+                    <li>PostgreSQL</li>
+                    <li>Redis</li>
+                    <li>Docker</li>
+                  </ul>
                 </div>
               </article>
-               <article class="project">
-                <img src="./images/mangaTracker.jpeg" alt="" class="projectImg" />
+              <article class="project">
+                <img src="./images/fileHwoosting.png" alt="Hwoosting file browser" class="projectImg" loading="lazy" />
                 <div class="projectInfo">
                   <div class="projectHeader">
-                    <p>Manga Tracker</p>
+                    <h3>Hwoosting</h3>
                     <div class="projectLinks">
-                      <a
-                        href="https://github.com/Shriyashzzz/mangaTracker"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href="https://github.com/Shriyashzzz/fileHoster" target="_blank" rel="noopener noreferrer" aria-label="Hwoosting on GitHub">
                         <svg
                           viewBox="0 0 128 128"
                           width="40"
                           height="40"
-                          class="svgIcons githubLink githubLibrary"
+                          class="svgIcons githubLink"
                         >
                           <g fill="#181616">
                             <path
@@ -462,17 +334,12 @@
                           </g>
                         </svg>
                       </a>
-                      <a
-                        href="https://mangatracker.xyz/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href="https://filehoster-production.up.railway.app/login" target="_blank" rel="noopener noreferrer" aria-label="Hwoosting live site">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
-                          class="svgIcons externalLink externalLibrary"
+                          class="svgIcons externalLink"
                         >
-                          <title>open-in-new</title>
                           <path
                             d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                           />
@@ -480,14 +347,118 @@
                       </a>
                     </div>
                   </div>
-                  <div class="proejctDescription">
-                    <p>
-                  A manga tracking app built to solve a real problem, forgetting which chapter you left off on.
-                    <br />
-                    <br>
-                  Session-based authentication with PostgreSQL-backed sessions, HTTP-only cookies, and bcrypt password hashing.  
-                               </p>
+                  <div class="projectDescription">
+                    <p>SSR app that lets you upload and organize your files in nested folders on the cloud.</p>
+                    <p><strong>Major Focus:</strong> File binaries go to a Supabase S3 bucket, while PostgreSQL only stores lightweight metadata (MIME type, size, path).</p>
                   </div>
+                  <ul class="projectTags" aria-label="Built with">
+                    <li>TypeScript</li>
+                    <li>Express</li>
+                    <li>EJS</li>
+                    <li>PostgreSQL</li>
+                    <li>Prisma</li>
+                    <li>Supabase</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="project">
+                <img src="./images/mangaTracker.jpeg" alt="Manga Tracker library page" class="projectImg" loading="lazy" />
+                <div class="projectInfo">
+                  <div class="projectHeader">
+                    <h3>Manga Tracker</h3>
+                    <div class="projectLinks">
+                      <a href="https://github.com/Shriyashzzz/mangaTracker" target="_blank" rel="noopener noreferrer" aria-label="Manga Tracker on GitHub">
+                        <svg
+                          viewBox="0 0 128 128"
+                          width="40"
+                          height="40"
+                          class="svgIcons githubLink"
+                        >
+                          <g fill="#181616">
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                            ></path>
+                            <path
+                              d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
+                            ></path>
+                          </g>
+                        </svg>
+                      </a>
+                      <a href="https://mangatracker.xyz/" target="_blank" rel="noopener noreferrer" aria-label="Manga Tracker live site">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          class="svgIcons externalLink"
+                        >
+                          <path
+                            d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="projectDescription">
+                    <p>A manga tracking app built to solve a real problem: forgetting which chapter you left off on.</p>
+                    <p><strong>Major Focus:</strong> Session auth with PostgreSQL-backed sessions, HTTP-only cookies, and bcrypt password hashing.</p>
+                  </div>
+                  <ul class="projectTags" aria-label="Built with">
+                    <li>React</li>
+                    <li>Express</li>
+                    <li>PostgreSQL</li>
+                    <li>Material UI</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="project">
+                <img src="./images/clubhouse.png" alt="Club House message board" class="projectImg" loading="lazy" />
+                <div class="projectInfo">
+                  <div class="projectHeader">
+                    <h3>Club House</h3>
+                    <div class="projectLinks">
+                      <a href="https://github.com/Shriyashzzz/clubhouse" target="_blank" rel="noopener noreferrer" aria-label="Club House on GitHub">
+                        <svg
+                          viewBox="0 0 128 128"
+                          width="40"
+                          height="40"
+                          class="svgIcons githubLink"
+                        >
+                          <g fill="#181616">
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                            ></path>
+                            <path
+                              d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
+                            ></path>
+                          </g>
+                        </svg>
+                      </a>
+                      <a href="https://clubhouse-production-e196.up.railway.app/" target="_blank" rel="noopener noreferrer" aria-label="Club House live site">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          class="svgIcons externalLink"
+                        >
+                          <path
+                            d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="projectDescription">
+                    <p>Message board where only <strong>authenticated</strong> users can post messages.</p>
+                    <p><strong>Major Focus:</strong> Role-based authorization: each user is a Member, VIP, or Admin, which decides what they can see and do.</p>
+                  </div>
+                  <ul class="projectTags" aria-label="Built with">
+                    <li>Express</li>
+                    <li>EJS</li>
+                    <li>PostgreSQL</li>
+                    <li>Passport</li>
+                  </ul>
                 </div>
               </article>
               <article class="project">
@@ -496,18 +467,14 @@
                 </div>
                 <div class="projectInfo">
                   <div class="projectHeader">
-                    <p>tailwindcss-highlights-v4</p>
+                    <h3>tailwindcss-highlights-v4</h3>
                     <div class="projectLinks">
-                      <a
-                        href="https://github.com/Shriyashzzz/tailwindcss-highlights"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href="https://github.com/Shriyashzzz/tailwindcss-highlights" target="_blank" rel="noopener noreferrer" aria-label="tailwindcss-highlights-v4 on GitHub">
                         <svg
                           viewBox="0 0 128 128"
                           width="40"
                           height="40"
-                          class="svgIcons githubLink githubLibrary"
+                          class="svgIcons githubLink"
                         >
                           <g fill="#181616">
                             <path
@@ -521,17 +488,12 @@
                           </g>
                         </svg>
                       </a>
-                      <a
-                        href="https://www.npmjs.com/package/tailwindcss-highlights-v4"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href="https://www.npmjs.com/package/tailwindcss-highlights-v4" target="_blank" rel="noopener noreferrer" aria-label="tailwindcss-highlights-v4 npm package">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
-                          class="svgIcons externalLink externalLibrary"
+                          class="svgIcons externalLink"
                         >
-                          <title>open-in-new</title>
                           <path
                             d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                           />
@@ -539,30 +501,80 @@
                       </a>
                     </div>
                   </div>
-                  <div class="proejctDescription">
-                    <p>
-                      Open-source npm package. Forked jln13x's tailwindcss-highlights
-                      plugin and added Tailwind CSS v4 support.
-                    </p>
+                  <div class="projectDescription">
+                    <p>Open-source npm package. Forked jln13x's tailwindcss-highlights plugin and added Tailwind CSS v4 support.</p>
                   </div>
+                  <ul class="projectTags" aria-label="Built with">
+                    <li>JavaScript</li>
+                    <li>Tailwind CSS v4</li>
+                    <li>npm</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+            <h2 class="projectsSubtitle">Earlier Projects</h2>
+            <div class="projectsGrid">
+              <article class="project">
+                <img src="./images/shoppingCart.jpg" alt="Shopping Cart store page" class="projectImg" loading="lazy" />
+                <div class="projectInfo">
+                  <div class="projectHeader">
+                    <h3>Shopping Cart</h3>
+                    <div class="projectLinks">
+                      <a href="https://github.com/Shriyashzzz/shoppingCart" target="_blank" rel="noopener noreferrer" aria-label="Shopping Cart on GitHub">
+                        <svg
+                          viewBox="0 0 128 128"
+                          width="40"
+                          height="40"
+                          class="svgIcons githubLink"
+                        >
+                          <g fill="#181616">
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                            ></path>
+                            <path
+                              d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
+                            ></path>
+                          </g>
+                        </svg>
+                      </a>
+                      <a href="https://realstore-tau.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Shopping Cart live site">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          class="svgIcons externalLink"
+                        >
+                          <path
+                            d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="projectDescription">
+                    <p>E-commerce SPA with category browsing, price filtering, a cart shared across routes, and light/dark mode, backed by the DummyJSON API.</p>
+                  </div>
+                  <ul class="projectTags" aria-label="Built with">
+                    <li>React</li>
+                    <li>React Router</li>
+                    <li>Vite</li>
+                    <li>Testing Library</li>
+                  </ul>
                 </div>
               </article>
               <article class="project">
-                <img src="./images/shoppingCart.jpg" alt="" class="projectImg" />
+                <img src="./images/harryPotter.jpg" alt="Harry Potter memory card game" class="projectImg" loading="lazy" />
                 <div class="projectInfo">
                   <div class="projectHeader">
-                    <p>Shopping Cart</p>
+                    <h3>Memory Game</h3>
                     <div class="projectLinks">
-                      <a
-                        href="https://github.com/Shriyashzzz/shoppingCart"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href="https://github.com/Shriyashzzz/harryPotter-memory-game" target="_blank" rel="noopener noreferrer" aria-label="Memory Game on GitHub">
                         <svg
                           viewBox="0 0 128 128"
                           width="40"
                           height="40"
-                          class="svgIcons githubLink githubEtch"
+                          class="svgIcons githubLink"
                         >
                           <g fill="#181616">
                             <path
@@ -576,13 +588,12 @@
                           </g>
                         </svg>
                       </a>
-                      <a href="https://realstore-tau.vercel.app/" target="_blank" rel="noopener noreferrer">
+                      <a href="https://harry-potter-memory-game.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Memory Game live site">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
-                          class="svgIcons externalLink externalEtch"
+                          class="svgIcons externalLink"
                         >
-                          <title>open-in-new</title>
                           <path
                             d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                           />
@@ -590,33 +601,28 @@
                       </a>
                     </div>
                   </div>
-                  <div class="proejctDescription">
-                    <p>
-                      E-commerce SPA built with React, React Router v7, and CSS Modules.
-                      <br />
-                      <br />
-                    Features category browsing, price filtering, cart state shared across routes via outlet context, light/dark mode, and a real mock API (DummyJSON). 
-                    </p>
+                  <div class="projectDescription">
+                    <p>Click every character card only once. Clicking the same card twice resets your score.</p>
                   </div>
+                  <ul class="projectTags" aria-label="Built with">
+                    <li>React</li>
+                    <li>Vite</li>
+                    <li>Vitest</li>
+                  </ul>
                 </div>
               </article>
               <article class="project">
-                <img src="./images/harryPotter.jpg" alt="" class="projectImg" />
+                <img src="./images/battleShip.jpg" alt="BattleShip game boards" class="projectImg" loading="lazy" />
                 <div class="projectInfo">
                   <div class="projectHeader">
-                    <p>Memory Game</p>
-
+                    <h3>BattleShip</h3>
                     <div class="projectLinks">
-                      <a
-                        href="https://github.com/Shriyashzzz/harryPotter-memory-game"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href="https://github.com/Shriyashzzz/battleship" target="_blank" rel="noopener noreferrer" aria-label="BattleShip on GitHub">
                         <svg
                           viewBox="0 0 128 128"
                           width="40"
                           height="40"
-                          class="svgIcons githubLink githubEtch"
+                          class="svgIcons githubLink"
                         >
                           <g fill="#181616">
                             <path
@@ -630,17 +636,12 @@
                           </g>
                         </svg>
                       </a>
-                      <a
-                        href="https://harry-potter-memory-game.vercel.app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href="https://shriyashzzz.github.io/battleship/" target="_blank" rel="noopener noreferrer" aria-label="BattleShip live site">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
-                          class="svgIcons externalLink externalEtch"
+                          class="svgIcons externalLink"
                         >
-                          <title>open-in-new</title>
                           <path
                             d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                           />
@@ -648,31 +649,28 @@
                       </a>
                     </div>
                   </div>
-                  <div class="proejctDescription">
-                    <p>
-                      A fast-paced memory card game built with React. <br /><br />
-                      Click every character card only once. Clicking the same card
-                      twice resets your current score and starts the round over.
-                    </p>
+                  <div class="projectDescription">
+                    <p>Classic Battleship against the computer. Place your ships and sink the enemy fleet to win.</p>
                   </div>
+                  <ul class="projectTags" aria-label="Built with">
+                    <li>JavaScript</li>
+                    <li>Webpack</li>
+                    <li>Jest</li>
+                  </ul>
                 </div>
               </article>
               <article class="project">
-                <img src="./images/battleShip.jpg" alt="" class="projectImg" />
+                <img src="./images/weatherApp.jpg" alt="Weather App forecast" class="projectImg" loading="lazy" />
                 <div class="projectInfo">
                   <div class="projectHeader">
-                    <p>BattleShip</p>
+                    <h3>Weather App</h3>
                     <div class="projectLinks">
-                      <a
-                        href="https://github.com/Shriyashzzz/battleship"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href="https://github.com/Shriyashzzz/weather-app" target="_blank" rel="noopener noreferrer" aria-label="Weather App on GitHub">
                         <svg
                           viewBox="0 0 128 128"
                           width="40"
                           height="40"
-                          class="svgIcons githubLink githubBattleShip"
+                          class="svgIcons githubLink"
                         >
                           <g fill="#181616">
                             <path
@@ -686,17 +684,12 @@
                           </g>
                         </svg>
                       </a>
-                      <a
-                        href="https://shriyashzzz.github.io/battleship/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href="https://shriyashzzz.github.io/weather-app/" target="_blank" rel="noopener noreferrer" aria-label="Weather App live site">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
-                          class="svgIcons externalLink externalBattleShip"
+                          class="svgIcons externalLink"
                         >
-                          <title>open-in-new</title>
                           <path
                             d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                           />
@@ -704,32 +697,28 @@
                       </a>
                     </div>
                   </div>
-                  <div class="proejctDescription">
-                    <p>
-                      Classic Battleship game built with JavaScript, CSS & Html
-                      and tested using Jest. <br />
-                      <br />
-                      Place your ships and sink the enemy fleet to win!
-                    </p>
+                  <div class="projectDescription">
+                    <p>Current weather plus the forecast for the next few hours and upcoming days.</p>
                   </div>
+                  <ul class="projectTags" aria-label="Built with">
+                    <li>JavaScript</li>
+                    <li>Webpack</li>
+                    <li>VisualCrossing API</li>
+                  </ul>
                 </div>
               </article>
               <article class="project">
-                <img src="./images/weatherApp.jpg" alt="" class="projectImg" />
+                <img src="./images/libraryApp.jpg" alt="Personal Library book list" class="projectImg" loading="lazy" />
                 <div class="projectInfo">
                   <div class="projectHeader">
-                    <p>Weather App</p>
+                    <h3>Personal Library</h3>
                     <div class="projectLinks">
-                      <a
-                        href="https://github.com/Shriyashzzz/weather-app"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href="https://github.com/Shriyashzzz/Book-Library" target="_blank" rel="noopener noreferrer" aria-label="Personal Library on GitHub">
                         <svg
                           viewBox="0 0 128 128"
                           width="40"
                           height="40"
-                          class="svgIcons githubLink guthubWeather"
+                          class="svgIcons githubLink"
                         >
                           <g fill="#181616">
                             <path
@@ -743,17 +732,12 @@
                           </g>
                         </svg>
                       </a>
-                      <a
-                        href="https://shriyashzzz.github.io/weather-app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href="https://shriyashzzz.github.io/Book-Library/" target="_blank" rel="noopener noreferrer" aria-label="Personal Library live site">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
-                          class="svgIcons externalLink externalWeather"
+                          class="svgIcons externalLink"
                         >
-                          <title>open-in-new</title>
                           <path
                             d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                           />
@@ -761,75 +745,16 @@
                       </a>
                     </div>
                   </div>
-                  <div class="proejctDescription">
-                    <p>
-                      Weather app built with JavaScript, Webpack, and the
-                      VisualCrossing API.
-                      <br />
-                      <br />
-                      Obtain essential information about the current weather, the
-                      forecast for the next few hours and upcoming days.
-                    </p>
+                  <div class="projectDescription">
+                    <p>Keep track of the books you've read and the ones you want to read, saved locally with localStorage.</p>
                   </div>
+                  <ul class="projectTags" aria-label="Built with">
+                    <li>JavaScript</li>
+                    <li>Webpack</li>
+                    <li>localStorage</li>
+                  </ul>
                 </div>
               </article>
-              <article class="project">
-                <img src="./images/libraryApp.jpg" alt="" class="projectImg" />
-                <div class="projectInfo">
-                  <div class="projectHeader">
-                    <p>Personal Library</p>
-                    <div class="projectLinks">
-                      <a
-                        href="https://github.com/Shriyashzzz/Book-Library"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <svg
-                          viewBox="0 0 128 128"
-                          width="40"
-                          height="40"
-                          class="svgIcons githubLink githubLibrary"
-                        >
-                          <g fill="#181616">
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
-                            ></path>
-                            <path
-                              d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
-                            ></path>
-                          </g>
-                        </svg>
-                      </a>
-                      <a
-                        href="https://shriyashzzz.github.io/Book-Library/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          class="svgIcons externalLink externalLibrary"
-                        >
-                          <title>open-in-new</title>
-                          <path
-                            d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="proejctDescription">
-                    <p>
-                      A library web app to keep track of the books you've read and
-                      the ones you want to read, saved locally with localStorage.
-                    </p>
-                  </div>
-                </div>
-              </article>
-              
-            
             </div>
           </section>
           <section
