@@ -492,27 +492,6 @@ header {
   z-index: 1;
 }
 
-.footerInfo {
-  display: flex;
-  flex-direction: column;
-  align-items: space-between;
-  margin: 1rem;
-  h2 {
-    margin-bottom: 0px;
-  }
-}
-
-.socials {
-  margin-top: 2rem;
-  display: flex;
-  max-width: 100%;
-  padding-bottom: 1rem;
-  gap: 1.2rem;
-  animation: hoverIcon 0.5s ease-out reverse;
-  justify-content: flex-start;
-  align-items: center;
-}
-
 h5,
 h4 {
   margin: 0;
@@ -546,24 +525,6 @@ h4 {
     brightness(90%) contrast(93%);
 }
 
-.footerSocial {
-  display: flex;
-  gap: 1rem;
-  padding-bottom: 1rem;
-}
-.emailFooter {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  p {
-    margin: 0;
-  }
-}
-.contactInfo {
-  padding-bottom: 3rem;
-}
 
 
 .techStackDiv {
@@ -621,12 +582,6 @@ h4 {
   }
 }
 
-
-.footerContactDesc {
-  padding-bottom: 2rem;
-  line-height: 1.6;
-  text-wrap: pretty;
-}
 
 #projects-title {
   color: white;
@@ -754,15 +709,133 @@ h4 {
     width: 100%;
   }
 }
+/* footer */
 footer {
-  display: flex;
   margin-top: 8rem;
-  font-size: 1.2rem;
   color: white;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: var(--navFootBgColor);
-  #contact-content {
-    max-width: 100%;
+  border-top: 3px solid rgb(141, 255, 47);
+}
+
+.footerMain {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 2rem 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2rem;
+}
+
+.footerCta {
+  h2 {
+    margin: 0 0 0.75rem;
+    font-family: "Playfair Display", "Roboto", serif;
+    font-size: 2rem;
+    font-weight: normal;
+  }
+  p {
+    margin: 0 0 1.25rem;
+    max-width: 52ch;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+  }
+}
+
+.footerEmail {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  border-bottom: 1px dashed currentColor;
+}
+.footerEmail:hover {
+  opacity: 0.75;
+}
+
+.footerSocial {
+  display: flex;
+  gap: 0.75rem;
+
+  a {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background-color: var(--contentBgColor);
+    transition: transform 0.2s ease;
+  }
+  a:hover {
+    transform: translateY(-3px);
+  }
+  .svgIcons {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.footerLinks {
+  display: flex;
+  gap: 3rem;
+
+  h3 {
+    margin: 0.5rem 0 0.75rem;
+    font-size: 0.8rem;
+    font-weight: normal;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li + li {
+    margin-top: 0.5rem;
+  }
+  a:hover {
+    color: rgb(141, 255, 47);
+  }
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 2rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+
+  p {
+    margin: 0;
+  }
+}
+
+.backToTop {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.backToTop:hover {
+  color: rgb(141, 255, 47);
+}
+
+@media screen and (max-width: 700px) {
+  .footerMain {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 1.25rem 1.5rem;
+  }
+  .footerBottom {
+    padding: 1rem 1.25rem 1.5rem;
   }
 }
 
@@ -837,13 +910,6 @@ footer {
   outline: none;
 }
 
-
-.emailFooter a {
-  border-bottom: 1px dashed currentColor;
-}
-.emailFooter a:hover {
-  opacity: 0.7;
-}
 
 /* project card without a screenshot */
 .projectPlaceholder {
