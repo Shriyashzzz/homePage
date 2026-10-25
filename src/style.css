@@ -164,29 +164,80 @@ img {
   }
 }
 
+/* always visible so the page tabs are reachable from anywhere */
 nav {
-  display: flex;
-  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
   padding-left: 1rem;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   background-color: var(--navFootBgColor);
   color: white;
   animation: slideIn 0.3s ease-in 0.2s 1 backwards;
 
+  .navName {
+    justify-self: start;
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
+
+  .pageTabs {
+    display: flex;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .navLink {
+      display: block;
+      padding: 0 1rem;
+      line-height: 50px;
+      font-size: 15px;
+      letter-spacing: 0.04em;
+      color: rgb(241, 240, 240);
+      border-bottom: 3px solid transparent;
+      transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+    }
+    .navLink:hover {
+      background-color: var(--ddItemColor);
+    }
+    .navLink[aria-current="page"] {
+      border-bottom-color: rgb(141, 255, 47);
+      font-weight: 500;
+    }
+  }
+
   .dropdown-container {
-    min-width: 250px;
+    justify-self: end;
+    min-width: 160px;
     position: relative;
     z-index: 2;
     text-align: center;
     line-height: 50px;
     font-size: 15px;
     color: rgb(241, 240, 240);
-    cursor: pointer;
 
     .menu-title {
+      width: 100%;
+      font: inherit;
+      color: inherit;
+      letter-spacing: 0.04em;
       background-color: inherit;
+      border: none;
+      cursor: pointer;
+    }
+    .menu-title::after {
+      content: " ▾";
+    }
+    .menu-title[aria-expanded="true"]::after {
+      content: " ▴";
     }
 
     .dropdown-menu {
@@ -198,6 +249,10 @@ nav {
       margin: 0;
       background-color: var(--ddItemColor);
       display: none;
+    }
+
+    .navLink {
+      display: block;
     }
 
     ul.dropdown-menu li:hover {
@@ -212,6 +267,23 @@ nav {
 
     .visible {
       display: inline-block;
+    }
+  }
+}
+
+/* phones: tabs get their own row under the name */
+@media screen and (max-width: 600px) {
+  nav {
+    grid-template-columns: 1fr auto;
+
+    .pageTabs {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      justify-content: space-around;
+      background-color: rgba(0, 0, 0, 0.12);
+    }
+    .pageTabs .navLink {
+      line-height: 42px;
     }
   }
 }
@@ -469,18 +541,6 @@ h4 {
   padding-bottom: 3rem;
 }
 
-/*  need to check for scroll state to see if it"s
-  in
-  project
-  section
-  */
-.navshow {
-  position: sticky;
-  animation: fadeIn 0.3s ease-out 0.2s backwards;
-  width: 100%;
-  top: 0;
-  z-index: 2;
-}
 
 .techStackDiv {
   display: flex;
@@ -536,14 +596,6 @@ h4 {
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
 .footerContactDesc {
   padding-bottom: 2rem;
@@ -760,16 +812,6 @@ footer {
   outline: none;
 }
 
-.navName {
-  font-weight: 500;
-}
-.navLink {
-  display: block;
-}
-.navLink[aria-current="page"] {
-  background: var(--ddmenuhoverColor);
-  color: rgb(141, 255, 47);
-}
 
 .emailFooter a {
   border-bottom: 1px dashed currentColor;

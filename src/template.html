@@ -21,13 +21,30 @@
         <div class="ball" id="cursorFollow"></div>
         <nav>
           <a href="#/about" class="navName">Shriyash Ghimire</a>
+          <ul class="pageTabs" aria-label="Pages">
+            <li><a href="#/about" class="navLink" data-route="about">About</a></li>
+            <li><a href="#/projects" class="navLink" data-route="projects">Projects</a></li>
+            <li><a href="#/resume" class="navLink" data-route="resume">Resume</a></li>
+          </ul>
           <div class="dropdown-container">
-            <div class="menu-title">QUICK DIVE</div>
-            <ul class="dropdown-menu">
-              <li><a href="#/about" class="navLink" data-route="about">About</a></li>
-              <li><a href="#/projects" class="navLink" data-route="projects">Projects</a></li>
-              <li><a href="#/resume" class="navLink" data-route="resume">Resume</a></li>
-              <li><a href="#contact-content" class="navLink" data-scroll="contact-content">Contact</a></li>
+            <button
+              type="button"
+              class="menu-title"
+              aria-expanded="false"
+              aria-controls="connect-menu"
+            >
+              CONNECT
+            </button>
+            <ul class="dropdown-menu" id="connect-menu">
+              <li>
+                <a href="https://github.com/Shriyashzzz" target="_blank" rel="noopener noreferrer" class="navLink">GitHub</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/shriyash-ghimire-73b385257/" target="_blank" rel="noopener noreferrer" class="navLink">LinkedIn</a>
+              </li>
+              <li>
+                <a href="https://blog.shriyash.dev" target="_blank" rel="noopener noreferrer" class="navLink">Blog</a>
+              </li>
             </ul>
           </div>
         </nav>
