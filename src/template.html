@@ -836,8 +836,7 @@
             tabindex="-1"
             id="resume-content"
           >
-            <div class="resumeHeader">
-              <h2 id="resume-title">Resume</h2>
+            <div class="resumeToolbar">
               <a
                 class="resumeDownload"
                 id="resumeDownload"
@@ -845,135 +844,155 @@
                 >Download PDF</a
               >
             </div>
-            <article class="resumeCard">
-              <section class="resumeBlock">
-                <h3>Education</h3>
-                <div class="resumeItem">
-                  <div class="resumeItemHead">
-                    <p>
-                      <strong>College of San Mateo</strong>, Computer Science
-                      Transfer Track (Intended B.S. in Computer Science)
-                    </p>
-                    <span class="resumeMeta">San Mateo, CA · Transfer Fall 2027</span>
-                  </div>
-                  <p class="resumeSub">
-                    GPA 3.6 / 4.0 · Coursework: Data Structures, Discrete
-                    Mathematics, Intro to Databases
-                  </p>
-                </div>
-              </section>
-
-              <section class="resumeBlock">
-                <h3>Experience</h3>
-                <div class="resumeItem">
-                  <div class="resumeItemHead">
-                    <p>
-                      <strong>IT Administrator</strong>,
-                      <a
-                        href="https://www.ultimatehomecareservices.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="resumeLink"
-                        >Ultimate Home Care</a
-                      >
-                    </p>
-                    <span class="resumeMeta">Palo Alto, CA · Jul 2026 – Present</span>
-                  </div>
-                  <ul>
-                    <li>
-                      Migrated 50+ active client records and billing histories
-                      from QuickBooks to AxisCare, preserving data integrity and
-                      HIPAA compliance.
-                    </li>
-                    <li>
-                      Configured automated employee scheduling in AxisCare,
-                      reducing scheduling conflicts and manual admin work.
-                    </li>
-                    <li>
-                      Maintain the company's Wix website, adding new Hiring and
-                      Contact sections, and manage client invoicing.
-                    </li>
-                  </ul>
-                </div>
-                <div class="resumeItem">
-                  <div class="resumeItemHead">
-                    <p><strong>Computer Science Tutor</strong>, Self-Employed</p>
-                    <span class="resumeMeta">Redwood City, CA · Jan 2024 – Present</span>
-                  </div>
-                  <ul>
-                    <li>
-                      Design and deliver personalized A-Level Computer Science
-                      exam-prep lesson plans for students in Pakistan, Nepal, and
-                      the UK.
-                    </li>
-                    <li>
-                      Tutor 4 students at a time, 8–10 hours per week, on
-                      object-oriented programming and data structures.
-                    </li>
-                  </ul>
-                </div>
-                <div class="resumeItem">
-                  <div class="resumeItemHead">
-                    <p><strong>Server</strong>, Benihana</p>
-                    <span class="resumeMeta">San Mateo, CA · Dec 2024 – Jul 2026</span>
-                  </div>
-                  <ul>
-                    <li>
-                      Founding team member of the San Mateo location; trained new
-                      servers in a high-volume dining room.
-                    </li>
-                  </ul>
-                </div>
-              </section>
-
-              <section class="resumeBlock">
-                <h3>Projects</h3>
-                <ul class="resumeProjects">
-                  <li>
-                    <span><strong>Shriyash Uncompiled</strong>, Full-Stack Blog Platform</span>
-                    <span class="resumeMeta">Aug 2026</span>
-                  </li>
-                  <li>
-                    <span><strong>Where's Waldo</strong>, Photo-Hunt Game</span>
-                    <span class="resumeMeta">Sep 2026</span>
-                  </li>
-                  <li>
-                    <span><strong>Hwoosting</strong>, Cloud File Hosting Platform</span>
-                    <span class="resumeMeta">Jul 2026</span>
-                  </li>
-                  <li>
-                    <span><strong>Manga Tracker</strong>, Manga Tracking App</span>
-                    <span class="resumeMeta">Jun 2026</span>
-                  </li>
-                  <li>
-                    <span><strong>tailwindcss-highlights-v4</strong>, Open-Source npm Package</span>
-                    <span class="resumeMeta">Oct 2026</span>
-                  </li>
-                </ul>
-                <p class="resumeSub">
-                  Details and live links on the
-                  <a href="#/projects" class="resumeLink">Projects</a> page.
+            <!-- mirrors src/assets/Shriyash_Ghimire_Resume.pdf, keep the two in sync -->
+            <article class="resumePaper">
+              <div class="rpHead">
+                <h2 id="resume-title">Shriyash Ghimire</h2>
+                <p>
+                  <a href="mailto:ghimires1@my.smccd.edu">ghimires1@my.smccd.edu</a>
+                  <span class="rpSep">|</span> (650) 421-3114
+                  <span class="rpSep">|</span>
+                  <a href="https://shriyash.dev/">shriyash.dev</a>
+                  <span class="rpSep">|</span>
+                  <a href="https://www.linkedin.com/in/shriyash-ghimire-73b385257/" target="_blank" rel="noopener noreferrer">linkedin.com/in/shriyash-ghimire-73b385257</a>
+                  <span class="rpSep">|</span>
+                  <a href="https://github.com/Shriyashzzz" target="_blank" rel="noopener noreferrer">github.com/Shriyashzzz</a>
                 </p>
+              </div>
+
+              <section>
+                <h3>Education</h3>
+                <div class="rpRow">
+                  <span><strong>College of San Mateo</strong> — Computer Science Transfer Track (Intended B.S. in Computer Science)</span>
+                  <span>San Mateo, CA</span>
+                </div>
+                <div class="rpRow">
+                  <span>GPA: 3.6 / 4.0 | Coursework: Data Structures, Discrete Mathematics, Intro to Databases</span>
+                  <span>Expected Transfer: Fall 2027</span>
+                </div>
               </section>
 
-              <section class="resumeBlock">
+              <section>
+                <h3>Projects</h3>
+                <div class="rpEntry">
+                  <div class="rpRow">
+                    <span><strong>Shriyash Uncompiled</strong> | Full-Stack Blog Platform |
+                      <a href="https://blog.shriyash.dev" target="_blank" rel="noopener noreferrer">Live</a> ·
+                      <a href="https://github.com/Shriyashzzz/blog-shriyash" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+                    <span>Aug 2026</span>
+                  </div>
+                  <p class="rpTech">TypeScript, React, Redux, Express, Passport.js, PostgreSQL, Prisma, Redis, BullMQ, Docker</p>
+                  <ul>
+                    <li>Built a newsletter CMS that sends email to 14 active subscribers in the background: Nodemailer and Resend handle delivery, while Redis and BullMQ job queues with 7 concurrent workers keep sends reliable and non-blocking.</li>
+                    <li>Architected a decoupled platform of three services (admin CMS, RESTful API, public client) with a React frontend and Express backend.</li>
+                    <li>Implemented authentication with Passport.js, storing JWTs in cookies with matched token and cookie expiry to avoid stale sessions.</li>
+                    <li>Developed a WYSIWYG post editor for the admin CMS, with a markdown-to-HTML parser for rendering posts on the client.</li>
+                    <li>Wrote two Jest/SuperTest integration test suites (posts and newsletter) and containerized the services with Docker for reproducible deployment.</li>
+                  </ul>
+                </div>
+                <div class="rpEntry">
+                  <div class="rpRow">
+                    <span><strong>Where's Waldo</strong> | Photo-Hunt Game |
+                      <a href="https://where-is-waldo.shriyash.dev/" target="_blank" rel="noopener noreferrer">Live</a> ·
+                      <a href="https://github.com/Shriyashzzz/where-is-waldo" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+                    <span>Sep 2026</span>
+                  </div>
+                  <p class="rpTech">TypeScript, React, Zustand, Express, PostgreSQL, Redis, Docker</p>
+                  <ul>
+                    <li>Verified every click server-side against character coordinates stored in PostgreSQL, so answers never reach the client or appear in network requests.</li>
+                    <li>Isolated each player's progress in sessions using express-session with a Redis-backed store (connect-redis).</li>
+                    <li>Validated all request input with express-validator and wrote Jest/SuperTest integration tests for Redis-backed sessions and click verification, using persistent agents to simulate full multi-request play sessions.</li>
+                  </ul>
+                </div>
+                <div class="rpEntry">
+                  <div class="rpRow">
+                    <span><strong>Hwoosting</strong> | Cloud File Hosting Platform |
+                      <a href="https://filehoster-production.up.railway.app/login" target="_blank" rel="noopener noreferrer">Live</a> ·
+                      <a href="https://github.com/Shriyashzzz/fileHoster" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+                    <span>Jul 2026</span>
+                  </div>
+                  <p class="rpTech">TypeScript, Express, EJS, PostgreSQL, Prisma, Supabase</p>
+                  <ul>
+                    <li>Built a server-side rendered file hosting app where users upload, group, and manage files in nested folders, backed by a Supabase S3 bucket.</li>
+                    <li>Designed a normalized relational schema (Users, Folders, Files) with Prisma to enforce referential integrity across nested directory trees.</li>
+                    <li>Stored file binaries in S3 storage and only lightweight metadata (MIME type, size, path) in PostgreSQL; handled multipart uploads with Multer.</li>
+                  </ul>
+                </div>
+                <div class="rpEntry">
+                  <div class="rpRow">
+                    <span><strong>Manga Tracker</strong> | Manga Tracking App |
+                      <a href="https://mangatracker.xyz/" target="_blank" rel="noopener noreferrer">Live</a> ·
+                      <a href="https://github.com/Shriyashzzz/mangaTracker" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+                    <span>Jun 2026</span>
+                  </div>
+                  <p class="rpTech">JavaScript, React, Node.js, Express, PostgreSQL, Material UI</p>
+                  <ul>
+                    <li>Developed a responsive multi-page app for searching manga and tracking reading progress, with library state persisted in PostgreSQL.</li>
+                    <li>Implemented session authentication (express-session, PostgreSQL store, HTTP-only cookies), bcrypt password hashing, and server-side input validation; deployed on Railway.</li>
+                  </ul>
+                </div>
+                <div class="rpEntry">
+                  <div class="rpRow">
+                    <span><strong>tailwindcss-highlights-v4</strong> | Open-Source npm Package |
+                      <a href="https://www.npmjs.com/package/tailwindcss-highlights-v4" target="_blank" rel="noopener noreferrer">npm</a> ·
+                      <a href="https://github.com/Shriyashzzz/tailwindcss-highlights" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+                    <span>Oct 2026</span>
+                  </div>
+                  <p class="rpTech">JavaScript, Tailwind CSS v4</p>
+                  <ul>
+                    <li>Forked jln13x's tailwindcss-highlights plugin, added Tailwind CSS v4 support, and published it to npm as tailwindcss-highlights-v4.</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section>
+                <h3>Professional Experience</h3>
+                <div class="rpEntry">
+                  <div class="rpRow">
+                    <span><strong>IT Administrator</strong>,
+                      <a href="https://www.ultimatehomecareservices.com/" target="_blank" rel="noopener noreferrer">Ultimate Home Care</a>
+                      — Palo Alto, CA</span>
+                    <span>Jul 2026 – Present</span>
+                  </div>
+                  <ul>
+                    <li>Migrated 50+ active client records and billing histories from QuickBooks to AxisCare, preserving data integrity and HIPAA compliance.</li>
+                    <li>Configured automated employee scheduling in AxisCare, reducing scheduling conflicts and manual administrative work.</li>
+                    <li>Maintain the company's Wix website, adding new Hiring and Contact sections, and manage client invoicing.</li>
+                  </ul>
+                </div>
+                <div class="rpEntry">
+                  <div class="rpRow">
+                    <span><strong>Computer Science Tutor</strong>, Self-Employed — Redwood City, CA</span>
+                    <span>Jan 2024 – Present</span>
+                  </div>
+                  <ul>
+                    <li>Design and deliver personalized A-Level Computer Science exam-prep lesson plans for students in Pakistan, Nepal, and the UK.</li>
+                    <li>Tutor 4 students at a time, 8–10 hours per week, on object-oriented programming and data structures, adapting instruction to each student's exam board and pace.</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section>
+                <h3>Additional Experience</h3>
+                <div class="rpEntry">
+                  <div class="rpRow">
+                    <span><strong>Server</strong>, Benihana — San Mateo, CA</span>
+                    <span>Dec 2024 – Jul 2026</span>
+                  </div>
+                  <ul>
+                    <li>Founding team member of the San Mateo location; trained new servers in a high-volume dining room.</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section>
                 <h3>Technical Skills</h3>
-                <dl class="resumeSkills">
-                  <dt>Languages</dt>
-                  <dd>TypeScript, JavaScript, SQL, Python, Java, HTML/CSS</dd>
-                  <dt>Frameworks</dt>
-                  <dd>React, Node.js, Express, Redux, Zustand, Tailwind, Passport.js</dd>
-                  <dt>Backend &amp; Data</dt>
-                  <dd>
-                    PostgreSQL, Prisma, Redis, BullMQ, Supabase, RESTful APIs,
-                    Nodemailer, Resend
-                  </dd>
-                  <dt>Testing &amp; Tools</dt>
-                  <dd>
-                    Jest, Vitest, SuperTest, Docker, Linux, Railway, Vercel, Git,
-                    GitHub, Vite, Webpack, Postman
-                  </dd>
-                </dl>
+                <ul class="rpSkills">
+                  <li><strong>Languages:</strong> TypeScript, JavaScript, SQL, Python, Java, HTML/CSS</li>
+                  <li><strong>Frameworks/Libraries:</strong> React, Node.js, Express, Redux, Zustand, Tailwind, Passport.js</li>
+                  <li><strong>Backend &amp; Data:</strong> PostgreSQL, Prisma, Redis, BullMQ, Supabase, RESTful APIs, Nodemailer, Resend</li>
+                  <li><strong>Testing, Deployment &amp; Tools:</strong> Jest, Vitest, SuperTest, Docker, Linux, Railway, Vercel, Git, GitHub, Vite, Webpack, Postman</li>
+                </ul>
               </section>
             </article>
           </section>
