@@ -420,13 +420,15 @@ header {
 .projectImg {
   display: block;
   width: 100%;
-  height: 200px;
+  aspect-ratio: 2 / 1;
   object-fit: cover;
   object-position: top;
 }
 .portfolio-section {
   display: flex;
-  margin: 2rem;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
   flex-direction: column;
   text-wrap: pretty;
 
@@ -448,20 +450,18 @@ header {
   .projectsGrid {
     color: rgb(0, 0, 0);
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 3rem;
+    /* at most 3 per row inside the 1100px column */
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 2rem;
   }
 
   .project {
     display: flex;
     flex-direction: column;
     border: 2px solid rgb(169, 154, 125);
-    box-shadow: 10px 10px 5px grey;
+    box-shadow: 6px 6px 3px rgba(0, 0, 0, 0.3);
     background-color: var(--contentBgColor);
-    padding: 0.1rem;
-    transition:
-      transform 0.2s ease-in,
-      box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
 
     img,
     .projectPlaceholder {
@@ -471,7 +471,7 @@ header {
       display: flex;
       flex-direction: column;
       flex: 1;
-      padding: 0.5rem 0.6rem 0.75rem;
+      padding: 0.6rem 0.9rem 0.9rem;
 
       .projectHeader {
         display: flex;
@@ -480,16 +480,79 @@ header {
         gap: 0.5rem;
 
         h3 {
-          margin: 0.4rem 0;
-          font-size: 1.5rem;
+          margin: 0.3rem 0 0.5rem;
+          font-size: 1.3rem;
           font-weight: normal;
           font-family: "Playfair Display", "Roboto", serif;
           overflow-wrap: anywhere;
         }
       }
       .projectDescription {
-        font-size: 1.05rem;
+        font-family: "Roboto", sans-serif;
+        font-size: 0.95rem;
+        color: rgba(0, 0, 0, 0.8);
       }
+    }
+  }
+}
+
+/* earlier projects: one card, one row each, no screenshots */
+.projectList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: var(--contentBgColor);
+  border: 2px solid rgb(169, 154, 125);
+  box-shadow: 6px 6px 3px rgba(0, 0, 0, 0.3);
+}
+.projectRow {
+  display: grid;
+  grid-template-columns: 10rem minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 0.5rem 1.5rem;
+  padding: 0.9rem 1.25rem;
+  transition: background-color 0.2s ease;
+
+  h3 {
+    margin: 0;
+    font-family: "Playfair Display", "Roboto", serif;
+    font-size: 1.15rem;
+    font-weight: normal;
+  }
+  p {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .projectTags {
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+  }
+}
+.projectRow + .projectRow {
+  border-top: 1px solid rgba(169, 154, 125, 0.5);
+}
+.projectRow:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+@media screen and (max-width: 860px) {
+  .projectRow {
+    grid-template-columns: minmax(0, 1fr) auto;
+
+    .projectLinks {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    p,
+    .projectTags {
+      grid-column: 1 / -1;
+    }
+    .projectTags {
+      justify-content: flex-start;
     }
   }
 }
@@ -514,11 +577,7 @@ header {
 }
 
 .project:hover {
-  transform: scale(1.05) translateY(-3px) translateX(-0.5rem);
-  box-shadow: 15px 15px 5px grey;
-
-  border: 2px solid rgb(169, 154, 125);
-  z-index: 1;
+  box-shadow: 9px 9px 3px rgba(0, 0, 0, 0.35);
 }
 
 h5,
@@ -531,7 +590,7 @@ h4 {
   gap: 1rem;
 
   .svgIcons {
-    height: 1.6rem;
+    height: 1.4rem;
     transition: transform 0.2s ease-out;
   }
 }
@@ -545,8 +604,8 @@ h4 {
 
 .projectDescription {
   p {
-    margin: 0 0 0.75rem;
-    line-height: 1.6;
+    margin: 0 0 0.6rem;
+    line-height: 1.55;
     text-wrap: pretty;
   }
 }
