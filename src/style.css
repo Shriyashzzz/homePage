@@ -278,6 +278,10 @@ nav {
     .navLink {
       display: block;
     }
+    .menuEmail {
+      color: rgb(141, 255, 47);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
 
     ul.dropdown-menu li:hover {
       background: var(--ddmenuhoverColor);
@@ -742,10 +746,36 @@ footer {
   }
 }
 
-.footerEmail {
-  display: inline-block;
+.footerEmailRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
   margin-bottom: 1.5rem;
-  font-size: 1.1rem;
+}
+
+.emailButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.3rem;
+  font-weight: 500;
+  color: #1e1e24;
+  background-color: rgb(141, 255, 47);
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.emailButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.footerEmail {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
   border-bottom: 1px dashed currentColor;
 }
 .footerEmail:hover {
