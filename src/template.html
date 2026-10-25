@@ -241,8 +241,8 @@
                     </div>
                   </div>
                   <div class="projectDescription">
-                    <p>A decoupled blog platform split into three services: <strong>admin CMS</strong>, <strong>API</strong>, and <strong>client</strong>.</p>
-                    <p><strong>Major Focus:</strong> A newsletter that sends in the background with Redis + BullMQ job queues, and a WYSIWYG editor for drafting posts.</p>
+                    <p>The blog I write on, built from scratch: an admin dashboard for writing posts, an API, and the public site where you read them.</p>
+                    <p>When I publish, subscribers get an email. Sending runs in a background queue (Redis + BullMQ), so hitting publish never waits on anyone's inbox.</p>
                   </div>
                   <ul class="projectTags" aria-label="Built with">
                     <li>TypeScript</li>
@@ -295,8 +295,8 @@
                     </div>
                   </div>
                   <div class="projectDescription">
-                    <p>Photo-hunt game where you find characters hidden inside an image.</p>
-                    <p><strong>Major Focus:</strong> Every click is verified server-side against coordinates in PostgreSQL, so answers never reach the client. Tested with Jest &amp; SuperTest.</p>
+                    <p>Find the characters hidden in a busy illustration, as fast as you can.</p>
+                    <p>The catch with any hidden-object game is that the answers can leak. Here the server checks every click against coordinates in the database, so there's nothing to find in the network tab.</p>
                   </div>
                   <ul class="projectTags" aria-label="Built with">
                     <li>TypeScript</li>
@@ -348,8 +348,8 @@
                     </div>
                   </div>
                   <div class="projectDescription">
-                    <p>SSR app that lets you upload and organize your files in nested folders on the cloud.</p>
-                    <p><strong>Major Focus:</strong> File binaries go to a Supabase S3 bucket, while PostgreSQL only stores lightweight metadata (MIME type, size, path).</p>
+                    <p>A tiny Google Drive of my own: sign in, upload files, and sort them into folders inside folders.</p>
+                    <p>The files live in cloud storage (Supabase S3), and the database only keeps what it needs to find them: name, size, type and path.</p>
                   </div>
                   <ul class="projectTags" aria-label="Built with">
                     <li>TypeScript</li>
@@ -400,8 +400,8 @@
                     </div>
                   </div>
                   <div class="projectDescription">
-                    <p>A manga tracking app built to solve a real problem: forgetting which chapter you left off on.</p>
-                    <p><strong>Major Focus:</strong> Session auth with PostgreSQL-backed sessions, HTTP-only cookies, and bcrypt password hashing.</p>
+                    <p>I kept forgetting which chapter I'd stopped on, so I built something to remember for me. Search for a manga, add it to your library, and track where you are.</p>
+                    <p>Accounts are done properly: hashed passwords (bcrypt), HTTP-only session cookies, and sessions stored in PostgreSQL.</p>
                   </div>
                   <ul class="projectTags" aria-label="Built with">
                     <li>React</li>
@@ -450,8 +450,8 @@
                     </div>
                   </div>
                   <div class="projectDescription">
-                    <p>Message board where only <strong>authenticated</strong> users can post messages.</p>
-                    <p><strong>Major Focus:</strong> Role-based authorization: each user is a Member, VIP, or Admin, which decides what they can see and do.</p>
+                    <p>A message board where you need an account to post.</p>
+                    <p>Every user is a Member, VIP or Admin, and that role decides what they can see and do.</p>
                   </div>
                   <ul class="projectTags" aria-label="Built with">
                     <li>Express</li>
@@ -502,7 +502,7 @@
                     </div>
                   </div>
                   <div class="projectDescription">
-                    <p>Open-source npm package. Forked jln13x's tailwindcss-highlights plugin and added Tailwind CSS v4 support.</p>
+                    <p>jln13x's tailwindcss-highlights plugin didn't support Tailwind v4, so I forked it, added v4 support, and published the fork to npm for anyone else who needed it.</p>
                   </div>
                   <ul class="projectTags" aria-label="Built with">
                     <li>JavaScript</li>
@@ -553,7 +553,8 @@
                     </div>
                   </div>
                   <div class="projectDescription">
-                    <p>E-commerce SPA with category browsing, price filtering, a cart shared across routes, and light/dark mode, backed by the DummyJSON API.</p>
+                    <p>A pretend online store: browse by category, filter by price, and fill a cart that follows you from page to page.</p>
+                    <p>Products come from the DummyJSON API, and there's a light and dark mode.</p>
                   </div>
                   <ul class="projectTags" aria-label="Built with">
                     <li>React</li>
@@ -602,7 +603,7 @@
                     </div>
                   </div>
                   <div class="projectDescription">
-                    <p>Click every character card only once. Clicking the same card twice resets your score.</p>
+                    <p>A Harry Potter memory game: click each character once, and only once. Pick the same card twice and your score resets.</p>
                   </div>
                   <ul class="projectTags" aria-label="Built with">
                     <li>React</li>
@@ -650,7 +651,8 @@
                     </div>
                   </div>
                   <div class="projectDescription">
-                    <p>Classic Battleship against the computer. Place your ships and sink the enemy fleet to win.</p>
+                    <p>The classic board game against the computer. Place your fleet, then trade shots until one side's ships are all sunk.</p>
+                    <p>The game logic is covered by Jest tests.</p>
                   </div>
                   <ul class="projectTags" aria-label="Built with">
                     <li>JavaScript</li>
@@ -698,7 +700,7 @@
                     </div>
                   </div>
                   <div class="projectDescription">
-                    <p>Current weather plus the forecast for the next few hours and upcoming days.</p>
+                    <p>Search a place and see the weather right now, over the next few hours, and for the coming days, using the Visual Crossing API.</p>
                   </div>
                   <ul class="projectTags" aria-label="Built with">
                     <li>JavaScript</li>
@@ -746,7 +748,7 @@
                     </div>
                   </div>
                   <div class="projectDescription">
-                    <p>Keep track of the books you've read and the ones you want to read, saved locally with localStorage.</p>
+                    <p>A reading list for the books you've finished and the ones you want to get to. It saves in your browser, so it's still there when you come back.</p>
                   </div>
                   <ul class="projectTags" aria-label="Built with">
                     <li>JavaScript</li>
