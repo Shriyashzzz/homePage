@@ -42,10 +42,13 @@ export default (env, argv) => {
         },
         {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          exclude: /[\\/]src[\\/]assets[\\/]/,
           type: "asset/resource",
         },
         {
-          test: /\.pdf$/i,
+          // files that need a stable URL: the resume download and the
+          // link-preview image referenced by absolute URL in <head>
+          test: /[\\/]src[\\/]assets[\\/].+\.(pdf|jpg)$/i,
           type: "asset/resource",
           generator: {
             filename: "[name][ext]",

@@ -3,6 +3,7 @@ import "./style.css";
 import "./bobTheblob.js";
 import "./router.js";
 import "./nav.js";
+import "./assets/og-image.jpg";
 import { inject } from "@vercel/analytics";
 
 inject();
