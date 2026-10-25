@@ -266,6 +266,7 @@ nav {
     .dropdown-menu {
       max-width: 100%;
       position: absolute;
+      top: 100%;
       left: 0%;
       list-style: none;
       padding: 0;
@@ -289,7 +290,7 @@ nav {
     }
 
     .visible {
-      display: inline-block;
+      display: block;
     }
   }
 }
