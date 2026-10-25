@@ -9,10 +9,53 @@
       />
       <link rel="icon" href="./images/favicon.png" />
       <title>Shriyash Ghimire | About</title>
+      <script>
+        document.documentElement.classList.add("js");
+      </script>
+      <!-- inline because the main stylesheet is injected by the bundle:
+           this keeps the page hidden (not unstyled) until it has run -->
+      <style>
+        .loader {
+          display: none;
+        }
+        .js .Content {
+          display: none;
+        }
+        .js .loader {
+          display: flex;
+          gap: 16px;
+          justify-content: center;
+          align-items: center;
+          height: 100dvh;
+          background-color: rgb(246, 239, 239);
+        }
+        .box {
+          width: 30px;
+          height: 30px;
+          padding: 8px;
+          border-radius: 50%;
+          background: rgb(52, 47, 194);
+          animation: bounce alternate infinite cubic-bezier(0.2, 0.65, 0.6, 1);
+        }
+        .box.one {
+          animation-duration: 200ms;
+        }
+        .box.two {
+          animation-duration: 300ms;
+        }
+        .box.three {
+          animation-duration: 400ms;
+        }
+        @keyframes bounce {
+          to {
+            transform: translateY(-10px);
+          }
+        }
+      </style>
     </head>
 
     <body>
-      <section class="loader">
+      <section class="loader" aria-hidden="true">
         <div class="box one"></div>
         <div class="box two"></div>
         <div class="box three"></div>

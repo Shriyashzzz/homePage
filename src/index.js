@@ -14,11 +14,7 @@ document.querySelector(".backToTop").addEventListener("click", () => {
   document.body.scrollTo({ top: 0, behavior: "smooth" });
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
-window.addEventListener("DOMContentLoaded", () => {
-  const loader = document.querySelector(".loader");
-  const content = document.querySelector(".Content");
-  setTimeout(() => {
-    content.style.display = "block";
-    loader.style.display = "none";
-  }, 1200);
-});
+
+// styles are injected by now, so swap the loader for the page
+document.querySelector(".loader").remove();
+document.querySelector(".Content").style.display = "block";
