@@ -47,9 +47,8 @@ import resumePdf from "./assets/Shriyash_Ghimire_Resume.pdf";
     });
 
     document.title = `Shriyash Ghimire | ${titles[route]}`;
-    // body is the scroll container (html has overflow hidden)
-    document.body.scrollTo({ top: 0 });
-    window.scrollTo({ top: 0 });
+    // jump, don't smooth-scroll, when switching pages
+    window.scrollTo({ top: 0, behavior: "instant" });
   }
 
   window.addEventListener("hashchange", () => {

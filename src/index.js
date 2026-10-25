@@ -10,8 +10,6 @@ inject();
 // footer
 document.getElementById("footerYear").textContent = new Date().getFullYear();
 document.querySelector(".backToTop").addEventListener("click", () => {
-  // body is the scroll container (html has overflow hidden)
-  document.body.scrollTo({ top: 0, behavior: "smooth" });
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 

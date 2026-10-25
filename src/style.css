@@ -71,28 +71,20 @@
 
 main {
   min-height: 100vh;
-  min-width: 100vw;
 }
 
+/* the window is the scroll container. clip (not hidden) stops sideways
+   scroll without making html/body scroll containers, which would break
+   the sticky nav, scroll restoration and mobile address-bar collapse */
 html {
-  max-width: 100vw;
-  max-height: 100dvh;
-  overflow-x: hidden;
+  overflow-x: clip;
   scroll-behavior: smooth;
-  overscroll-behavior: none;
-  overflow: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
 body {
-  max-height: 100dvh;
-  max-width: 100dvw;
-  text-decoration: none;
-  overflow-x: hidden;
-  justify-content: center;
-  font-family: "Playfair Display", "Roboto";
+  font-family: "Playfair Display", "Roboto", serif;
   background-color: var(--backgroundColor);
-  scroll-behavior: smooth;
 }
 
 a {
