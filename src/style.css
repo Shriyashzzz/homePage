@@ -543,11 +543,12 @@ h4 {
 
 
 .techStackDiv {
-  display: flex;
-  justify-content: start;
-  flex-wrap: wrap;
-  margin-top: 3rem;
-  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr));
+  margin-top: 2rem;
+  gap: 1.25rem 0.5rem;
 }
 
 .stackContainer {
@@ -624,7 +625,7 @@ h4 {
   }
 
   .techStackDiv {
-    justify-content: space-evenly;
+    grid-template-columns: repeat(auto-fill, minmax(4.5rem, 1fr));
   }
   .about-me-container {
     margin-top: -20px;
