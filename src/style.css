@@ -197,7 +197,6 @@ nav {
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  padding-left: 1rem;
   font-family: "Roboto", sans-serif;
   background-color: var(--navFootBgColor);
   color: white;
@@ -205,6 +204,7 @@ nav {
 
   .navName {
     justify-self: start;
+    padding-left: 1rem;
     font-size: 1.05rem;
     font-weight: 500;
   }
