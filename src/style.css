@@ -1091,3 +1091,21 @@ footer {
     margin: 0 0.4rem;
   }
 }
+
+/* respect the OS "reduce motion" setting: no looping or entrance
+   animations, no smooth scrolling */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  nav,
+  nav .dropdown-container ul,
+  .cube,
+  .about-me-container h1,
+  .about-desc p span {
+    animation: none;
+  }
+  .ball {
+    transition: none;
+  }
+}
