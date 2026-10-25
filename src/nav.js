@@ -23,7 +23,6 @@
   skipLinks.forEach((link) => {
     link.addEventListener("click", () => {
       dropdownMenu.classList.remove("visible");
-      console.log("not visible");
     });
   });
 
