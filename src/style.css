@@ -527,7 +527,7 @@ header {
 h5,
 h4 {
   margin: 0;
-  padding: none;
+  padding: 0;
 }
 .projectLinks {
   display: flex;
@@ -716,21 +716,6 @@ h4 {
   }
 }
 
-.progress {
-  height: 3px;
-  width: 0%;
-  background-color: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  animation: progress 1s linear;
-}
-@keyframes progress {
-  to {
-    background-color: rgb(20, 255, 226);
-    width: 100%;
-  }
-}
 /* footer */
 footer {
   margin-top: 8rem;
