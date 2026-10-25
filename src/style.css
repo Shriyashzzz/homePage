@@ -771,6 +771,13 @@ footer {
   color: rgb(141, 255, 47);
 }
 
+.emailFooter a {
+  border-bottom: 1px dashed currentColor;
+}
+.emailFooter a:hover {
+  opacity: 0.7;
+}
+
 /* project card without a screenshot */
 .projectPlaceholder {
   display: grid;
