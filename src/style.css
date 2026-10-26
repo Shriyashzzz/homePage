@@ -242,9 +242,12 @@ nav {
   }
 }
 
-/* phones: tabs get their own row under the name */
+/* phones: tabs get their own row under the name. the negative top lets
+   the name/connect row (50px, set by the dropdown's line-height) scroll
+   away while the tabs row stays pinned */
 @media screen and (max-width: 600px) {
   nav {
+    top: -50px;
     grid-template-columns: 1fr auto;
 
     .pageTabs {
