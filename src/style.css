@@ -164,7 +164,7 @@ nav {
       display: block;
       padding: 0 1rem;
       line-height: 50px;
-      font-size: 15px;
+      font-size: 1.05rem;
       letter-spacing: 0.04em;
       color: rgb(241, 240, 240);
       border-bottom: 3px solid transparent;
@@ -562,8 +562,6 @@ h4 {
     brightness(90%) contrast(93%);
 }
 
-
-
 .techStackDiv {
   list-style: none;
   padding: 0;
@@ -618,8 +616,6 @@ h4 {
     transform: translateY(0%);
   }
 }
-
-
 
 /* for small screens */
 @media screen and (max-width: 545px) {
@@ -916,7 +912,6 @@ footer {
 .view:focus {
   outline: none;
 }
-
 
 /* project card without a screenshot */
 .projectPlaceholder {

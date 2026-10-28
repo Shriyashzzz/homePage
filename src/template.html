@@ -1,1018 +1,1665 @@
-  <!doctype html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta
-        name="description"
-        content="Shriyash Ghimire, full-stack developer. Projects, resume, and contact."
-      />
-      <link rel="icon" href="./images/favicon.png" />
-      <link rel="canonical" href="https://shriyash.dev/" />
-      <!-- link previews (LinkedIn, iMessage, Slack, X) -->
-      <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Shriyash Ghimire" />
-      <meta property="og:title" content="Shriyash Ghimire | Full-Stack Developer" />
-      <meta
-        property="og:description"
-        content="CS student and full-stack developer in the Bay Area. Projects, resume, and contact."
-      />
-      <meta property="og:url" content="https://shriyash.dev/" />
-      <meta property="og:image" content="https://shriyash.dev/og-image.jpg" />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content="Shriyash Ghimire" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <title>Shriyash Ghimire | About</title>
-      <script>
-        document.documentElement.classList.add("js");
-      </script>
-      <!-- inline because the main stylesheet is injected by the bundle:
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Shriyash Ghimire, full-stack developer. Projects, resume, and contact."
+    />
+    <link rel="icon" href="./images/favicon.png" />
+    <link rel="canonical" href="https://shriyash.dev/" />
+    <!-- link previews (LinkedIn, iMessage, Slack, X) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Shriyash Ghimire" />
+    <meta
+      property="og:title"
+      content="Shriyash Ghimire | Full-Stack Developer"
+    />
+    <meta
+      property="og:description"
+      content="CS student and full-stack developer in the Bay Area. Projects, resume, and contact."
+    />
+    <meta property="og:url" content="https://shriyash.dev/" />
+    <meta property="og:image" content="https://shriyash.dev/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Shriyash Ghimire" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Shriyash Ghimire | About</title>
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <!-- inline because the main stylesheet is injected by the bundle:
            this keeps the page hidden (not unstyled) until it has run -->
-      <style>
-        .loader {
-          display: none;
+    <style>
+      .loader {
+        display: none;
+      }
+      .js .Content {
+        display: none;
+      }
+      .js .loader {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        align-items: center;
+        height: 100dvh;
+        background-color: rgb(246, 239, 239);
+      }
+      .box {
+        width: 30px;
+        height: 30px;
+        padding: 8px;
+        border-radius: 50%;
+        background: rgb(52, 47, 194);
+        animation: bounce alternate infinite cubic-bezier(0.2, 0.65, 0.6, 1);
+      }
+      .box.one {
+        animation-duration: 200ms;
+      }
+      .box.two {
+        animation-duration: 300ms;
+      }
+      .box.three {
+        animation-duration: 400ms;
+      }
+      @keyframes bounce {
+        to {
+          transform: translateY(-10px);
         }
-        .js .Content {
-          display: none;
-        }
-        .js .loader {
-          display: flex;
-          gap: 16px;
-          justify-content: center;
-          align-items: center;
-          height: 100dvh;
-          background-color: rgb(246, 239, 239);
-        }
+      }
+      @media (prefers-reduced-motion: reduce) {
         .box {
-          width: 30px;
-          height: 30px;
-          padding: 8px;
-          border-radius: 50%;
-          background: rgb(52, 47, 194);
-          animation: bounce alternate infinite cubic-bezier(0.2, 0.65, 0.6, 1);
+          animation: none;
         }
-        .box.one {
-          animation-duration: 200ms;
-        }
-        .box.two {
-          animation-duration: 300ms;
-        }
-        .box.three {
-          animation-duration: 400ms;
-        }
-        @keyframes bounce {
-          to {
-            transform: translateY(-10px);
-          }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .box {
-            animation: none;
-          }
-        }
-      </style>
-    </head>
+      }
+    </style>
+  </head>
 
-    <body>
-      <section class="loader" aria-hidden="true">
-        <div class="box one"></div>
-        <div class="box two"></div>
-        <div class="box three"></div>
-      </section>
-      <div class="Content">
-        <div class="ball" id="cursorFollow"></div>
-        <nav>
-          <a href="#/about" class="navName">Shriyash Ghimire</a>
-          <ul class="pageTabs" aria-label="Pages">
-            <li><a href="#/about" class="navLink" data-route="about">About</a></li>
-            <li><a href="#/projects" class="navLink" data-route="projects">Projects</a></li>
-            <li><a href="#/resume" class="navLink" data-route="resume">Resume</a></li>
-          </ul>
-          <div class="dropdown-container">
-            <button
-              type="button"
-              class="menu-title"
-              aria-expanded="false"
-              aria-controls="connect-menu"
+  <body>
+    <section class="loader" aria-hidden="true">
+      <div class="box one"></div>
+      <div class="box two"></div>
+      <div class="box three"></div>
+    </section>
+    <div class="Content">
+      <div class="ball" id="cursorFollow"></div>
+      <nav>
+        <a href="#/about" class="navName">Shriyash Ghimire</a>
+        <ul class="pageTabs" aria-label="Pages">
+          <li>
+            <a href="#/about" class="navLink" data-route="about">About</a>
+          </li>
+          <li>
+            <a href="#/projects" class="navLink" data-route="projects"
+              >Projects</a
             >
-              CONNECT
-            </button>
-            <ul class="dropdown-menu" id="connect-menu">
-              <li>
-                <a href="https://github.com/Shriyashzzz" target="_blank" rel="noopener noreferrer" class="navLink">GitHub</a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/shriyash-ghimire-73b385257/" target="_blank" rel="noopener noreferrer" class="navLink">LinkedIn</a>
-              </li>
-              <li>
-                <a href="https://blog.shriyash.dev" target="_blank" rel="noopener noreferrer" class="navLink">Blog</a>
-              </li>
-              <li>
-                <a href="mailto:ghimires1@my.smccd.edu?subject=Hello%20Shriyash" class="navLink menuEmail">Email me</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <main>
-          <header id="about-content" class="view" data-view="about" tabindex="-1">
-            <img
-              srcset="
-                ./images/hero_1200.jpg 1515w,
-                ./images/hero_800.jpg 1010w,
-                ./images/hero_400.jpg 505w
-              "
-              src="./images/hero_800.jpg"
-              sizes="(min-width: 1050px) 420px, (min-width: 813px) 40vw, 325px"
-              alt="Shriyash Ghimire"
-              class="heroImage"
-            />
-            <div class="about-me-container">
-              <div class="about-desc">
-                <!-- decorative spinning cube of stack logos -->
-                <div class="cube-wrap" aria-hidden="true">
-                  <div class="cube">
-                    <div class="side top">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/typescript/typescript-original.svg" alt="" />
-                    </div>
-                    <div class="side bottom">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/postgresql/postgresql-original.svg" alt="" />
-                    </div>
-                    <div class="side front">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/react/react-original.svg" alt="" />
-                    </div>
-                    <div class="side back">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/vite/vite-original.svg" alt="" />
-                    </div>
-                    <div class="side left">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/docker/docker-original.svg" alt="" />
-                    </div>
-                    <div class="side right">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/jest/jest-plain.svg" alt="" />
-                    </div>
-                  </div>
-                </div>
-                <h1>Hello!</h1>
-                <p>
-                 I'm <span>Shriyash</span>, a self-taught full-stack developer passionate about building websites and creative tools on the web. 
-                </p>
-                <p>
-                I love bringing creative ideas to life, solving problems to build scalable, secure systems. Nothing gives me more joy than to see a project I've worked on come to life.
-                </p>
-                 
-                  <div class="blogContainer">
-                    <p >
-                      I also write on 
-                      <em><a class = "blog-link" href="https://blog.shriyash.dev" target="_blank" rel="noopener noreferrer"> Shriyash Uncompiled</a></em>
-                    </p>
-                  </div>
-                <div>
-                  <h4>My Stack</h4>
-                  <ul class="techStackDiv">
-                    <li class="stackContainer">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/typescript/typescript-original.svg" alt="" width="40" height="40" class="svgIcons" loading="lazy" />
-                      <p>TypeScript</p>
-                    </li>
-                    <li class="stackContainer">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/javascript/javascript-original.svg" alt="" width="40" height="40" class="svgIcons" loading="lazy" />
-                      <p>JavaScript</p>
-                    </li>
-                    <li class="stackContainer">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/react/react-original.svg" alt="" width="40" height="40" class="svgIcons" loading="lazy" />
-                      <p>React</p>
-                    </li>
-                    <li class="stackContainer">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/redux/redux-original.svg" alt="" width="40" height="40" class="svgIcons" loading="lazy" />
-                      <p>Redux</p>
-                    </li>
-                    <li class="stackContainer">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/zustand/zustand-original.svg" alt="" width="40" height="40" class="svgIcons" loading="lazy" />
-                      <p>Zustand</p>
-                    </li>
-                    <li class="stackContainer">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/nodejs/nodejs-original.svg" alt="" width="40" height="40" class="svgIcons" loading="lazy" />
-                      <p>Node.js</p>
-                    </li>
-                    <li class="stackContainer">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/express/express-original.svg" alt="" width="40" height="40" class="svgIcons" loading="lazy" />
-                      <p>Express</p>
-                    </li>
-                    <li class="stackContainer">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/passport/passport-original.svg" alt="" width="40" height="40" class="svgIcons" loading="lazy" />
-                      <p>Passport</p>
-                    </li>
-                    <li class="stackContainer">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/postgresql/postgresql-original.svg" alt="" width="40" height="40" class="svgIcons" loading="lazy" />
-                      <p>PostgreSQL</p>
-                    </li>
-                    <li class="stackContainer">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/prisma/prisma-original.svg" alt="" width="40" height="40" class="svgIcons" loading="lazy" />
-                      <p>Prisma</p>
-                    </li>
-                    <li class="stackContainer">
-                      <img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/drizzle.svg" alt="" width="40" height="40" class="svgIcons" loading="lazy" />
-                      <p>Drizzle</p>
-                    </li>
-                    <li class="stackContainer">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/redis/redis-original.svg" alt="" width="40" height="40" class="svgIcons" loading="lazy" />
-                      <p>Redis</p>
-                    </li>
-                    <li class="stackContainer">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/supabase/supabase-original.svg" alt="" width="40" height="40" class="svgIcons" loading="lazy" />
-                      <p>Supabase</p>
-                    </li>
-                    <li class="stackContainer">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/tailwindcss/tailwindcss-original.svg" alt="" width="40" height="40" class="svgIcons" loading="lazy" />
-                      <p>Tailwind</p>
-                    </li>
-                    <li class="stackContainer">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/docker/docker-original.svg" alt="" width="40" height="40" class="svgIcons" loading="lazy" />
-                      <p>Docker</p>
-                    </li>
-                    <li class="stackContainer">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/jest/jest-plain.svg" alt="" width="40" height="40" class="svgIcons" loading="lazy" />
-                      <p>Jest</p>
-                    </li>
-                    <li class="stackContainer">
-                      <svg viewBox="0 0 40 40" width="40" height="40" class="svgIcons" aria-hidden="true">
-                        <rect width="40" height="40" rx="8" fill="#2d3748" />
-                        <text x="20" y="26" text-anchor="middle" font-family="monospace" font-size="16" font-weight="bold" fill="#8dff2f">ST</text>
-                      </svg>
-                      <p>SuperTest</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </header>
-          <section
-            class="portfolio-section view"
-            data-view="projects"
-            aria-labelledby="projects-title"
-            tabindex="-1"
-            id="project-content"
+          </li>
+          <li>
+            <a href="#/resume" class="navLink" data-route="resume">Resume</a>
+          </li>
+        </ul>
+        <div class="dropdown-container">
+          <button
+            type="button"
+            class="menu-title"
+            aria-expanded="false"
+            aria-controls="connect-menu"
           >
-            <h2 id="projects-title">My Projects</h2>
-            <p class="projectsIntro">Full-stack apps first, then the smaller front-end builds I learned on.</p>
-            <div class="projectsGrid">
-              <article class="project">
-                <img src="./images/mangaTracker.jpeg" alt="Manga Tracker price check page" class="projectImg" loading="lazy" />
-                <div class="projectInfo">
-                  <div class="projectHeader">
-                    <h3>Manga Tracker</h3>
-                    <div class="projectLinks">
-                      <a href="https://github.com/Shriyashzzz/mangaTracker" target="_blank" rel="noopener noreferrer" aria-label="Manga Tracker on GitHub">
-                        <svg
-                          viewBox="0 0 128 128"
-                          width="40"
-                          height="40"
-                          class="svgIcons githubLink"
-                        >
-                          <g fill="#181616">
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
-                            ></path>
-                            <path
-                              d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
-                            ></path>
-                          </g>
-                        </svg>
-                      </a>
-                      <a href="https://mangatracker.xyz/" target="_blank" rel="noopener noreferrer" aria-label="Manga Tracker live site">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          class="svgIcons externalLink"
-                        >
-                          <path
-                            d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="projectDescription">
-                    <p>I kept forgetting which chapter I'd stopped on, so I built something to remember for me. Then I kept opening ten tabs to find the next volume at a fair price, so a price checker followed.</p>
-                    <p>Keep your place and the volumes you own on your shelf, then compare what US stores charge for the next one, with price history for every volume.</p>
-                  </div>
-                  <ul class="projectTags" aria-label="Built with">
-                    <li>TypeScript</li>
-                    <li>React</li>
-                    <li>Express</li>
-                    <li>PostgreSQL</li>
-                    <li>Prisma</li>
-                    <li>Tailwind</li>
-                  </ul>
-                </div>
-              </article>
-              <article class="project">
-                <img src="./images/viewpost-client.jpg" alt="Blog post page of Shriyash Uncompiled" class="projectImg" loading="lazy" />
-                <div class="projectInfo">
-                  <div class="projectHeader">
-                    <h3>Shriyash Uncompiled</h3>
-                    <div class="projectLinks">
-                      <a href="https://github.com/Shriyashzzz/blog-shriyash" target="_blank" rel="noopener noreferrer" aria-label="Shriyash Uncompiled on GitHub">
-                        <svg
-                          viewBox="0 0 128 128"
-                          width="40"
-                          height="40"
-                          class="svgIcons githubLink"
-                        >
-                          <g fill="#181616">
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
-                            ></path>
-                            <path
-                              d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
-                            ></path>
-                          </g>
-                        </svg>
-                      </a>
-                      <a href="https://blog.shriyash.dev" target="_blank" rel="noopener noreferrer" aria-label="Shriyash Uncompiled live site">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          class="svgIcons externalLink"
-                        >
-                          <path
-                            d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="projectDescription">
-                    <p>The blog I write on, built from scratch as three apps: an admin dashboard, an API, and the public site.</p>
-                    <p>I draft posts in a WYSIWYG editor that turns them into Markdown, and the site renders that Markdown as HTML. Publishing emails subscribers from a background queue (Redis + BullMQ), so it never waits on anyone's inbox.</p>
-                  </div>
-                  <ul class="projectTags" aria-label="Built with">
-                    <li>TypeScript</li>
-                    <li>React</li>
-                    <li>Redux</li>
-                    <li>Express</li>
-                    <li>Prisma</li>
-                    <li>Redis</li>
-                    <li>BullMQ</li>
-                    <li>Docker</li>
-                  </ul>
-                </div>
-              </article>
-              <article class="project">
-                <img src="./images/where-is-waldo.jpg" alt="Where's Waldo game board" class="projectImg" loading="lazy" />
-                <div class="projectInfo">
-                  <div class="projectHeader">
-                    <h3>Where's Waldo</h3>
-                    <div class="projectLinks">
-                      <a href="https://github.com/Shriyashzzz/where-is-waldo" target="_blank" rel="noopener noreferrer" aria-label="Where's Waldo on GitHub">
-                        <svg
-                          viewBox="0 0 128 128"
-                          width="40"
-                          height="40"
-                          class="svgIcons githubLink"
-                        >
-                          <g fill="#181616">
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
-                            ></path>
-                            <path
-                              d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
-                            ></path>
-                          </g>
-                        </svg>
-                      </a>
-                      <a href="https://where-is-waldo.shriyash.dev/" target="_blank" rel="noopener noreferrer" aria-label="Where's Waldo live site">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          class="svgIcons externalLink"
-                        >
-                          <path
-                            d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="projectDescription">
-                    <p>Find the characters hidden in a busy illustration, as fast as you can.</p>
-                    <p>The catch with any hidden-object game is that the answers can leak. Here the server checks every click against coordinates in the database, so there's nothing to find in the network tab.</p>
-                  </div>
-                  <ul class="projectTags" aria-label="Built with">
-                    <li>TypeScript</li>
-                    <li>React</li>
-                    <li>Zustand</li>
-                    <li>Express</li>
-                    <li>PostgreSQL</li>
-                    <li>Redis</li>
-                    <li>Docker</li>
-                  </ul>
-                </div>
-              </article>
-              <article class="project">
-                <img src="./images/fileHwoosting.png" alt="Hwoosting file browser" class="projectImg" loading="lazy" />
-                <div class="projectInfo">
-                  <div class="projectHeader">
-                    <h3>Hwoosting</h3>
-                    <div class="projectLinks">
-                      <a href="https://github.com/Shriyashzzz/fileHoster" target="_blank" rel="noopener noreferrer" aria-label="Hwoosting on GitHub">
-                        <svg
-                          viewBox="0 0 128 128"
-                          width="40"
-                          height="40"
-                          class="svgIcons githubLink"
-                        >
-                          <g fill="#181616">
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
-                            ></path>
-                            <path
-                              d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
-                            ></path>
-                          </g>
-                        </svg>
-                      </a>
-                      <a href="https://filehoster-production.up.railway.app/login" target="_blank" rel="noopener noreferrer" aria-label="Hwoosting live site">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          class="svgIcons externalLink"
-                        >
-                          <path
-                            d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="projectDescription">
-                    <p>A tiny Google Drive of my own: sign in, upload files, and sort them into folders inside folders.</p>
-                    <p>The files live in cloud storage (Supabase S3), and the database only keeps what it needs to find them: name, size, type and path.</p>
-                  </div>
-                  <ul class="projectTags" aria-label="Built with">
-                    <li>TypeScript</li>
-                    <li>Express</li>
-                    <li>EJS</li>
-                    <li>PostgreSQL</li>
-                    <li>Prisma</li>
-                    <li>Supabase</li>
-                  </ul>
-                </div>
-              </article>
-              <article class="project">
-                <img src="./images/clubhouse.png" alt="Club House message board" class="projectImg" loading="lazy" />
-                <div class="projectInfo">
-                  <div class="projectHeader">
-                    <h3>Club House</h3>
-                    <div class="projectLinks">
-                      <a href="https://github.com/Shriyashzzz/clubhouse" target="_blank" rel="noopener noreferrer" aria-label="Club House on GitHub">
-                        <svg
-                          viewBox="0 0 128 128"
-                          width="40"
-                          height="40"
-                          class="svgIcons githubLink"
-                        >
-                          <g fill="#181616">
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
-                            ></path>
-                            <path
-                              d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
-                            ></path>
-                          </g>
-                        </svg>
-                      </a>
-                      <a href="https://clubhouse-production-e196.up.railway.app/" target="_blank" rel="noopener noreferrer" aria-label="Club House live site">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          class="svgIcons externalLink"
-                        >
-                          <path
-                            d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="projectDescription">
-                    <p>A message board where you need an account to post.</p>
-                    <p>Every user is a Member, VIP or Admin, and that role decides what they can see and do.</p>
-                  </div>
-                  <ul class="projectTags" aria-label="Built with">
-                    <li>Express</li>
-                    <li>EJS</li>
-                    <li>PostgreSQL</li>
-                    <li>Passport</li>
-                  </ul>
-                </div>
-              </article>
-              <article class="project">
-                <div class="projectImg projectPlaceholder" aria-hidden="true">
-                  <code>npm i tailwindcss-highlights-v4</code>
-                </div>
-                <div class="projectInfo">
-                  <div class="projectHeader">
-                    <h3>tailwindcss-highlights-v4</h3>
-                    <div class="projectLinks">
-                      <a href="https://github.com/Shriyashzzz/tailwindcss-highlights" target="_blank" rel="noopener noreferrer" aria-label="tailwindcss-highlights-v4 on GitHub">
-                        <svg
-                          viewBox="0 0 128 128"
-                          width="40"
-                          height="40"
-                          class="svgIcons githubLink"
-                        >
-                          <g fill="#181616">
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
-                            ></path>
-                            <path
-                              d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
-                            ></path>
-                          </g>
-                        </svg>
-                      </a>
-                      <a href="https://www.npmjs.com/package/tailwindcss-highlights-v4" target="_blank" rel="noopener noreferrer" aria-label="tailwindcss-highlights-v4 npm package">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          class="svgIcons externalLink"
-                        >
-                          <path
-                            d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="projectDescription">
-                    <p>jln13x's tailwindcss-highlights plugin didn't support Tailwind v4, so I forked it, added v4 support, and published the fork to npm for anyone else who needed it.</p>
-                  </div>
-                  <ul class="projectTags" aria-label="Built with">
-                    <li>JavaScript</li>
-                    <li>Tailwind CSS v4</li>
-                    <li>npm</li>
-                  </ul>
-                </div>
-              </article>
-            </div>
-            <h2 class="projectsSubtitle">Earlier Projects</h2>
-            <ul class="projectList">
-              <li class="projectRow">
-                <h3>Shopping Cart</h3>
-                <p>A pretend online store with category and price filters, a cart that follows you between pages, and light/dark mode.</p>
-                <ul class="projectTags" aria-label="Built with">
-                  <li>React</li>
-                  <li>React Router</li>
-                  <li>Vite</li>
-                  <li>Testing Library</li>
-                </ul>
-                <div class="projectLinks">
-                  <a href="https://github.com/Shriyashzzz/shoppingCart" target="_blank" rel="noopener noreferrer" aria-label="Shopping Cart on GitHub">
-                    <svg
-                      viewBox="0 0 128 128"
-                      width="40"
-                      height="40"
-                      class="svgIcons githubLink"
-                    >
-                      <g fill="#181616">
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
-                        ></path>
-                        <path
-                          d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
-                        ></path>
-                      </g>
-                    </svg>
-                  </a>
-                  <a href="https://realstore-tau.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Shopping Cart live site">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      class="svgIcons externalLink"
-                    >
-                      <path
-                        d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
-                      />
-                    </svg>
-                  </a>
-                </div>
-              </li>
-              <li class="projectRow">
-                <h3>Memory Game</h3>
-                <p>A Harry Potter memory game: click each character once. Pick the same card twice and your score resets.</p>
-                <ul class="projectTags" aria-label="Built with">
-                  <li>React</li>
-                  <li>Vite</li>
-                  <li>Vitest</li>
-                </ul>
-                <div class="projectLinks">
-                  <a href="https://github.com/Shriyashzzz/harryPotter-memory-game" target="_blank" rel="noopener noreferrer" aria-label="Memory Game on GitHub">
-                    <svg
-                      viewBox="0 0 128 128"
-                      width="40"
-                      height="40"
-                      class="svgIcons githubLink"
-                    >
-                      <g fill="#181616">
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
-                        ></path>
-                        <path
-                          d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
-                        ></path>
-                      </g>
-                    </svg>
-                  </a>
-                  <a href="https://harry-potter-memory-game.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Memory Game live site">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      class="svgIcons externalLink"
-                    >
-                      <path
-                        d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
-                      />
-                    </svg>
-                  </a>
-                </div>
-              </li>
-              <li class="projectRow">
-                <h3>BattleShip</h3>
-                <p>The classic board game against the computer, with the game logic covered by Jest tests.</p>
-                <ul class="projectTags" aria-label="Built with">
-                  <li>JavaScript</li>
-                  <li>Webpack</li>
-                  <li>Jest</li>
-                </ul>
-                <div class="projectLinks">
-                  <a href="https://github.com/Shriyashzzz/battleship" target="_blank" rel="noopener noreferrer" aria-label="BattleShip on GitHub">
-                    <svg
-                      viewBox="0 0 128 128"
-                      width="40"
-                      height="40"
-                      class="svgIcons githubLink"
-                    >
-                      <g fill="#181616">
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
-                        ></path>
-                        <path
-                          d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
-                        ></path>
-                      </g>
-                    </svg>
-                  </a>
-                  <a href="https://shriyashzzz.github.io/battleship/" target="_blank" rel="noopener noreferrer" aria-label="BattleShip live site">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      class="svgIcons externalLink"
-                    >
-                      <path
-                        d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
-                      />
-                    </svg>
-                  </a>
-                </div>
-              </li>
-              <li class="projectRow">
-                <h3>Weather App</h3>
-                <p>Current, hourly and multi-day forecasts for any place, from the Visual Crossing API.</p>
-                <ul class="projectTags" aria-label="Built with">
-                  <li>JavaScript</li>
-                  <li>Webpack</li>
-                  <li>VisualCrossing API</li>
-                </ul>
-                <div class="projectLinks">
-                  <a href="https://github.com/Shriyashzzz/weather-app" target="_blank" rel="noopener noreferrer" aria-label="Weather App on GitHub">
-                    <svg
-                      viewBox="0 0 128 128"
-                      width="40"
-                      height="40"
-                      class="svgIcons githubLink"
-                    >
-                      <g fill="#181616">
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
-                        ></path>
-                        <path
-                          d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
-                        ></path>
-                      </g>
-                    </svg>
-                  </a>
-                  <a href="https://shriyashzzz.github.io/weather-app/" target="_blank" rel="noopener noreferrer" aria-label="Weather App live site">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      class="svgIcons externalLink"
-                    >
-                      <path
-                        d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
-                      />
-                    </svg>
-                  </a>
-                </div>
-              </li>
-              <li class="projectRow">
-                <h3>Personal Library</h3>
-                <p>A reading list for the books you've finished and the ones you want to read, saved in your browser.</p>
-                <ul class="projectTags" aria-label="Built with">
-                  <li>JavaScript</li>
-                  <li>Webpack</li>
-                  <li>localStorage</li>
-                </ul>
-                <div class="projectLinks">
-                  <a href="https://github.com/Shriyashzzz/Book-Library" target="_blank" rel="noopener noreferrer" aria-label="Personal Library on GitHub">
-                    <svg
-                      viewBox="0 0 128 128"
-                      width="40"
-                      height="40"
-                      class="svgIcons githubLink"
-                    >
-                      <g fill="#181616">
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
-                        ></path>
-                        <path
-                          d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
-                        ></path>
-                      </g>
-                    </svg>
-                  </a>
-                  <a href="https://shriyashzzz.github.io/Book-Library/" target="_blank" rel="noopener noreferrer" aria-label="Personal Library live site">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      class="svgIcons externalLink"
-                    >
-                      <path
-                        d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
-                      />
-                    </svg>
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </section>
-          <section
-            class="resume-section view"
-            data-view="resume"
-            aria-labelledby="resume-title"
-            tabindex="-1"
-            id="resume-content"
-          >
-            <div class="resumeToolbar">
+            CONNECT
+          </button>
+          <ul class="dropdown-menu" id="connect-menu">
+            <li>
               <a
-                class="resumeDownload"
-                id="resumeDownload"
-                download="Shriyash_Ghimire_Resume.pdf"
-                >Download PDF</a
+                href="https://github.com/Shriyashzzz"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="navLink"
+                >GitHub</a
               >
-            </div>
-            <!-- mirrors src/assets/Shriyash_Ghimire_Resume.pdf, keep the two in sync -->
-            <article class="resumePaper">
-              <div class="rpHead">
-                <h2 id="resume-title">Shriyash Ghimire</h2>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/shriyash-ghimire-73b385257/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="navLink"
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://blog.shriyash.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="navLink"
+                >Blog</a
+              >
+            </li>
+            <li>
+              <a
+                href="mailto:ghimires1@my.smccd.edu?subject=Hello%20Shriyash"
+                class="navLink menuEmail"
+                >Email me</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <main>
+        <header id="about-content" class="view" data-view="about" tabindex="-1">
+          <img
+            srcset="
+              ./images/hero_1200.jpg 1515w,
+              ./images/hero_800.jpg  1010w,
+              ./images/hero_400.jpg   505w
+            "
+            src="./images/hero_800.jpg"
+            sizes="(min-width: 1050px) 420px, (min-width: 813px) 40vw, 325px"
+            alt="Shriyash Ghimire"
+            class="heroImage"
+          />
+          <div class="about-me-container">
+            <div class="about-desc">
+              <!-- decorative spinning cube of stack logos -->
+              <div class="cube-wrap" aria-hidden="true">
+                <div class="cube">
+                  <div class="side top">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/typescript/typescript-original.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="side bottom">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/postgresql/postgresql-original.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="side front">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/react/react-original.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="side back">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/vite/vite-original.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="side left">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/docker/docker-original.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="side right">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/jest/jest-plain.svg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <h1>Hello!</h1>
+              <p>
+                I'm <span>Shriyash</span>, a self-taught full-stack developer
+                passionate about building websites and creative tools on the
+                web.
+              </p>
+              <p>
+                I love bringing creative ideas to life, solving problems to
+                build scalable, secure systems. Nothing gives me more joy than
+                to see a project I've worked on come to life.
+              </p>
+
+              <div class="blogContainer">
                 <p>
-                  <a href="mailto:ghimires1@my.smccd.edu">ghimires1@my.smccd.edu</a>
-                  <span class="rpSep">|</span>
-                  <a href="https://shriyash.dev/">shriyash.dev</a>
-                  <span class="rpSep">|</span>
-                  <a href="https://www.linkedin.com/in/shriyash-ghimire-73b385257/" target="_blank" rel="noopener noreferrer">linkedin.com/in/shriyash-ghimire-73b385257</a>
-                  <span class="rpSep">|</span>
-                  <a href="https://github.com/Shriyashzzz" target="_blank" rel="noopener noreferrer">github.com/Shriyashzzz</a>
+                  I also write on
+                  <em
+                    ><a
+                      class="blog-link"
+                      href="https://blog.shriyash.dev"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Shriyash Uncompiled</a
+                    ></em
+                  >
                 </p>
               </div>
-
-              <section>
-                <h3>Education</h3>
-                <div class="rpRow">
-                  <span><strong>College of San Mateo</strong> — Computer Science Transfer Track (Intended B.S. in Computer Science)</span>
-                  <span>San Mateo, CA</span>
-                </div>
-                <div class="rpRow">
-                  <span>GPA: 3.6 / 4.0 | Coursework: Data Structures, Discrete Mathematics, Intro to Databases</span>
-                  <span>Expected Transfer: Fall 2027</span>
-                </div>
-              </section>
-
-              <section>
-                <h3>Projects</h3>
-                <div class="rpEntry">
-                  <div class="rpRow">
-                    <span><strong>Manga Tracker</strong> | Reading Shelf &amp; Price Checker |
-                      <a href="https://mangatracker.xyz/" target="_blank" rel="noopener noreferrer">Live</a> ·
-                      <a href="https://github.com/Shriyashzzz/mangaTracker" target="_blank" rel="noopener noreferrer">GitHub</a></span>
-                    <span>Jun 2026 – Present</span>
-                  </div>
-                  <p class="rpTech">TypeScript, React, Zustand, Tailwind CSS, Express, PostgreSQL, Prisma, Docker</p>
-                  <ul>
-                    <li>Built a reading tracker and US price checker for physical manga, combining AniList and Open Library catalog data with store prices fetched in parallel through a pluggable provider interface.</li>
-                    <li>Stored every price check in PostgreSQL to compute per-format price history (low, high, median) with parameterized SQL, and capped paid API calls with an atomic monthly budget.</li>
-                    <li>Secured the API with PostgreSQL-backed sessions, bcrypt, ownership checks, per-route rate limits, and zod/express-validator validation; deployed as two Railway services on a private network.</li>
-                  </ul>
-                </div>
-                <div class="rpEntry">
-                  <div class="rpRow">
-                    <span><strong>Shriyash Uncompiled</strong> | Full-Stack Blog Platform |
-                      <a href="https://blog.shriyash.dev" target="_blank" rel="noopener noreferrer">Live</a> ·
-                      <a href="https://github.com/Shriyashzzz/blog-shriyash" target="_blank" rel="noopener noreferrer">GitHub</a></span>
-                    <span>Aug 2026</span>
-                  </div>
-                  <p class="rpTech">TypeScript, React, Redux, Express, Passport.js, PostgreSQL, Prisma, Redis, BullMQ, Docker</p>
-                  <ul>
-                    <li>Built a newsletter CMS that sends email to 14 active subscribers in the background: Nodemailer and Resend handle delivery, while Redis and BullMQ job queues with 7 concurrent workers keep sends reliable and non-blocking.</li>
-                    <li>Architected a decoupled platform of three services (admin CMS, RESTful API, public client) with a React frontend and Express backend.</li>
-                    <li>Implemented authentication with Passport.js, storing JWTs in cookies with matched token and cookie expiry to avoid stale sessions.</li>
-                    <li>Developed a WYSIWYG post editor for the admin CMS, with a markdown-to-HTML parser for rendering posts on the client.</li>
-                    <li>Wrote two Jest/SuperTest integration test suites (posts and newsletter) and containerized the services with Docker for reproducible deployment.</li>
-                  </ul>
-                </div>
-                <div class="rpEntry">
-                  <div class="rpRow">
-                    <span><strong>Where's Waldo</strong> | Photo-Hunt Game |
-                      <a href="https://where-is-waldo.shriyash.dev/" target="_blank" rel="noopener noreferrer">Live</a> ·
-                      <a href="https://github.com/Shriyashzzz/where-is-waldo" target="_blank" rel="noopener noreferrer">GitHub</a></span>
-                    <span>Sep 2026</span>
-                  </div>
-                  <p class="rpTech">TypeScript, React, Zustand, Express, PostgreSQL, Redis, Docker</p>
-                  <ul>
-                    <li>Verified every click server-side against character coordinates stored in PostgreSQL, so answers never reach the client or appear in network requests.</li>
-                    <li>Isolated each player's progress in sessions using express-session with a Redis-backed store (connect-redis).</li>
-                    <li>Validated all request input with express-validator and wrote Jest/SuperTest integration tests for Redis-backed sessions and click verification, using persistent agents to simulate full multi-request play sessions.</li>
-                  </ul>
-                </div>
-                <div class="rpEntry">
-                  <div class="rpRow">
-                    <span><strong>Hwoosting</strong> | Cloud File Hosting Platform |
-                      <a href="https://filehoster-production.up.railway.app/login" target="_blank" rel="noopener noreferrer">Live</a> ·
-                      <a href="https://github.com/Shriyashzzz/fileHoster" target="_blank" rel="noopener noreferrer">GitHub</a></span>
-                    <span>Jul 2026</span>
-                  </div>
-                  <p class="rpTech">TypeScript, Express, EJS, PostgreSQL, Prisma, Supabase</p>
-                  <ul>
-                    <li>Built a server-side rendered file hosting app where users upload, group, and manage files in nested folders, backed by a Supabase S3 bucket.</li>
-                    <li>Designed a normalized relational schema (Users, Folders, Files) with Prisma to enforce referential integrity across nested directory trees.</li>
-                    <li>Stored file binaries in S3 storage and only lightweight metadata (MIME type, size, path) in PostgreSQL; handled multipart uploads with Multer.</li>
-                  </ul>
-                </div>
-                <div class="rpEntry">
-                  <div class="rpRow">
-                    <span><strong>tailwindcss-highlights-v4</strong> | Open-Source npm Package |
-                      <a href="https://www.npmjs.com/package/tailwindcss-highlights-v4" target="_blank" rel="noopener noreferrer">npm</a> ·
-                      <a href="https://github.com/Shriyashzzz/tailwindcss-highlights" target="_blank" rel="noopener noreferrer">GitHub</a></span>
-                    <span>Oct 2026</span>
-                  </div>
-                  <p class="rpTech">JavaScript, Tailwind CSS v4</p>
-                  <ul>
-                    <li>Forked jln13x's tailwindcss-highlights plugin, added Tailwind CSS v4 support, and published it to npm as tailwindcss-highlights-v4.</li>
-                  </ul>
-                </div>
-              </section>
-
-              <section>
-                <h3>Professional Experience</h3>
-                <div class="rpEntry">
-                  <div class="rpRow">
-                    <span><strong>IT Administrator</strong>,
-                      <a href="https://www.ultimatehomecareservices.com/" target="_blank" rel="noopener noreferrer">Ultimate Home Care</a>
-                      — Palo Alto, CA</span>
-                    <span>Jul 2026 – Present</span>
-                  </div>
-                  <ul>
-                    <li>Migrated 50+ active client records and billing histories from QuickBooks to AxisCare, preserving data integrity and HIPAA compliance.</li>
-                    <li>Configured automated employee scheduling in AxisCare, reducing scheduling conflicts and manual administrative work.</li>
-                    <li>Maintain the company's Wix website, adding new Hiring and Contact sections, and manage client invoicing.</li>
-                  </ul>
-                </div>
-                <div class="rpEntry">
-                  <div class="rpRow">
-                    <span><strong>Computer Science Tutor</strong>, Self-Employed — Redwood City, CA</span>
-                    <span>Jan 2024 – Present</span>
-                  </div>
-                  <ul>
-                    <li>Design and deliver personalized A-Level Computer Science exam-prep lesson plans for students in Pakistan, Nepal, and the UK.</li>
-                    <li>Tutor 4 students at a time, 8–10 hours per week, on object-oriented programming and data structures, adapting instruction to each student's exam board and pace.</li>
-                  </ul>
-                </div>
-              </section>
-
-              <section>
-                <h3>Additional Experience</h3>
-                <div class="rpEntry">
-                  <div class="rpRow">
-                    <span><strong>Server</strong>, Benihana — San Mateo, CA</span>
-                    <span>Dec 2024 – Jul 2026</span>
-                  </div>
-                  <ul>
-                    <li>Founding team member of the San Mateo location; trained new servers in a high-volume dining room.</li>
-                  </ul>
-                </div>
-              </section>
-
-              <section>
-                <h3>Technical Skills</h3>
-                <ul class="rpSkills">
-                  <li><strong>Languages:</strong> TypeScript, JavaScript, SQL, Python, Java, HTML/CSS</li>
-                  <li><strong>Frameworks/Libraries:</strong> React, Node.js, Express, Redux, Zustand, Tailwind, Passport.js</li>
-                  <li><strong>Backend &amp; Data:</strong> PostgreSQL, Prisma, Redis, BullMQ, Supabase, RESTful APIs, Nodemailer, Resend</li>
-                  <li><strong>Testing, Deployment &amp; Tools:</strong> Jest, Vitest, SuperTest, Docker, Linux, Railway, Vercel, Git, GitHub, Vite, Webpack, Postman</li>
+              <div>
+                <h4>My Stack</h4>
+                <ul class="techStackDiv">
+                  <li class="stackContainer">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/typescript/typescript-original.svg"
+                      alt=""
+                      width="40"
+                      height="40"
+                      class="svgIcons"
+                      loading="lazy"
+                    />
+                    <p>TypeScript</p>
+                  </li>
+                  <li class="stackContainer">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/javascript/javascript-original.svg"
+                      alt=""
+                      width="40"
+                      height="40"
+                      class="svgIcons"
+                      loading="lazy"
+                    />
+                    <p>JavaScript</p>
+                  </li>
+                  <li class="stackContainer">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/react/react-original.svg"
+                      alt=""
+                      width="40"
+                      height="40"
+                      class="svgIcons"
+                      loading="lazy"
+                    />
+                    <p>React</p>
+                  </li>
+                  <li class="stackContainer">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/redux/redux-original.svg"
+                      alt=""
+                      width="40"
+                      height="40"
+                      class="svgIcons"
+                      loading="lazy"
+                    />
+                    <p>Redux</p>
+                  </li>
+                  <li class="stackContainer">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/zustand/zustand-original.svg"
+                      alt=""
+                      width="40"
+                      height="40"
+                      class="svgIcons"
+                      loading="lazy"
+                    />
+                    <p>Zustand</p>
+                  </li>
+                  <li class="stackContainer">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/nodejs/nodejs-original.svg"
+                      alt=""
+                      width="40"
+                      height="40"
+                      class="svgIcons"
+                      loading="lazy"
+                    />
+                    <p>Node.js</p>
+                  </li>
+                  <li class="stackContainer">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/express/express-original.svg"
+                      alt=""
+                      width="40"
+                      height="40"
+                      class="svgIcons"
+                      loading="lazy"
+                    />
+                    <p>Express</p>
+                  </li>
+                  <li class="stackContainer">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/passport/passport-original.svg"
+                      alt=""
+                      width="40"
+                      height="40"
+                      class="svgIcons"
+                      loading="lazy"
+                    />
+                    <p>Passport</p>
+                  </li>
+                  <li class="stackContainer">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/postgresql/postgresql-original.svg"
+                      alt=""
+                      width="40"
+                      height="40"
+                      class="svgIcons"
+                      loading="lazy"
+                    />
+                    <p>PostgreSQL</p>
+                  </li>
+                  <li class="stackContainer">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/prisma/prisma-original.svg"
+                      alt=""
+                      width="40"
+                      height="40"
+                      class="svgIcons"
+                      loading="lazy"
+                    />
+                    <p>Prisma</p>
+                  </li>
+                  <li class="stackContainer">
+                    <img
+                      src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/drizzle.svg"
+                      alt=""
+                      width="40"
+                      height="40"
+                      class="svgIcons"
+                      loading="lazy"
+                    />
+                    <p>Drizzle</p>
+                  </li>
+                  <li class="stackContainer">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/redis/redis-original.svg"
+                      alt=""
+                      width="40"
+                      height="40"
+                      class="svgIcons"
+                      loading="lazy"
+                    />
+                    <p>Redis</p>
+                  </li>
+                  <li class="stackContainer">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/supabase/supabase-original.svg"
+                      alt=""
+                      width="40"
+                      height="40"
+                      class="svgIcons"
+                      loading="lazy"
+                    />
+                    <p>Supabase</p>
+                  </li>
+                  <li class="stackContainer">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/tailwindcss/tailwindcss-original.svg"
+                      alt=""
+                      width="40"
+                      height="40"
+                      class="svgIcons"
+                      loading="lazy"
+                    />
+                    <p>Tailwind</p>
+                  </li>
+                  <li class="stackContainer">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/docker/docker-original.svg"
+                      alt=""
+                      width="40"
+                      height="40"
+                      class="svgIcons"
+                      loading="lazy"
+                    />
+                    <p>Docker</p>
+                  </li>
+                  <li class="stackContainer">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/jest/jest-plain.svg"
+                      alt=""
+                      width="40"
+                      height="40"
+                      class="svgIcons"
+                      loading="lazy"
+                    />
+                    <p>Jest</p>
+                  </li>
+                  <li class="stackContainer">
+                    <svg
+                      viewBox="0 0 40 40"
+                      width="40"
+                      height="40"
+                      class="svgIcons"
+                      aria-hidden="true"
+                    >
+                      <rect width="40" height="40" rx="8" fill="#2d3748" />
+                      <text
+                        x="20"
+                        y="26"
+                        text-anchor="middle"
+                        font-family="monospace"
+                        font-size="16"
+                        font-weight="bold"
+                        fill="#8dff2f"
+                      >
+                        ST
+                      </text>
+                    </svg>
+                    <p>SuperTest</p>
+                  </li>
                 </ul>
-              </section>
-            </article>
-          </section>
-        </main>
-        <footer>
-          <section id="contact-content" class="footerMain">
-            <div class="footerCta">
-              <h2>Connect with me</h2>
-              <p>
-                Have a project in mind or just want to say hello? Whether it's a
-                collaboration, an internship, or a quick chat about tech, I'm
-                always open to new conversations.
-              </p>
-              <div class="footerEmailRow">
-                <a class="emailButton" href="mailto:ghimires1@my.smccd.edu?subject=Hello%20Shriyash">
-                  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="5" width="18" height="14" rx="2" />
-                    <path d="m3 7 9 6 9-6" />
-                  </svg>
-                  Email me
-                </a>
-                <div class="footerSocial">
-                  <a href="https://github.com/Shriyashzzz" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
-                    <svg
-                      viewBox="0 0 128 128"
-                      width="40"
-                      height="40"
-                      class="svgIcons githubLink"
-                    >
-                      <g fill="#181616">
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
-                        ></path>
-                        <path
-                          d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
-                        ></path>
-                      </g>
-                    </svg>
-                  </a>
-                  <a href="https://www.linkedin.com/in/shriyash-ghimire-73b385257/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
-                    <svg
-                      width="40"
-                      height="40"
-                      viewBox="0 0 128 128"
-                      class="svgIcons linkedIn"
-                    >
-                      <path
-                        d="M116 3H12a8.91 8.91 0 00-9 8.8v104.42a8.91 8.91 0 009 8.78h104a8.93 8.93 0 009-8.81V11.77A8.93 8.93 0 00116 3zM39.17 107H21.06V48.73h18.11zm-9-66.21a10.5 10.5 0 1110.49-10.5 10.5 10.5 0 01-10.54 10.48zM107 107H88.89V78.65c0-6.75-.12-15.44-9.41-15.44s-10.87 7.36-10.87 15V107H50.53V48.73h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41C103.6 47.28 107 59.35 107 75z"
-                      ></path></svg>
-                  </a>
-                  <a href="https://blog.shriyash.dev" target="_blank" rel="noopener noreferrer" aria-label="Blog: Shriyash Uncompiled" title="Blog: Shriyash Uncompiled">
-                    <svg viewBox="0 0 24 24" width="40" height="40" class="svgIcons blogLink" aria-hidden="true" fill="none" stroke="#181616" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="16 18 22 12 16 6" />
-                      <polyline points="8 6 2 12 8 18" />
-                    </svg>
-                  </a>
-                  <a href="https://medium.com/@ghimireshriyash" target="_blank" rel="noopener noreferrer" aria-label="Medium" title="Medium">
-                    <svg viewBox="0 0 24 24" width="40" height="40" class="svgIcons mediumLink" aria-hidden="true">
-                      <path fill="#181616" d="M4.21 0A4.201 4.201 0 0 0 0 4.21v15.58A4.201 4.201 0 0 0 4.21 24h15.58A4.201 4.201 0 0 0 24 19.79v-1.093c-.137.013-.278.02-.422.02-2.577 0-4.027-2.146-4.09-4.832a7.592 7.592 0 0 1 .022-.708c.093-1.186.475-2.241 1.105-3.022a3.885 3.885 0 0 1 1.395-1.1c.468-.237 1.127-.367 1.664-.367h.023c.101 0 .202.004.303.01V4.211A4.201 4.201 0 0 0 19.79 0Zm.198 5.583h4.165l3.588 8.435 3.59-8.435h3.864v.146l-.019.004c-.705.16-1.063.397-1.063 1.254h-.003l.003 10.274c.06.676.424.885 1.063 1.03l.02.004v.145h-4.923v-.145l.019-.005c.639-.144.994-.353 1.054-1.03V7.267l-4.745 11.15h-.261L6.15 7.569v9.445c0 .857.358 1.094 1.063 1.253l.02.004v.147H4.405v-.147l.019-.004c.705-.16 1.065-.397 1.065-1.253V6.987c0-.857-.358-1.094-1.064-1.254l-.018-.004zm19.25 3.668c-1.086.023-1.733 1.323-1.813 3.124H24V9.298a1.378 1.378 0 0 0-.342-.047Zm-1.862 3.632c-.1 1.756.86 3.239 2.204 3.634v-3.634z" />
-                    </svg>
-                  </a>
-                </div>
               </div>
             </div>
-          </section>
-          <div class="footerBottom">
-            <p>© <span id="footerYear">2026</span> Shriyash Ghimire · Bay Area, CA</p>
-            <button type="button" class="backToTop">Back to top ↑</button>
           </div>
-        </footer>
-      </div>
-    </body>
-  </html>
+        </header>
+        <section
+          class="portfolio-section view"
+          data-view="projects"
+          aria-labelledby="projects-title"
+          tabindex="-1"
+          id="project-content"
+        >
+          <h2 id="projects-title">My Projects</h2>
+          <p class="projectsIntro">
+            Full-stack apps first, then the smaller front-end builds I learned
+            on.
+          </p>
+          <div class="projectsGrid">
+            <article class="project">
+              <img
+                src="./images/mangaTracker.jpeg"
+                alt="Manga Tracker price check page"
+                class="projectImg"
+                loading="lazy"
+              />
+              <div class="projectInfo">
+                <div class="projectHeader">
+                  <h3>Manga Tracker</h3>
+                  <div class="projectLinks">
+                    <a
+                      href="https://github.com/Shriyashzzz/mangaTracker"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Manga Tracker on GitHub"
+                    >
+                      <svg
+                        viewBox="0 0 128 128"
+                        width="40"
+                        height="40"
+                        class="svgIcons githubLink"
+                      >
+                        <g fill="#181616">
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                          ></path>
+                          <path
+                            d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
+                          ></path>
+                        </g>
+                      </svg>
+                    </a>
+                    <a
+                      href="https://mangatracker.xyz/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Manga Tracker live site"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        class="svgIcons externalLink"
+                      >
+                        <path
+                          d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="projectDescription">
+                  <p>
+                    I kept forgetting which chapter I'd stopped on, so I built
+                    something to remember for me. Then I kept opening ten tabs
+                    to find the next volume at a fair price, so a price checker
+                    followed.
+                  </p>
+                  <p>
+                    Keep your place and the volumes you own on your shelf, then
+                    compare what US stores charge for the next one, with price
+                    history for every volume.
+                  </p>
+                </div>
+                <ul class="projectTags" aria-label="Built with">
+                  <li>TypeScript</li>
+                  <li>React</li>
+                  <li>Express</li>
+                  <li>PostgreSQL</li>
+                  <li>Prisma</li>
+                  <li>Tailwind</li>
+                </ul>
+              </div>
+            </article>
+            <article class="project">
+              <img
+                src="./images/viewpost-client.jpg"
+                alt="Blog post page of Shriyash Uncompiled"
+                class="projectImg"
+                loading="lazy"
+              />
+              <div class="projectInfo">
+                <div class="projectHeader">
+                  <h3>Shriyash Uncompiled</h3>
+                  <div class="projectLinks">
+                    <a
+                      href="https://github.com/Shriyashzzz/blog-shriyash"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Shriyash Uncompiled on GitHub"
+                    >
+                      <svg
+                        viewBox="0 0 128 128"
+                        width="40"
+                        height="40"
+                        class="svgIcons githubLink"
+                      >
+                        <g fill="#181616">
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                          ></path>
+                          <path
+                            d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
+                          ></path>
+                        </g>
+                      </svg>
+                    </a>
+                    <a
+                      href="https://blog.shriyash.dev"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Shriyash Uncompiled live site"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        class="svgIcons externalLink"
+                      >
+                        <path
+                          d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="projectDescription">
+                  <p>
+                    The blog I write on, built from scratch as three apps: an
+                    admin dashboard, an API, and the public site.
+                  </p>
+                  <p>
+                    I draft posts in a WYSIWYG editor that turns them into
+                    Markdown, and the site renders that Markdown as HTML.
+                    Publishing emails subscribers from a background queue (Redis
+                    + BullMQ), so it never waits on anyone's inbox.
+                  </p>
+                </div>
+                <ul class="projectTags" aria-label="Built with">
+                  <li>TypeScript</li>
+                  <li>React</li>
+                  <li>Redux</li>
+                  <li>Express</li>
+                  <li>Prisma</li>
+                  <li>Redis</li>
+                  <li>BullMQ</li>
+                  <li>Docker</li>
+                </ul>
+              </div>
+            </article>
+            <article class="project">
+              <img
+                src="./images/where-is-waldo.jpg"
+                alt="Where's Waldo game board"
+                class="projectImg"
+                loading="lazy"
+              />
+              <div class="projectInfo">
+                <div class="projectHeader">
+                  <h3>Where's Waldo</h3>
+                  <div class="projectLinks">
+                    <a
+                      href="https://github.com/Shriyashzzz/where-is-waldo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Where's Waldo on GitHub"
+                    >
+                      <svg
+                        viewBox="0 0 128 128"
+                        width="40"
+                        height="40"
+                        class="svgIcons githubLink"
+                      >
+                        <g fill="#181616">
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                          ></path>
+                          <path
+                            d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
+                          ></path>
+                        </g>
+                      </svg>
+                    </a>
+                    <a
+                      href="https://where-is-waldo.shriyash.dev/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Where's Waldo live site"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        class="svgIcons externalLink"
+                      >
+                        <path
+                          d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="projectDescription">
+                  <p>
+                    Find the characters hidden in a busy illustration, as fast
+                    as you can.
+                  </p>
+                  <p>
+                    The catch with any hidden-object game is that the answers
+                    can leak. Here the server checks every click against
+                    coordinates in the database, so there's nothing to find in
+                    the network tab.
+                  </p>
+                </div>
+                <ul class="projectTags" aria-label="Built with">
+                  <li>TypeScript</li>
+                  <li>React</li>
+                  <li>Zustand</li>
+                  <li>Express</li>
+                  <li>PostgreSQL</li>
+                  <li>Redis</li>
+                  <li>Docker</li>
+                </ul>
+              </div>
+            </article>
+            <article class="project">
+              <img
+                src="./images/fileHwoosting.png"
+                alt="Hwoosting file browser"
+                class="projectImg"
+                loading="lazy"
+              />
+              <div class="projectInfo">
+                <div class="projectHeader">
+                  <h3>Hwoosting</h3>
+                  <div class="projectLinks">
+                    <a
+                      href="https://github.com/Shriyashzzz/fileHoster"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Hwoosting on GitHub"
+                    >
+                      <svg
+                        viewBox="0 0 128 128"
+                        width="40"
+                        height="40"
+                        class="svgIcons githubLink"
+                      >
+                        <g fill="#181616">
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                          ></path>
+                          <path
+                            d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
+                          ></path>
+                        </g>
+                      </svg>
+                    </a>
+                    <a
+                      href="https://filehoster-production.up.railway.app/login"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Hwoosting live site"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        class="svgIcons externalLink"
+                      >
+                        <path
+                          d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="projectDescription">
+                  <p>
+                    A tiny Google Drive of my own: sign in, upload files, and
+                    sort them into folders inside folders.
+                  </p>
+                  <p>
+                    The files live in cloud storage (Supabase S3), and the
+                    database only keeps what it needs to find them: name, size,
+                    type and path.
+                  </p>
+                </div>
+                <ul class="projectTags" aria-label="Built with">
+                  <li>TypeScript</li>
+                  <li>Express</li>
+                  <li>EJS</li>
+                  <li>PostgreSQL</li>
+                  <li>Prisma</li>
+                  <li>Supabase</li>
+                </ul>
+              </div>
+            </article>
+            <article class="project">
+              <img
+                src="./images/clubhouse.png"
+                alt="Club House message board"
+                class="projectImg"
+                loading="lazy"
+              />
+              <div class="projectInfo">
+                <div class="projectHeader">
+                  <h3>Club House</h3>
+                  <div class="projectLinks">
+                    <a
+                      href="https://github.com/Shriyashzzz/clubhouse"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Club House on GitHub"
+                    >
+                      <svg
+                        viewBox="0 0 128 128"
+                        width="40"
+                        height="40"
+                        class="svgIcons githubLink"
+                      >
+                        <g fill="#181616">
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                          ></path>
+                          <path
+                            d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
+                          ></path>
+                        </g>
+                      </svg>
+                    </a>
+                    <a
+                      href="https://clubhouse-production-e196.up.railway.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Club House live site"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        class="svgIcons externalLink"
+                      >
+                        <path
+                          d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="projectDescription">
+                  <p>A message board where you need an account to post.</p>
+                  <p>
+                    Every user is a Member, VIP or Admin, and that role decides
+                    what they can see and do.
+                  </p>
+                </div>
+                <ul class="projectTags" aria-label="Built with">
+                  <li>Express</li>
+                  <li>EJS</li>
+                  <li>PostgreSQL</li>
+                  <li>Passport</li>
+                </ul>
+              </div>
+            </article>
+            <article class="project">
+              <div class="projectImg projectPlaceholder" aria-hidden="true">
+                <code>npm i tailwindcss-highlights-v4</code>
+              </div>
+              <div class="projectInfo">
+                <div class="projectHeader">
+                  <h3>tailwindcss-highlights-v4</h3>
+                  <div class="projectLinks">
+                    <a
+                      href="https://github.com/Shriyashzzz/tailwindcss-highlights"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="tailwindcss-highlights-v4 on GitHub"
+                    >
+                      <svg
+                        viewBox="0 0 128 128"
+                        width="40"
+                        height="40"
+                        class="svgIcons githubLink"
+                      >
+                        <g fill="#181616">
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                          ></path>
+                          <path
+                            d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
+                          ></path>
+                        </g>
+                      </svg>
+                    </a>
+                    <a
+                      href="https://www.npmjs.com/package/tailwindcss-highlights-v4"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="tailwindcss-highlights-v4 npm package"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        class="svgIcons externalLink"
+                      >
+                        <path
+                          d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="projectDescription">
+                  <p>
+                    jln13x's tailwindcss-highlights plugin didn't support
+                    Tailwind v4, so I forked it, added v4 support, and published
+                    the fork to npm for anyone else who needed it.
+                  </p>
+                </div>
+                <ul class="projectTags" aria-label="Built with">
+                  <li>JavaScript</li>
+                  <li>Tailwind CSS v4</li>
+                  <li>npm</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <h2 class="projectsSubtitle">Earlier Projects</h2>
+          <ul class="projectList">
+            <li class="projectRow">
+              <h3>Shopping Cart</h3>
+              <p>
+                A pretend online store with category and price filters, a cart
+                that follows you between pages, and light/dark mode.
+              </p>
+              <ul class="projectTags" aria-label="Built with">
+                <li>React</li>
+                <li>React Router</li>
+                <li>Vite</li>
+                <li>Testing Library</li>
+              </ul>
+              <div class="projectLinks">
+                <a
+                  href="https://github.com/Shriyashzzz/shoppingCart"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Shopping Cart on GitHub"
+                >
+                  <svg
+                    viewBox="0 0 128 128"
+                    width="40"
+                    height="40"
+                    class="svgIcons githubLink"
+                  >
+                    <g fill="#181616">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                      ></path>
+                      <path
+                        d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
+                      ></path>
+                    </g>
+                  </svg>
+                </a>
+                <a
+                  href="https://realstore-tau.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Shopping Cart live site"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    class="svgIcons externalLink"
+                  >
+                    <path
+                      d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </li>
+            <li class="projectRow">
+              <h3>Memory Game</h3>
+              <p>
+                A Harry Potter memory game: click each character once. Pick the
+                same card twice and your score resets.
+              </p>
+              <ul class="projectTags" aria-label="Built with">
+                <li>React</li>
+                <li>Vite</li>
+                <li>Vitest</li>
+              </ul>
+              <div class="projectLinks">
+                <a
+                  href="https://github.com/Shriyashzzz/harryPotter-memory-game"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Memory Game on GitHub"
+                >
+                  <svg
+                    viewBox="0 0 128 128"
+                    width="40"
+                    height="40"
+                    class="svgIcons githubLink"
+                  >
+                    <g fill="#181616">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                      ></path>
+                      <path
+                        d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
+                      ></path>
+                    </g>
+                  </svg>
+                </a>
+                <a
+                  href="https://harry-potter-memory-game.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Memory Game live site"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    class="svgIcons externalLink"
+                  >
+                    <path
+                      d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </li>
+            <li class="projectRow">
+              <h3>BattleShip</h3>
+              <p>
+                The classic board game against the computer, with the game logic
+                covered by Jest tests.
+              </p>
+              <ul class="projectTags" aria-label="Built with">
+                <li>JavaScript</li>
+                <li>Webpack</li>
+                <li>Jest</li>
+              </ul>
+              <div class="projectLinks">
+                <a
+                  href="https://github.com/Shriyashzzz/battleship"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="BattleShip on GitHub"
+                >
+                  <svg
+                    viewBox="0 0 128 128"
+                    width="40"
+                    height="40"
+                    class="svgIcons githubLink"
+                  >
+                    <g fill="#181616">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                      ></path>
+                      <path
+                        d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
+                      ></path>
+                    </g>
+                  </svg>
+                </a>
+                <a
+                  href="https://shriyashzzz.github.io/battleship/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="BattleShip live site"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    class="svgIcons externalLink"
+                  >
+                    <path
+                      d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </li>
+            <li class="projectRow">
+              <h3>Weather App</h3>
+              <p>
+                Current, hourly and multi-day forecasts for any place, from the
+                Visual Crossing API.
+              </p>
+              <ul class="projectTags" aria-label="Built with">
+                <li>JavaScript</li>
+                <li>Webpack</li>
+                <li>VisualCrossing API</li>
+              </ul>
+              <div class="projectLinks">
+                <a
+                  href="https://github.com/Shriyashzzz/weather-app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Weather App on GitHub"
+                >
+                  <svg
+                    viewBox="0 0 128 128"
+                    width="40"
+                    height="40"
+                    class="svgIcons githubLink"
+                  >
+                    <g fill="#181616">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                      ></path>
+                      <path
+                        d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
+                      ></path>
+                    </g>
+                  </svg>
+                </a>
+                <a
+                  href="https://shriyashzzz.github.io/weather-app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Weather App live site"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    class="svgIcons externalLink"
+                  >
+                    <path
+                      d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </li>
+            <li class="projectRow">
+              <h3>Personal Library</h3>
+              <p>
+                A reading list for the books you've finished and the ones you
+                want to read, saved in your browser.
+              </p>
+              <ul class="projectTags" aria-label="Built with">
+                <li>JavaScript</li>
+                <li>Webpack</li>
+                <li>localStorage</li>
+              </ul>
+              <div class="projectLinks">
+                <a
+                  href="https://github.com/Shriyashzzz/Book-Library"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Personal Library on GitHub"
+                >
+                  <svg
+                    viewBox="0 0 128 128"
+                    width="40"
+                    height="40"
+                    class="svgIcons githubLink"
+                  >
+                    <g fill="#181616">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                      ></path>
+                      <path
+                        d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
+                      ></path>
+                    </g>
+                  </svg>
+                </a>
+                <a
+                  href="https://shriyashzzz.github.io/Book-Library/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Personal Library live site"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    class="svgIcons externalLink"
+                  >
+                    <path
+                      d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section
+          class="resume-section view"
+          data-view="resume"
+          aria-labelledby="resume-title"
+          tabindex="-1"
+          id="resume-content"
+        >
+          <div class="resumeToolbar">
+            <a
+              class="resumeDownload"
+              id="resumeDownload"
+              download="Shriyash_Ghimire_Resume.pdf"
+              >Download PDF</a
+            >
+          </div>
+          <!-- mirrors src/assets/Shriyash_Ghimire_Resume.pdf, keep the two in sync -->
+          <article class="resumePaper">
+            <div class="rpHead">
+              <h2 id="resume-title">Shriyash Ghimire</h2>
+              <p>
+                <a href="mailto:ghimires1@my.smccd.edu"
+                  >ghimires1@my.smccd.edu</a
+                >
+                <span class="rpSep">|</span>
+                <a href="https://shriyash.dev/">shriyash.dev</a>
+                <span class="rpSep">|</span>
+                <a
+                  href="https://www.linkedin.com/in/shriyash-ghimire-73b385257/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >linkedin.com/in/shriyash-ghimire-73b385257</a
+                >
+                <span class="rpSep">|</span>
+                <a
+                  href="https://github.com/Shriyashzzz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >github.com/Shriyashzzz</a
+                >
+              </p>
+            </div>
+
+            <section>
+              <h3>Education</h3>
+              <div class="rpRow">
+                <span
+                  ><strong>College of San Mateo</strong> — Computer Science
+                  Transfer Track (Intended B.S. in Computer Science)</span
+                >
+                <span>San Mateo, CA</span>
+              </div>
+              <div class="rpRow">
+                <span
+                  >GPA: 3.6 / 4.0 | Coursework: Data Structures, Discrete
+                  Mathematics, Intro to Databases</span
+                >
+                <span>Expected Transfer: Fall 2027</span>
+              </div>
+            </section>
+
+            <section>
+              <h3>Projects</h3>
+              <div class="rpEntry">
+                <div class="rpRow">
+                  <span
+                    ><strong>Manga Tracker</strong> | Reading Shelf &amp; Price
+                    Checker |
+                    <a
+                      href="https://mangatracker.xyz/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Live</a
+                    >
+                    ·
+                    <a
+                      href="https://github.com/Shriyashzzz/mangaTracker"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >GitHub</a
+                    ></span
+                  >
+                  <span>Jun 2026 – Present</span>
+                </div>
+                <p class="rpTech">
+                  TypeScript, React, Zustand, Tailwind CSS, Express, PostgreSQL,
+                  Prisma, Docker
+                </p>
+                <ul>
+                  <li>
+                    Built a reading tracker and US price checker for physical
+                    manga, combining AniList and Open Library catalog data with
+                    store prices fetched in parallel through a pluggable
+                    provider interface.
+                  </li>
+                  <li>
+                    Stored every price check in PostgreSQL to compute per-format
+                    price history (low, high, median) with parameterized SQL,
+                    and capped paid API calls with an atomic monthly budget.
+                  </li>
+                  <li>
+                    Secured the API with PostgreSQL-backed sessions, bcrypt,
+                    ownership checks, per-route rate limits, and
+                    zod/express-validator validation; deployed as two Railway
+                    services on a private network.
+                  </li>
+                </ul>
+              </div>
+              <div class="rpEntry">
+                <div class="rpRow">
+                  <span
+                    ><strong>Shriyash Uncompiled</strong> | Full-Stack Blog
+                    Platform |
+                    <a
+                      href="https://blog.shriyash.dev"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Live</a
+                    >
+                    ·
+                    <a
+                      href="https://github.com/Shriyashzzz/blog-shriyash"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >GitHub</a
+                    ></span
+                  >
+                  <span>Aug 2026</span>
+                </div>
+                <p class="rpTech">
+                  TypeScript, React, Redux, Express, Passport.js, PostgreSQL,
+                  Prisma, Redis, BullMQ, Docker
+                </p>
+                <ul>
+                  <li>
+                    Built a newsletter CMS that sends email to 14 active
+                    subscribers in the background: Nodemailer and Resend handle
+                    delivery, while Redis and BullMQ job queues with 7
+                    concurrent workers keep sends reliable and non-blocking.
+                  </li>
+                  <li>
+                    Architected a decoupled platform of three services (admin
+                    CMS, RESTful API, public client) with a React frontend and
+                    Express backend.
+                  </li>
+                  <li>
+                    Implemented authentication with Passport.js, storing JWTs in
+                    cookies with matched token and cookie expiry to avoid stale
+                    sessions.
+                  </li>
+                  <li>
+                    Developed a WYSIWYG post editor for the admin CMS, with a
+                    markdown-to-HTML parser for rendering posts on the client.
+                  </li>
+                  <li>
+                    Wrote two Jest/SuperTest integration test suites (posts and
+                    newsletter) and containerized the services with Docker for
+                    reproducible deployment.
+                  </li>
+                </ul>
+              </div>
+              <div class="rpEntry">
+                <div class="rpRow">
+                  <span
+                    ><strong>Where's Waldo</strong> | Photo-Hunt Game |
+                    <a
+                      href="https://where-is-waldo.shriyash.dev/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Live</a
+                    >
+                    ·
+                    <a
+                      href="https://github.com/Shriyashzzz/where-is-waldo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >GitHub</a
+                    ></span
+                  >
+                  <span>Sep 2026</span>
+                </div>
+                <p class="rpTech">
+                  TypeScript, React, Zustand, Express, PostgreSQL, Redis, Docker
+                </p>
+                <ul>
+                  <li>
+                    Verified every click server-side against character
+                    coordinates stored in PostgreSQL, so answers never reach the
+                    client or appear in network requests.
+                  </li>
+                  <li>
+                    Isolated each player's progress in sessions using
+                    express-session with a Redis-backed store (connect-redis).
+                  </li>
+                  <li>
+                    Validated all request input with express-validator and wrote
+                    Jest/SuperTest integration tests for Redis-backed sessions
+                    and click verification, using persistent agents to simulate
+                    full multi-request play sessions.
+                  </li>
+                </ul>
+              </div>
+              <div class="rpEntry">
+                <div class="rpRow">
+                  <span
+                    ><strong>Hwoosting</strong> | Cloud File Hosting Platform |
+                    <a
+                      href="https://filehoster-production.up.railway.app/login"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Live</a
+                    >
+                    ·
+                    <a
+                      href="https://github.com/Shriyashzzz/fileHoster"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >GitHub</a
+                    ></span
+                  >
+                  <span>Jul 2026</span>
+                </div>
+                <p class="rpTech">
+                  TypeScript, Express, EJS, PostgreSQL, Prisma, Supabase
+                </p>
+                <ul>
+                  <li>
+                    Built a server-side rendered file hosting app where users
+                    upload, group, and manage files in nested folders, backed by
+                    a Supabase S3 bucket.
+                  </li>
+                  <li>
+                    Designed a normalized relational schema (Users, Folders,
+                    Files) with Prisma to enforce referential integrity across
+                    nested directory trees.
+                  </li>
+                  <li>
+                    Stored file binaries in S3 storage and only lightweight
+                    metadata (MIME type, size, path) in PostgreSQL; handled
+                    multipart uploads with Multer.
+                  </li>
+                </ul>
+              </div>
+              <div class="rpEntry">
+                <div class="rpRow">
+                  <span
+                    ><strong>tailwindcss-highlights-v4</strong> | Open-Source
+                    npm Package |
+                    <a
+                      href="https://www.npmjs.com/package/tailwindcss-highlights-v4"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >npm</a
+                    >
+                    ·
+                    <a
+                      href="https://github.com/Shriyashzzz/tailwindcss-highlights"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >GitHub</a
+                    ></span
+                  >
+                  <span>Oct 2026</span>
+                </div>
+                <p class="rpTech">JavaScript, Tailwind CSS v4</p>
+                <ul>
+                  <li>
+                    Forked jln13x's tailwindcss-highlights plugin, added
+                    Tailwind CSS v4 support, and published it to npm as
+                    tailwindcss-highlights-v4.
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <section>
+              <h3>Professional Experience</h3>
+              <div class="rpEntry">
+                <div class="rpRow">
+                  <span
+                    ><strong>IT Administrator</strong>,
+                    <a
+                      href="https://www.ultimatehomecareservices.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Ultimate Home Care</a
+                    >
+                    — Palo Alto, CA</span
+                  >
+                  <span>Jul 2026 – Present</span>
+                </div>
+                <ul>
+                  <li>
+                    Migrated 50+ active client records and billing histories
+                    from QuickBooks to AxisCare, preserving data integrity and
+                    HIPAA compliance.
+                  </li>
+                  <li>
+                    Configured automated employee scheduling in AxisCare,
+                    reducing scheduling conflicts and manual administrative
+                    work.
+                  </li>
+                  <li>
+                    Maintain the company's Wix website, adding new Hiring and
+                    Contact sections, and manage client invoicing.
+                  </li>
+                </ul>
+              </div>
+              <div class="rpEntry">
+                <div class="rpRow">
+                  <span
+                    ><strong>Computer Science Tutor</strong>, Self-Employed —
+                    Redwood City, CA</span
+                  >
+                  <span>Jan 2024 – Present</span>
+                </div>
+                <ul>
+                  <li>
+                    Design and deliver personalized A-Level Computer Science
+                    exam-prep lesson plans for students in Pakistan, Nepal, and
+                    the UK.
+                  </li>
+                  <li>
+                    Tutor 4 students at a time, 8–10 hours per week, on
+                    object-oriented programming and data structures, adapting
+                    instruction to each student's exam board and pace.
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <section>
+              <h3>Additional Experience</h3>
+              <div class="rpEntry">
+                <div class="rpRow">
+                  <span><strong>Server</strong>, Benihana — San Mateo, CA</span>
+                  <span>Dec 2024 – Jul 2026</span>
+                </div>
+                <ul>
+                  <li>
+                    Founding team member of the San Mateo location; trained new
+                    servers in a high-volume dining room.
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <section>
+              <h3>Technical Skills</h3>
+              <ul class="rpSkills">
+                <li>
+                  <strong>Languages:</strong> TypeScript, JavaScript, SQL,
+                  Python, Java, HTML/CSS
+                </li>
+                <li>
+                  <strong>Frameworks/Libraries:</strong> React, Node.js,
+                  Express, Redux, Zustand, Tailwind, Passport.js
+                </li>
+                <li>
+                  <strong>Backend &amp; Data:</strong> PostgreSQL, Prisma,
+                  Redis, BullMQ, Supabase, RESTful APIs, Nodemailer, Resend
+                </li>
+                <li>
+                  <strong>Testing, Deployment &amp; Tools:</strong> Jest,
+                  Vitest, SuperTest, Docker, Linux, Railway, Vercel, Git,
+                  GitHub, Vite, Webpack, Postman
+                </li>
+              </ul>
+            </section>
+          </article>
+        </section>
+      </main>
+      <footer>
+        <section id="contact-content" class="footerMain">
+          <div class="footerCta">
+            <h2>Connect with me</h2>
+            <p>
+              Have a project in mind or just want to say hello? Whether it's a
+              collaboration, an internship, or a quick chat about tech, I'm
+              always open to new conversations.
+            </p>
+            <div class="footerEmailRow">
+              <a
+                class="emailButton"
+                href="mailto:ghimires1@my.smccd.edu?subject=Hello%20Shriyash"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="m3 7 9 6 9-6" />
+                </svg>
+                Email me
+              </a>
+              <div class="footerSocial">
+                <a
+                  href="https://github.com/Shriyashzzz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  title="GitHub"
+                >
+                  <svg
+                    viewBox="0 0 128 128"
+                    width="40"
+                    height="40"
+                    class="svgIcons githubLink"
+                  >
+                    <g fill="#181616">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                      ></path>
+                      <path
+                        d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
+                      ></path>
+                    </g>
+                  </svg>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/shriyash-ghimire-73b385257/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  title="LinkedIn"
+                >
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 128 128"
+                    class="svgIcons linkedIn"
+                  >
+                    <path
+                      d="M116 3H12a8.91 8.91 0 00-9 8.8v104.42a8.91 8.91 0 009 8.78h104a8.93 8.93 0 009-8.81V11.77A8.93 8.93 0 00116 3zM39.17 107H21.06V48.73h18.11zm-9-66.21a10.5 10.5 0 1110.49-10.5 10.5 10.5 0 01-10.54 10.48zM107 107H88.89V78.65c0-6.75-.12-15.44-9.41-15.44s-10.87 7.36-10.87 15V107H50.53V48.73h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41C103.6 47.28 107 59.35 107 75z"
+                    ></path>
+                  </svg>
+                </a>
+                <a
+                  href="https://blog.shriyash.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Blog: Shriyash Uncompiled"
+                  title="Blog: Shriyash Uncompiled"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="40"
+                    height="40"
+                    class="svgIcons blogLink"
+                    aria-hidden="true"
+                    fill="none"
+                    stroke="#181616"
+                    stroke-width="2.25"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="16 18 22 12 16 6" />
+                    <polyline points="8 6 2 12 8 18" />
+                  </svg>
+                </a>
+                <a
+                  href="https://medium.com/@ghimireshriyash"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Medium"
+                  title="Medium"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="40"
+                    height="40"
+                    class="svgIcons mediumLink"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="#181616"
+                      d="M4.21 0A4.201 4.201 0 0 0 0 4.21v15.58A4.201 4.201 0 0 0 4.21 24h15.58A4.201 4.201 0 0 0 24 19.79v-1.093c-.137.013-.278.02-.422.02-2.577 0-4.027-2.146-4.09-4.832a7.592 7.592 0 0 1 .022-.708c.093-1.186.475-2.241 1.105-3.022a3.885 3.885 0 0 1 1.395-1.1c.468-.237 1.127-.367 1.664-.367h.023c.101 0 .202.004.303.01V4.211A4.201 4.201 0 0 0 19.79 0Zm.198 5.583h4.165l3.588 8.435 3.59-8.435h3.864v.146l-.019.004c-.705.16-1.063.397-1.063 1.254h-.003l.003 10.274c.06.676.424.885 1.063 1.03l.02.004v.145h-4.923v-.145l.019-.005c.639-.144.994-.353 1.054-1.03V7.267l-4.745 11.15h-.261L6.15 7.569v9.445c0 .857.358 1.094 1.063 1.253l.02.004v.147H4.405v-.147l.019-.004c.705-.16 1.065-.397 1.065-1.253V6.987c0-.857-.358-1.094-1.064-1.254l-.018-.004zm19.25 3.668c-1.086.023-1.733 1.323-1.813 3.124H24V9.298a1.378 1.378 0 0 0-.342-.047Zm-1.862 3.632c-.1 1.756.86 3.239 2.204 3.634v-3.634z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="footerBottom">
+          <p>
+            © <span id="footerYear">2026</span> Shriyash Ghimire · Bay Area, CA
+          </p>
+          <button type="button" class="backToTop">Back to top ↑</button>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
