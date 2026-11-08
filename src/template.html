@@ -505,15 +505,15 @@
                 </div>
                 <div class="projectDescription">
                   <p>
-                    I kept forgetting which chapter I'd stopped on, so I built
-                    something to remember for me. Then I kept opening ten tabs
-                    to find the next volume at a fair price, so a price checker
-                    followed.
+                    A shelf for the manga I'm reading, with live US prices for
+                    the next volume built right in.
                   </p>
                   <p>
-                    Keep your place and the volumes you own on your shelf, then
-                    compare what US stores charge for the next one, with price
-                    history for every volume.
+                    Series come from AniList and Open Library, and live US store
+                    prices from SerpApi, fetched in parallel through a shared
+                    provider interface. Every check is stored in PostgreSQL for
+                    price history and matched against your shelf, so each manga
+                    leads with the next volume you need and its cheapest price.
                   </p>
                 </div>
                 <ul class="projectTags" aria-label="Built with">
@@ -691,7 +691,7 @@
                   <h3>Hwoosting</h3>
                   <div class="projectLinks">
                     <a
-                      href="https://github.com/Shriyashzzz/fileHoster"
+                      href="https://github.com/Shriyashzzz/Hwoosting"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Hwoosting on GitHub"
@@ -1181,10 +1181,11 @@
             <div class="rpHead">
               <h2 id="resume-title">Shriyash Ghimire</h2>
               <p>
+                <span>Bay Area, CA</span>
+                <span class="rpSep">|</span>
                 <a href="mailto:ghimires1@my.smccd.edu"
                   >ghimires1@my.smccd.edu</a
-                >
-                <span class="rpSep">|</span>
+                ><br />
                 <a href="https://shriyash.dev/">shriyash.dev</a>
                 <span class="rpSep">|</span>
                 <a
@@ -1214,10 +1215,10 @@
               </div>
               <div class="rpRow">
                 <span
-                  >GPA: 3.6 / 4.0 | Coursework: Data Structures, Discrete
-                  Mathematics, Intro to Databases</span
+                  >GPA: 3.6 / 4.0 | Coursework: Data Structures, Discrete Math,
+                  Databases</span
                 >
-                <span>Expected Transfer: Fall 2027</span>
+                <span>Transfer: Fall 2027 · Expected B.S.: Fall 2028</span>
               </div>
             </section>
 
@@ -1246,25 +1247,37 @@
                 </div>
                 <p class="rpTech">
                   TypeScript, React, Zustand, Tailwind CSS, Express, PostgreSQL,
-                  Prisma, Docker
+                  Prisma, Jest, Docker
                 </p>
                 <ul>
                   <li>
-                    Built a reading tracker and US price checker for physical
-                    manga, combining AniList and Open Library catalog data with
-                    store prices fetched in parallel through a pluggable
-                    provider interface.
+                    Built and launched a manga reading shelf with live US
+                    prices, used by ~300 readers a week (18 registered
+                    accounts); each series leads with the next volume a reader
+                    needs and its cheapest store.
+                  </li>
+                  <li>
+                    Combined AniList and Open Library catalog data with live
+                    store prices from SerpApi, fetched in parallel through a
+                    pluggable provider interface with per-provider timeouts, and
+                    filtered out implausible listings before storing them.
                   </li>
                   <li>
                     Stored every price check in PostgreSQL to compute per-format
-                    price history (low, high, median) with parameterized SQL,
-                    and capped paid API calls with an atomic monthly budget.
+                    price history (low, high, median) with parameterized SQL;
+                    enforced an atomic monthly quota on paid API calls,
+                    deduplicated concurrent requests, and served crawlers cached
+                    prices.
+                  </li>
+                  <li>
+                    Added MyAnimeList import, barcode scanning, and new-release
+                    tracking so readers can fill and follow their shelf.
                   </li>
                   <li>
                     Secured the API with PostgreSQL-backed sessions, bcrypt,
-                    ownership checks, per-route rate limits, and
-                    zod/express-validator validation; deployed as two Railway
-                    services on a private network.
+                    authorization checks, rate limits, and
+                    Zod/express-validator; tested with Jest/SuperTest in GitHub
+                    Actions CI and deployed with Docker as two Railway services.
                   </li>
                 </ul>
               </div>
@@ -1295,29 +1308,21 @@
                 </p>
                 <ul>
                   <li>
-                    Built a newsletter CMS that sends email to 14 active
-                    subscribers in the background: Nodemailer and Resend handle
-                    delivery, while Redis and BullMQ job queues with 7
-                    concurrent workers keep sends reliable and non-blocking.
+                    Built a blog platform as three services (admin CMS, RESTful
+                    API, public client) and a WYSIWYG Markdown editor for posts.
                   </li>
                   <li>
-                    Architected a decoupled platform of three services (admin
-                    CMS, RESTful API, public client) with a React frontend and
-                    Express backend.
+                    Sent newsletter emails in the background with Redis and
+                    BullMQ job queues running 7 concurrent workers, delivered
+                    through Nodemailer and Resend, so publishing never blocks.
                   </li>
                   <li>
-                    Implemented authentication with Passport.js, storing JWTs in
-                    cookies with matched token and cookie expiry to avoid stale
-                    sessions.
+                    Implemented Passport.js authentication with JWTs in cookies,
+                    matching token and cookie expiry to avoid stale sessions.
                   </li>
                   <li>
-                    Developed a WYSIWYG post editor for the admin CMS, with a
-                    markdown-to-HTML parser for rendering posts on the client.
-                  </li>
-                  <li>
-                    Wrote two Jest/SuperTest integration test suites (posts and
-                    newsletter) and containerized the services with Docker for
-                    reproducible deployment.
+                    Wrote Jest/SuperTest integration suites for posts and the
+                    newsletter, and containerized the services with Docker.
                   </li>
                 </ul>
               </div>
@@ -1346,9 +1351,8 @@
                 </p>
                 <ul>
                   <li>
-                    Verified every click server-side against character
-                    coordinates stored in PostgreSQL, so answers never reach the
-                    client or appear in network requests.
+                    Verified every click server-side against coordinates stored
+                    in PostgreSQL, so answers never reach the client.
                   </li>
                   <li>
                     Isolated each player's progress in sessions using
@@ -1357,49 +1361,8 @@
                   <li>
                     Validated all request input with express-validator and wrote
                     Jest/SuperTest integration tests for Redis-backed sessions
-                    and click verification, using persistent agents to simulate
-                    full multi-request play sessions.
-                  </li>
-                </ul>
-              </div>
-              <div class="rpEntry">
-                <div class="rpRow">
-                  <span
-                    ><strong>Hwoosting</strong> | Cloud File Hosting Platform |
-                    <a
-                      href="https://filehoster-production.up.railway.app/login"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Live</a
-                    >
-                    ·
-                    <a
-                      href="https://github.com/Shriyashzzz/fileHoster"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >GitHub</a
-                    ></span
-                  >
-                  <span>Jul 2026</span>
-                </div>
-                <p class="rpTech">
-                  TypeScript, Express, EJS, PostgreSQL, Prisma, Supabase
-                </p>
-                <ul>
-                  <li>
-                    Built a server-side rendered file hosting app where users
-                    upload, group, and manage files in nested folders, backed by
-                    a Supabase S3 bucket.
-                  </li>
-                  <li>
-                    Designed a normalized relational schema (Users, Folders,
-                    Files) with Prisma to enforce referential integrity across
-                    nested directory trees.
-                  </li>
-                  <li>
-                    Stored file binaries in S3 storage and only lightweight
-                    metadata (MIME type, size, path) in PostgreSQL; handled
-                    multipart uploads with Multer.
+                    and click verification, simulating full multi-request game
+                    sessions.
                   </li>
                 </ul>
               </div>
@@ -1428,8 +1391,43 @@
                 <ul>
                   <li>
                     Forked jln13x's tailwindcss-highlights plugin, added
-                    Tailwind CSS v4 support, and published it to npm as
-                    tailwindcss-highlights-v4.
+                    Tailwind CSS v4 support, and published it to npm.
+                  </li>
+                </ul>
+              </div>
+              <div class="rpEntry">
+                <div class="rpRow">
+                  <span
+                    ><strong>Hwoosting</strong> | Cloud File Hosting Platform |
+                    <a
+                      href="https://filehoster-production.up.railway.app/login"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Live</a
+                    >
+                    ·
+                    <a
+                      href="https://github.com/Shriyashzzz/Hwoosting"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >GitHub</a
+                    ></span
+                  >
+                  <span>Jul 2026</span>
+                </div>
+                <p class="rpTech">
+                  TypeScript, Express, EJS, PostgreSQL, Prisma, Supabase
+                </p>
+                <ul>
+                  <li>
+                    Built a server-rendered file hosting app where users upload
+                    and manage files in nested folders on Supabase Storage.
+                  </li>
+                  <li>
+                    Designed a normalized Prisma schema (Users, Folders, Files)
+                    for nested folders, storing binaries in Supabase Storage and
+                    only metadata (MIME type, size, path) in PostgreSQL; handled
+                    uploads with Multer.
                   </li>
                 </ul>
               </div>
@@ -1453,9 +1451,8 @@
                 </div>
                 <ul>
                   <li>
-                    Migrated 50+ active client records and billing histories
-                    from QuickBooks to AxisCare, preserving data integrity and
-                    HIPAA compliance.
+                    Migrated 50+ client records and billing histories from
+                    QuickBooks to AxisCare.
                   </li>
                   <li>
                     Configured automated employee scheduling in AxisCare,
@@ -1472,36 +1469,18 @@
                 <div class="rpRow">
                   <span
                     ><strong>Computer Science Tutor</strong>, Self-Employed —
-                    Redwood City, CA</span
+                    Remote</span
                   >
                   <span>Jan 2024 – Present</span>
                 </div>
                 <ul>
                   <li>
-                    Design and deliver personalized A-Level Computer Science
-                    exam-prep lesson plans for students in Pakistan, Nepal, and
-                    the UK.
+                    Design personalized A-Level Computer Science exam-prep
+                    lessons for students in Pakistan, Nepal, and the UK.
                   </li>
                   <li>
-                    Tutor 4 students at a time, 8–10 hours per week, on
-                    object-oriented programming and data structures, adapting
-                    instruction to each student's exam board and pace.
-                  </li>
-                </ul>
-              </div>
-            </section>
-
-            <section>
-              <h3>Additional Experience</h3>
-              <div class="rpEntry">
-                <div class="rpRow">
-                  <span><strong>Server</strong>, Benihana — San Mateo, CA</span>
-                  <span>Dec 2024 – Jul 2026</span>
-                </div>
-                <ul>
-                  <li>
-                    Founding team member of the San Mateo location; trained new
-                    servers in a high-volume dining room.
+                    Tutor 4 students at a time, 8–10 hours a week, in
+                    object-oriented programming and data structures.
                   </li>
                 </ul>
               </div>
@@ -1516,7 +1495,7 @@
                 </li>
                 <li>
                   <strong>Frameworks/Libraries:</strong> React, Node.js,
-                  Express, Redux, Zustand, Tailwind, Passport.js
+                  Express, Redux, Zustand, Tailwind CSS, Passport.js
                 </li>
                 <li>
                   <strong>Backend &amp; Data:</strong> PostgreSQL, Prisma,
@@ -1524,8 +1503,8 @@
                 </li>
                 <li>
                   <strong>Testing, Deployment &amp; Tools:</strong> Jest,
-                  Vitest, SuperTest, Docker, Linux, Railway, Vercel, Git,
-                  GitHub, Vite, Webpack, Postman
+                  Vitest, SuperTest, Docker, Linux, Railway, Vercel, Git, GitHub
+                  Actions, Vite, Webpack, Postman
                 </li>
               </ul>
             </section>
