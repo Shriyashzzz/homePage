@@ -1258,26 +1258,25 @@
                   </li>
                   <li>
                     Combined AniList and Open Library catalog data with live
-                    store prices from SerpApi, fetched in parallel through a
-                    pluggable provider interface with per-provider timeouts, and
-                    filtered out implausible listings before storing them.
+                    store prices from SerpApi, checking every store at once and
+                    filtering out fake or mislabeled listings before saving
+                    them.
                   </li>
                   <li>
-                    Stored every price check in PostgreSQL to compute per-format
-                    price history (low, high, median) with parameterized SQL;
-                    enforced an atomic monthly quota on paid API calls,
-                    deduplicated concurrent requests, and served crawlers cached
-                    prices.
+                    Saved every price check in PostgreSQL to show each volume's
+                    lowest, highest, and median price over time, and capped paid
+                    API searches with a monthly budget that busy traffic and
+                    search-engine bots can't overspend.
                   </li>
                   <li>
                     Added MyAnimeList import, barcode scanning, and new-release
                     tracking so readers can fill and follow their shelf.
                   </li>
                   <li>
-                    Secured the API with PostgreSQL-backed sessions, bcrypt,
-                    authorization checks, rate limits, and
-                    Zod/express-validator; tested with Jest/SuperTest in GitHub
-                    Actions CI and deployed with Docker as two Railway services.
+                    Secured accounts with bcrypt-hashed passwords,
+                    database-backed sessions, per-user access checks, rate
+                    limits, and input validation; tested with Jest/SuperTest in
+                    GitHub Actions CI and deployed with Docker on Railway.
                   </li>
                 </ul>
               </div>
@@ -1308,21 +1307,22 @@
                 </p>
                 <ul>
                   <li>
-                    Built a blog platform as three services (admin CMS, RESTful
-                    API, public client) and a WYSIWYG Markdown editor for posts.
+                    Built a blog as three apps (admin dashboard, REST API,
+                    public site), with a rich-text editor that saves posts as
+                    Markdown.
                   </li>
                   <li>
-                    Sent newsletter emails in the background with Redis and
-                    BullMQ job queues running 7 concurrent workers, delivered
-                    through Nodemailer and Resend, so publishing never blocks.
+                    Sent newsletter emails through a background job queue
+                    (Redis, BullMQ) with 7 workers, delivered via Nodemailer and
+                    Resend, so publishing never waits on email.
                   </li>
                   <li>
-                    Implemented Passport.js authentication with JWTs in cookies,
-                    matching token and cookie expiry to avoid stale sessions.
+                    Added Passport.js login with JWT cookies set to expire with
+                    the token, so stale sign-ins never linger.
                   </li>
                   <li>
-                    Wrote Jest/SuperTest integration suites for posts and the
-                    newsletter, and containerized the services with Docker.
+                    Wrote Jest/SuperTest tests for the posts and newsletter APIs
+                    and packaged the services with Docker.
                   </li>
                 </ul>
               </div>
@@ -1351,18 +1351,17 @@
                 </p>
                 <ul>
                   <li>
-                    Verified every click server-side against coordinates stored
-                    in PostgreSQL, so answers never reach the client.
+                    Checked every click on the server against answer locations
+                    stored in PostgreSQL, so players can't find answers in the
+                    browser.
                   </li>
                   <li>
-                    Isolated each player's progress in sessions using
-                    express-session with a Redis-backed store (connect-redis).
+                    Kept each player's progress in a separate Redis session so
+                    games never mix, and added per-level leaderboards.
                   </li>
                   <li>
-                    Validated all request input with express-validator and wrote
-                    Jest/SuperTest integration tests for Redis-backed sessions
-                    and click verification, simulating full multi-request game
-                    sessions.
+                    Validated every request with express-validator and wrote
+                    Jest/SuperTest tests that play through full games.
                   </li>
                 </ul>
               </div>
@@ -1424,10 +1423,8 @@
                     and manage files in nested folders on Supabase Storage.
                   </li>
                   <li>
-                    Designed a normalized Prisma schema (Users, Folders, Files)
-                    for nested folders, storing binaries in Supabase Storage and
-                    only metadata (MIME type, size, path) in PostgreSQL; handled
-                    uploads with Multer.
+                    Kept files in Supabase Storage and only their name, size,
+                    type, and path in PostgreSQL; handled uploads with Multer.
                   </li>
                 </ul>
               </div>
